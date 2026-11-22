@@ -23,7 +23,9 @@ export default function ServicesPage() {
                 alt={service.imageAlt}
                 fill
                 sizes="(max-width: 900px) 100vw, 33vw"
-                unoptimized={service.image.endsWith(".svg")}
+                unoptimized={
+                  service.image.endsWith(".svg") || service.image.endsWith(".png")
+                }
               />
             </div>
             <div className="svc-card-body">

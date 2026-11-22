@@ -31,7 +31,7 @@ export default async function ServicePage({ params }: Props) {
     <section className="section service-detail">
       <div className="service-hero">
         <div>
-          <p className="kicker">服務 {service.index}</p>
+          <p className="kicker">服務項目</p>
           <h1>{service.title}</h1>
           <p className="lede">{service.lead}</p>
         </div>
@@ -42,7 +42,7 @@ export default async function ServicePage({ params }: Props) {
             fill
             sizes="(max-width: 900px) 100vw, 46vw"
             priority
-            unoptimized={service.image.endsWith(".svg")}
+            unoptimized={service.image.endsWith(".svg") || service.image.endsWith(".png")}
           />
         </div>
       </div>
@@ -55,6 +55,34 @@ export default async function ServicePage({ params }: Props) {
           </article>
         ))}
       </div>
+
+      {service.systems.length > 0 ? (
+        <div className="system-gallery">
+          <div className="section-head">
+            <p className="kicker">系統畫面</p>
+            <h2>相關系統與既有專案介面</h2>
+            <p className="section-desc">
+              以下為我們先前建置／展示過的系統畫面，供對應服務說明參考。
+            </p>
+          </div>
+          <div className="system-grid">
+            {service.systems.map((shot) => (
+              <figure key={shot.src} className="system-card">
+                <div className="system-card-media">
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 33vw"
+                    unoptimized={shot.src.endsWith(".svg") || shot.src.endsWith(".png")}
+                  />
+                </div>
+                <figcaption>{shot.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      ) : null}
 
       <div className="deliver">
         <div>
