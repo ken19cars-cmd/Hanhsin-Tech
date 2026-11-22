@@ -44,8 +44,8 @@ export const services: Service[] = [
     summary: "以顧問服務為核心，整合 PMIS、AI 儀表板與任務追蹤，讓履約管理有方法、有進度、有依據。",
     lead:
       "公辦都更與促參案件進入興建期後，文件量與協調節點陡增。PMIS 把公文、進度、查核、送審與影像歸檔整合於同一平台，並以 AI 儀表板輔助督導決策，讓進度預測、文件審核、風險預警與會議摘要可追蹤。",
-    image: "/systems/pmis-standalone.png",
-    imageAlt: "PMIS 優勢與應用控制台畫面",
+    image: "/systems/pmis-ai-workflow.png",
+    imageAlt: "PMIS AI Workflow 系統畫面",
     modules: [
       {
         title: "九大核心模組",
@@ -68,14 +68,14 @@ export const services: Service[] = [
     boundary: "這裡整理的是管理資訊與督導底稿。結構安全、施工圖與簽證仍由建築師、專業技師與營造廠負責。",
     systems: [
       {
-        src: "/systems/pmis-standalone.png",
-        alt: "PMIS Data Ops 優勢與應用控制台",
-        caption: "優勢與應用控制台：招商資料庫、自動化工作流、PMIS 與任務追蹤",
+        src: "/systems/pmis-ai-workflow.png",
+        alt: "PMIS AI Workflow 展示頁",
+        caption: "AI Workflow：招商資料庫、自動化工作流、PMIS 與任務追蹤總覽",
       },
       {
-        src: "/systems/pmis-ai-workflow.png",
-        alt: "PMIS AI 工作流示意",
-        caption: "Data Ops 展示頁：Notion × n8n × PMIS 整合示意",
+        src: "/systems/pmis-system-ui.png",
+        alt: "PMIS 優勢與應用完整畫面",
+        caption: "Data Ops 完整頁：工作流示意、PMIS AI 儀表板與任務追蹤",
       },
       {
         src: "/systems/construction-site.png",
