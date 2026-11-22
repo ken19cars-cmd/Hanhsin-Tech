@@ -270,9 +270,14 @@ export const services: Service[] = [
         caption: "GIS／國土資訊系統介面示意",
       },
       {
-        src: "/systems/gis-map.svg",
-        alt: "數值化疊圖示意",
-        caption: "數值化圖層與指標疊圖示意",
+        src: "/systems/gis-map-home.png",
+        alt: "GIS 地圖首頁畫面",
+        caption: "GIS 地圖首頁：案件落點與圖層瀏覽",
+      },
+      {
+        src: "/systems/gis-cases-map.png",
+        alt: "招商案件地圖畫面",
+        caption: "招商案件地圖與條件篩選畫面",
       },
     ],
   },
