@@ -283,18 +283,18 @@ export function getService(slug: string) {
 }
 
 export const capabilities = [
-  { title: "土地", text: "地政、分區與招商條件可單獨盤點上圖。" },
-  { title: "圖面", text: "平面圖與 BIM／EC 計算可按案啟用。" },
-  { title: "工程", text: "PMIS 進度、文件與查核依專案導入。" },
-  { title: "指標", text: "綠建築、能效與低碳標章可獨立準備。" },
-  { title: "資產", text: "ESG、財務與評價底稿可按需求整理。" },
+  { title: "土地", text: "地政、使用分區與招商條件盤點。" },
+  { title: "圖面", text: "建築平面圖、BIM 構件與低碳計算。" },
+  { title: "工程", text: "PMIS 進度、文件、查核與現場紀錄。" },
+  { title: "指標", text: "綠建築、能效與低碳標章評估。" },
+  { title: "資產", text: "企業 ESG、財務假設與評價底稿。" },
 ];
 
 export const focusAreas = [
-  { title: "土地開發", text: "基地條件、分區限制與開發策略，先落到可比較的空間事實。" },
-  { title: "財務與估價", text: "土開財務、敏感度與評價底稿共用同一組假設與來源。" },
-  { title: "工程管理", text: "契約、進度與品質沿著 PMIS 主檔閉環追蹤。" },
-  { title: "建築設計支援", text: "平面圖與 BIM 物件化，支援 EC 階段低碳計算。" },
-  { title: "ESG 永續", text: "標章評估與企業 ESG 系統，讓數字回得去來源。" },
-  { title: "國土智慧", text: "GIS 招商地圖與疊圖，把國土資料變成決策底圖。" },
+  { title: "土地開發", text: "基地條件、分區限制與開發策略整理。" },
+  { title: "財務與估價", text: "土開財務、敏感性分析與評價底稿。" },
+  { title: "工程管理", text: "契約、進度、查核與文件主檔管理。" },
+  { title: "建築設計支援", text: "平面圖整理、BIM 應用與 EC 低碳計算。" },
+  { title: "ESG 永續", text: "標章評估與企業 ESG 指標整理。" },
+  { title: "國土智慧", text: "GIS 招商地圖、條件查詢與圖層疊加。" },
 ];

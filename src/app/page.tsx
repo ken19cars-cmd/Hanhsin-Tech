@@ -22,10 +22,10 @@ export default function HomePage() {
             <p className="eyebrow">
               {company.group}旗下｜{company.tagline}
             </p>
-            <h1>把地籍、圖面、工地與永續指標，放回同一張底圖。</h1>
+            <h1>土地開發與永續科技的專業夥伴</h1>
             <p className="lede">
-              我們以科技與資訊整合，支援土地開發、財務估價、工程管理、建築設計、ESG
-              永續與國土智慧應用，讓開發決策說得出依據。
+              翰欣科技以資訊整合與應用研發，支援土地開發、建築規劃、營建管理、綠建築標章、企業
+              ESG 與 GIS 加值，協助案件推進與決策。
             </p>
             <div className="hero-actions">
               <Link className="btn btn-primary" href="/services">
@@ -42,9 +42,9 @@ export default function HomePage() {
       <section className="section">
         <div className="section-head">
           <p className="kicker">服務項目</p>
-          <h2>五項可獨立搭配的專業服務</h2>
+          <h2>我們提供的專業服務</h2>
           <p className="section-desc">
-            服務彼此相關、可互相支援，但不是固定一條龍流程。依基地階段與需求，單點導入或組合使用皆可。
+            涵蓋營建管理、建築規劃設計、綠建築標章、企業 ESG 與地理資訊加值。
           </p>
         </div>
         <div className="svc-cards">
@@ -74,8 +74,8 @@ export default function HomePage() {
       <section className="band band-bleed">
         <div className="band-inner">
           <div className="section-head light">
-            <p className="kicker">服務面向</p>
-            <h2>可組合、可單點啟動，不綁一條龍流程。</h2>
+            <p className="kicker">專業範疇</p>
+            <h2>從土地到永續指標的整合支援</h2>
           </div>
           <ul className="capability-grid">
             {capabilities.map((item) => (
@@ -90,10 +90,10 @@ export default function HomePage() {
 
       <section className="section cta-panel">
         <div>
-          <p className="kicker">合作</p>
-          <h2>說明你的基地與階段，我們回對應的服務線。</h2>
+          <p className="kicker">聯絡我們</p>
+          <h2>歡迎洽詢合作與專案需求</h2>
           <p>
-            無論是土地盤點、圖面分析、工程主檔、永續指標或招商疊圖，都可以從一通電話開始。
+            若有土地開發、工程管理、標章準備或資料加值需求，歡迎來電或來信，我們將盡速回覆。
           </p>
         </div>
         <Link className="btn btn-primary" href="/contact">

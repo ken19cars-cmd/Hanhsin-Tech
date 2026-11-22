@@ -5,15 +5,17 @@ import { services } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "服務項目",
-  description: "PMIS、圖面分析、綠建築與智慧建築、ESG 與 GIS 五項服務。",
+  description: "PMIS、建築規劃設計、綠建築與智慧建築、ESG 與 GIS 五項專業服務。",
 };
 
 export default function ServicesPage() {
   return (
     <section className="section">
       <p className="kicker">服務項目</p>
-      <h1>五項服務</h1>
-      <p className="lede">從土地、圖面、工程，接到指標與資產數字。</p>
+      <h1>專業服務</h1>
+      <p className="lede">
+        營建工程管理、建築規劃設計、綠建築標章、企業 ESG 與 GIS 地理資訊加值。
+      </p>
       <div className="svc-cards">
         {services.map((service) => (
           <Link key={service.slug} className="svc-card" href={`/services/${service.slug}`}>
@@ -31,7 +33,7 @@ export default function ServicesPage() {
             <div className="svc-card-body">
               <h3>{service.title}</h3>
               <p>{service.summary}</p>
-              <span className="svc-card-go">進入服務</span>
+              <span className="svc-card-go">了解更多</span>
             </div>
           </Link>
         ))}
