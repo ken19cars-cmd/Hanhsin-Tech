@@ -45,7 +45,7 @@ export const services: Service[] = [
     lead:
       "公辦都更與促參案件進入興建期後，文件量與協調節點陡增。PMIS 把公文、進度、查核、送審與影像歸檔整合於同一平台，並以 AI 儀表板輔助督導決策，讓進度預測、文件審核、風險預警與會議摘要可追蹤。",
     image: "/systems/pmis-ai-workflow.png",
-    imageAlt: "PMIS AI Workflow 系統畫面",
+    imageAlt: "營建工程管理平台總覽",
     modules: [
       {
         title: "九大核心模組",
@@ -60,27 +60,27 @@ export const services: Service[] = [
         text: "依單一案件列出開工前審議到開工後履約工作項目，以進度條、甘特圖與 Kanban 分欄追蹤待辦與檢附文件。",
       },
       {
-        title: "工程公開資訊介面",
-        text: "可延伸至基地資料、大事紀、工期進度與工地實況等公開資訊頁，讓主辦機關與專案團隊共用同一組現場事實。",
+        title: "工程公開資訊",
+        text: "基地資料、大事紀、工期進度與工地實況可整理為公開資訊頁，讓主辦機關與專案團隊共用同一組現場事實。",
       },
     ],
     deliverables: ["工程主檔與模組目錄", "進度／S 曲線與落後說明", "查核與未關閉事項", "任務追蹤與文件版次清單"],
-    boundary: "這裡整理的是管理資訊與督導底稿。結構安全、施工圖與簽證仍由建築師、專業技師與營造廠負責。",
+    boundary: "本服務整理管理資訊與督導底稿。結構安全、施工圖與簽證仍由建築師、專業技師與營造廠負責。",
     systems: [
       {
         src: "/systems/pmis-ai-workflow.png",
-        alt: "PMIS AI Workflow 展示頁",
-        caption: "AI Workflow：招商資料庫、自動化工作流、PMIS 與任務追蹤總覽",
+        alt: "工程管理平台總覽",
+        caption: "公文、進度、查核與任務，集中在同一工作平台掌握",
       },
       {
         src: "/systems/pmis-system-ui.png",
-        alt: "PMIS 優勢與應用完整畫面",
-        caption: "Data Ops 完整頁：工作流示意、PMIS AI 儀表板與任務追蹤",
+        alt: "AI 儀表板與工作流",
+        caption: "AI 儀表板協助進度預測、文件審核與風險預警",
       },
       {
         src: "/systems/construction-site.png",
-        alt: "工程公開資訊系統畫面",
-        caption: "工程公開資訊頁：基地資料、預定／實際進度與工期介面",
+        alt: "工程公開資訊頁",
+        caption: "基地資料、預定／實際進度與工期資訊一次對齊",
       },
     ],
   },
@@ -117,18 +117,18 @@ export const services: Service[] = [
     systems: [
       {
         src: "/systems/drawings-svc.jpg",
-        alt: "建築圖面分析示意",
-        caption: "建築規劃／圖面分析相關系統與圖資應用示意",
+        alt: "建築圖面分析",
+        caption: "平面圖與空間單元整理，讓規劃討論有同一套圖說",
       },
       {
         src: "/systems/plan-svc.jpg",
-        alt: "規劃設計示意畫面",
-        caption: "規劃設計圖說整理與案件圖資介面示意",
+        alt: "規劃設計圖資",
+        caption: "圖說版次、面積與設計條件對位，方便跨單位對齊",
       },
       {
         src: "/systems/construction-site.png",
-        alt: "基地與規劃圖資公開頁",
-        caption: "基地位置、規模與規劃構想資訊頁（可對接圖說公開）",
+        alt: "基地與規劃資訊",
+        caption: "基地位置、規模與規劃構想可一併對外說明",
       },
     ],
   },
@@ -139,9 +139,9 @@ export const services: Service[] = [
     short: "綠建築、能效、低碳與永續標章的評估工作台。",
     summary: "把 GRESB／綠建築／能效／低碳標章做成可切換模組的評估與試算工作台。",
     lead:
-      "同一案件常同時面對 EEWH 綠建築九大指標、BERS 建築能效、LEBR 低碳標示與相關永續評比。我們以既有標章評估系統為基礎，整理指標門檻、缺口試算與證據準備，讓送審前先對齊，而不是核發後再補洞。",
+      "同一案件常同時面對 EEWH 綠建築九大指標、BERS 建築能效、LEBR 低碳標示與相關永續評比。我們協助整理指標門檻、缺口試算與證據準備，讓送審前先對齊，而不是核發後再補洞。",
     image: "/systems/green-esg-page.png",
-    imageAlt: "不動產永續評估工作台畫面",
+    imageAlt: "綠建築與永續標章評估",
     modules: [
       {
         title: "標章模組切換",
@@ -153,11 +153,11 @@ export const services: Service[] = [
       },
       {
         title: "能效與低碳試算",
-        text: "串接建築能效分級與低碳／蘊含碳相關計算畫面，協助設計與永續團隊共用同一組假設。",
+        text: "串接建築能效分級與低碳／蘊含碳相關計算，協助設計與永續團隊共用同一組假設。",
       },
       {
         title: "缺口分析與報告輸出",
-        text: "以 AI／規則輔助進行缺口試算、碳數據入庫與報告輸出，縮短跨專業對齊時間。",
+        text: "以規則與輔助工具進行缺口試算、碳數據整理與報告輸出，縮短跨專業對齊時間。",
       },
     ],
     deliverables: ["指標模組對照", "缺口與準備度檢核", "能效／低碳試算底稿", "證據與報告輸出清單"],
@@ -165,18 +165,18 @@ export const services: Service[] = [
     systems: [
       {
         src: "/systems/green-esg-page.png",
-        alt: "ESG OS 不動產永續評估工作台",
-        caption: "標章評估工作台：GRESB／EEWH／BERS／LEBR 模組畫面",
+        alt: "標章評估工作台",
+        caption: "GRESB、EEWH、BERS、LEBR 等標章模組，依案件切換評估",
       },
       {
         src: "/systems/green-eewh-nine.jpg",
-        alt: "綠建築九大指標圖",
-        caption: "EEWH 綠建築九大指標架構圖",
+        alt: "綠建築九大指標",
+        caption: "EEWH 九大指標對照，掌握門檻與準備重點",
       },
       {
         src: "/systems/green-bers-cei.jpg",
-        alt: "建築能效分級示意",
-        caption: "BERS／CEI 能效與碳排密度相關計算示意",
+        alt: "建築能效與碳排",
+        caption: "建築能效分級與碳排密度試算，支援送審前檢討",
       },
     ],
   },
@@ -189,7 +189,7 @@ export const services: Service[] = [
     lead:
       "企業 ESG 永續應用系統協助蒐集年度資料、對應指標與產出可稽核軌跡。報告書上的能源、碳與治理數字要回得去來源文件；土開財務與資產評價也可共用同一組可追溯假設。",
     image: "/systems/esg-platform.png",
-    imageAlt: "企業 ESG 永續應用系統儀表板",
+    imageAlt: "企業 ESG 指標儀表板",
     modules: [
       {
         title: "資料來源對照",
@@ -213,18 +213,18 @@ export const services: Service[] = [
     systems: [
       {
         src: "/systems/esg-platform.png",
-        alt: "企業 ESG 永續應用系統",
-        caption: "ESG 儀表板：資料來源、指標分數與年度軌跡",
+        alt: "ESG 指標儀表板",
+        caption: "資料來源、指標分數與年度軌跡，一次看清準備進度",
       },
       {
         src: "/systems/esg-ghg-inventory.jpg",
-        alt: "溫室氣體盤查文件示意",
-        caption: "溫室氣體盤查等來源文件整理示意",
+        alt: "溫室氣體盤查文件",
+        caption: "溫室氣體盤查等來源文件可對回報告書數字",
       },
       {
         src: "/systems/esg-esg-report-cover.jpg",
-        alt: "永續報告書封面示意",
-        caption: "永續報告書與揭露文件對照示意",
+        alt: "永續報告書",
+        caption: "永續報告書與揭露文件，對應可稽核的計算軌跡",
       },
     ],
   },
@@ -235,9 +235,9 @@ export const services: Service[] = [
     short: "招商案件地圖、條件查詢與數值化統計看板。",
     summary: "在地圖上比較地號、分區、限制與招商條件，並以案件統計看板掌握覆蓋與狀態。",
     lead:
-      "土地與招商要不要進下一階段，先看地圖。我們以既有 GIS／招商案件系統為基礎，介接地政與公開招商資訊，支援條件查詢、落點統計與圖層疊加，讓基地限制與案件分布一次看清。",
+      "土地與招商要不要進下一階段，先看地圖。我們介接地政與公開招商資訊，支援條件查詢、落點統計與圖層疊加，讓基地限制與案件分布一次看清。",
     image: "/systems/gis-wallpaper-map.png",
-    imageAlt: "招商案件 GIS 統計看板",
+    imageAlt: "招商案件地圖與統計看板",
     modules: [
       {
         title: "招商案件地圖",
@@ -253,7 +253,7 @@ export const services: Service[] = [
       },
       {
         title: "自動化資料更新",
-        text: "可接自動化工作流持續匯入公告、解析欄位並更新地圖，降低人工造冊成本。",
+        text: "可持續匯入公告、解析欄位並更新地圖，降低人工造冊成本。",
       },
     ],
     deliverables: ["案件地圖與篩選結果", "統計看板截圖／匯出", "分區與限制標註", "資料時點紀錄"],
@@ -261,23 +261,18 @@ export const services: Service[] = [
     systems: [
       {
         src: "/systems/gis-wallpaper-map.png",
-        alt: "GIS 案件統計看板",
-        caption: "招商案件 GIS：條件查詢、縣市統計與地圖落點",
-      },
-      {
-        src: "/systems/gis-hero-1.jpg",
-        alt: "GIS 系統介面橫幅",
-        caption: "GIS／國土資訊系統介面示意",
+        alt: "招商案件統計看板",
+        caption: "條件查詢、縣市統計與案件落點，協助快速篩案",
       },
       {
         src: "/systems/gis-map-home.png",
-        alt: "GIS 地圖首頁畫面",
-        caption: "GIS 地圖首頁：案件落點與圖層瀏覽",
+        alt: "招商案件地圖",
+        caption: "全台招商案件落點與圖層瀏覽",
       },
       {
         src: "/systems/gis-cases-map.png",
-        alt: "招商案件地圖畫面",
-        caption: "招商案件地圖與條件篩選畫面",
+        alt: "案件條件篩選地圖",
+        caption: "依縣市、狀態與類型篩選，對照基地條件",
       },
     ],
   },

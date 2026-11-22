@@ -59,10 +59,10 @@ export default async function ServicePage({ params }: Props) {
       {service.systems.length > 0 ? (
         <div className="system-gallery">
           <div className="section-head">
-            <p className="kicker">系統畫面</p>
-            <h2>相關系統與既有專案介面</h2>
+            <p className="kicker">實際應用</p>
+            <h2>這項服務可以怎麼用</h2>
             <p className="section-desc">
-              以下為我們先前建置／展示過的系統畫面，供對應服務說明參考。
+              以下整理這項服務常見的工作畫面與產出樣貌，方便對照實際需求。
             </p>
           </div>
           <div className="system-grid">
@@ -86,7 +86,7 @@ export default async function ServicePage({ params }: Props) {
 
       <div className="deliver">
         <div>
-          <h2>交付</h2>
+          <h2>您會得到</h2>
           <ul>
             {service.deliverables.map((item) => (
               <li key={item}>{item}</li>
@@ -94,10 +94,10 @@ export default async function ServicePage({ params }: Props) {
           </ul>
         </div>
         <div>
-          <h2>邊界</h2>
+          <h2>服務範圍</h2>
           <p>{service.boundary}</p>
           <Link className="btn btn-primary" href="/contact">
-            討論這個服務
+            諮詢這項服務
           </Link>
         </div>
       </div>
