@@ -46,9 +46,14 @@ img {
   max-width: 100%;
 }
 
-main {
+.shell {
   width: min(100% - (var(--gutter) * 2), var(--max));
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main {
+  width: 100%;
   padding-bottom: 4.5rem;
 }
 
@@ -84,8 +89,7 @@ p {
 
 .site-header,
 .site-footer {
-  width: min(100% - (var(--gutter) * 2), var(--max));
-  margin: 0 auto;
+  width: 100%;
 }
 
 .site-header {
@@ -153,35 +157,23 @@ p {
   color: var(--blue-600);
 }
 
-.hero-bleed,
-.band-bleed {
-  position: relative;
-  width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  max-width: 100vw;
-}
-
 .hero {
   position: relative;
+  width: 100%;
   min-height: clamp(220px, 32vh, 320px);
   height: clamp(220px, 32vh, 320px);
   border-radius: 0;
   overflow: hidden;
   display: grid;
   align-items: center;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
+  margin: 0 0 1.5rem;
   box-shadow: none;
 }
 
 .hero-inner,
 .band-inner {
-  width: min(100% - (var(--gutter) * 2), var(--max));
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-media,
@@ -306,9 +298,17 @@ p {
   text-align: center;
 }
 
+.section-head.left {
+  text-align: left;
+}
+
 .section-head .section-desc {
   margin-left: auto;
   margin-right: auto;
+}
+
+.section-head.left .section-desc {
+  margin-left: 0;
 }
 
 .section-head.light,
@@ -389,21 +389,12 @@ p {
 }
 
 .band {
-  margin-top: 2.25rem;
-  margin-bottom: 2rem;
-  padding: 2.1rem 0;
+  width: 100%;
+  margin: 2.25rem 0 2rem;
+  padding: 2.25rem 0;
   border-radius: 0;
   background: linear-gradient(135deg, #3ea0c8 0%, #2b84ab 55%, #1f6f94 100%);
   color: var(--white);
-}
-
-.band.band-bleed {
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
-  max-width: 100vw;
 }
 
 .band .section-head {
@@ -417,13 +408,8 @@ p {
 }
 
 .band.soft {
-  position: static;
-  left: auto;
-  right: auto;
-  width: auto;
-  max-width: none;
-  margin-left: 0;
-  margin-right: 0;
+  width: 100%;
+  margin: 0;
   background: linear-gradient(160deg, rgba(62, 160, 200, 0.12), rgba(245, 251, 254, 0.9));
   color: var(--ink);
   border: 1px solid var(--line);
@@ -477,8 +463,6 @@ p {
   gap: 1.2rem;
   align-items: center;
   width: 100%;
-  max-width: var(--max);
-  margin: 0 auto;
   padding: 1.45rem 1.5rem;
   border-radius: 22px;
   background: var(--white);

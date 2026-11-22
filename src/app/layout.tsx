@@ -29,9 +29,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="zh-Hant" className={`${sans.variable} ${display.variable}`}>
       <body>
-        <Header />
+        <div className="shell">
+          <Header />
+        </div>
         <main>{children}</main>
-        <Footer />
+        <div className="shell">
+          <Footer />
+        </div>
       </body>
     </html>
   );
