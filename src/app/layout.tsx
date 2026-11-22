@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Noto_Sans_TC, Newsreader } from "next/font/google";
+import { Noto_Sans_TC, Sora } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { company } from "@/lib/site";
 import "./globals.css";
 
 const sans = Noto_Sans_TC({
@@ -10,19 +11,18 @@ const sans = Noto_Sans_TC({
   variable: "--font-sans",
 });
 
-const display = Newsreader({
+const display = Sora({
   subsets: ["latin"],
-  weight: ["500", "600"],
+  weight: ["500", "600", "700"],
   variable: "--font-display",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "翰欣科技｜不動產開發 × 創新應用",
-    template: "%s｜翰欣科技",
+    default: `${company.nameZh}｜${company.tagline}`,
+    template: `%s｜${company.nameZh}`,
   },
-  description:
-    "翰欣科技協助土地開發團隊處理工程管理、設計圖分析、綠建築與智慧建築檢核、企業 ESG，以及 GIS 地政加值。",
+  description: `${company.nameZh}為${company.group}旗下公司，支援土地開發、財務估價、工程管理、建築設計、ESG 永續與國土智慧應用研發。`,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

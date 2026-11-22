@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getService, services } from "@/lib/site";
@@ -28,9 +29,22 @@ export default async function ServicePage({ params }: Props) {
 
   return (
     <section className="section service-detail">
-      <p className="kicker">服務 {service.index}</p>
-      <h1>{service.title}</h1>
-      <p className="lede">{service.lead}</p>
+      <div className="service-hero">
+        <div>
+          <p className="kicker">服務 {service.index}</p>
+          <h1>{service.title}</h1>
+          <p className="lede">{service.lead}</p>
+        </div>
+        <div className="service-hero-media">
+          <Image
+            src={service.image}
+            alt={service.imageAlt}
+            fill
+            sizes="(max-width: 900px) 100vw, 46vw"
+            priority
+          />
+        </div>
+      </div>
 
       <div className="module-grid">
         {service.modules.map((module) => (

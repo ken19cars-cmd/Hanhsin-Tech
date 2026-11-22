@@ -13,8 +13,8 @@ export default function ContactForm() {
   if (sent) {
     return (
       <div className="form-done" role="status">
-        <h2>已收到說明</h2>
-        <p>這是前端示意表單。正式案件請改用你們實際的收件信箱或 CRM。</p>
+        <h2>已收到您的訊息</h2>
+        <p>這是前端示意表單。正式聯繫請直接來電或來信，我們將儘速回覆。</p>
       </div>
     );
   }
@@ -30,11 +30,20 @@ export default function ContactForm() {
         <input name="email" type="email" required autoComplete="email" />
       </label>
       <label>
-        基地或案件摘要
-        <textarea name="message" rows={6} required placeholder="地點、階段、需要哪一條服務線" />
+        電話
+        <input name="phone" type="tel" autoComplete="tel" />
+      </label>
+      <label>
+        諮詢內容
+        <textarea
+          name="message"
+          rows={6}
+          required
+          placeholder="請簡述基地位置、目前階段與需要協助的方向"
+        />
       </label>
       <button className="btn btn-primary" type="submit">
-        送出
+        送出訊息
       </button>
     </form>
   );

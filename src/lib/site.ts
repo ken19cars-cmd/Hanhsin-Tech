@@ -10,9 +10,22 @@ export type Service = {
   short: string;
   summary: string;
   lead: string;
+  image: string;
+  imageAlt: string;
   modules: Module[];
   deliverables: string[];
   boundary: string;
+};
+
+export const company = {
+  nameZh: "翰欣科技實業有限公司",
+  nameEn: "Hanxin Technology Industrial Co., Ltd.",
+  group: "皓欣集團",
+  tagline: "土地開發 × 智慧應用 × 永續科技",
+  address: "臺北市松山區民權東路三段144號5F-4",
+  phoneDisplay: "0963-511-091",
+  phoneTel: "+886963511091",
+  email: "service.haohsin@gmail.com",
 };
 
 export const services: Service[] = [
@@ -23,6 +36,8 @@ export const services: Service[] = [
     short: "契約、進度、成本與品質放在同一份工程主檔。",
     summary: "多專案的營建管理資訊：進度、成本、品質、安衛與變更閉環。",
     lead: "開發、設計與營造若各看各的表，變更就會消失在信件裡。PMIS 把基地、契約、進度、成本與品質收成同一份工程主檔，讓落後與超支說得出原因。",
+    image: "/services/pmis.jpg",
+    imageAlt: "營建工地與工程管理現場",
     modules: [
       {
         title: "專案與契約主檔",
@@ -51,6 +66,8 @@ export const services: Service[] = [
     short: "產權套繪、BIM 梁柱蘊含碳、CAD 物件辨識。",
     summary: "把地籍、設計圖與模型變成可核算的物件：權界、數量與結構體碳排。",
     lead: "圖檔要能回答登記與碳排，不能只是再存一份打不開的 DWG。我們把地籍、BIM 與 CAD 對到可統計的物件，供產權、數量與蘊含碳使用。",
+    image: "/services/drawings.jpg",
+    imageAlt: "建築設計圖與規劃工作台",
     modules: [
       {
         title: "產權登記套繪",
@@ -75,6 +92,8 @@ export const services: Service[] = [
     short: "綠建築、智慧建築、LEED、WELL、低碳與能效的送審前檢核。",
     summary: "六套制度的指標對照、證據清單與準備度檢核。正式分數仍由評定機構核定。",
     lead: "同一棟建築常常同時面對綠建築、智慧建築、能效、低碳，以及 LEED 或 WELL。送審前先對齊指標與證據，比取得標章後再補文件便宜。",
+    image: "/services/green.jpg",
+    imageAlt: "永續建築與智慧空間",
     modules: [
       {
         title: "制度對照",
@@ -99,6 +118,8 @@ export const services: Service[] = [
     short: "永續報告書、土開財務、不動產估價與資產評價共用一套數字。",
     summary: "讓揭露、財務與評價回溯到同一組基地、工程與能耗資料。",
     lead: "報告書上的能源、碳與資產數字，要回得去基地與工程。我們把永續揭露、土地開發財務和評價需要的資料放在同一條軌跡上。",
+    image: "/services/esg.jpg",
+    imageAlt: "永續環境與資產視野",
     modules: [
       {
         title: "永續報告書",
@@ -123,6 +144,8 @@ export const services: Service[] = [
     short: "地政資料介接、計畫疊圖與招商案件。",
     summary: "在合法資料範圍內，把地號、分區、限制與招商條件放到地圖上比較。",
     lead: "土地要不要進設計與財務，先看地圖。地政、使用分區與招商條件疊在一起，基地限制才不會等到送審才出現。",
+    image: "/services/gis.jpg",
+    imageAlt: "地理資訊與都市空間地圖",
     modules: [
       {
         title: "地政資料介接",
@@ -154,116 +177,11 @@ export const steps = [
   { index: "05", title: "資產", text: "財務、估價與報告書共用數字。" },
 ];
 
-export type ReviewItem = {
-  id: string;
-  label: string;
-  note?: string;
-};
-
-export type ReviewGroup = {
-  id: string;
-  title: string;
-  source: string;
-  items: ReviewItem[];
-};
-
-export const reviewGroups: ReviewGroup[] = [
-  {
-    id: "eewh",
-    title: "綠建築九大指標",
-    source: "內政部綠建築評估手冊的指標架構。必過項目與計分依建築類型和手冊版本而定。",
-    items: [
-      { id: "eewh-bio", label: "生物多樣性" },
-      { id: "eewh-green", label: "綠化量" },
-      { id: "eewh-water-retain", label: "基地保水" },
-      { id: "eewh-energy", label: "日常節能", note: "多數案件的核心指標" },
-      { id: "eewh-co2", label: "二氧化碳減量" },
-      { id: "eewh-waste", label: "廢棄物減量" },
-      { id: "eewh-indoor", label: "室內環境" },
-      { id: "eewh-water", label: "水資源", note: "多數案件的核心指標" },
-      { id: "eewh-sewage", label: "污水垃圾改善" },
-    ],
-  },
-  {
-    id: "ib",
-    title: "智慧建築六大指標",
-    source: "智慧建築評估手冊 2024 年版。須符合全部基本規定，鼓勵項目另計等級。",
-    items: [
-      { id: "ib-basic", label: "22 項基本規定已納入送審範圍", note: "未全數符合不能取得標章" },
-      { id: "ib-infra", label: "基礎設施" },
-      { id: "ib-ops", label: "維運管理" },
-      { id: "ib-safety", label: "安全防災" },
-      { id: "ib-energy", label: "節能管理" },
-      { id: "ib-health", label: "健康舒適" },
-      { id: "ib-innovation", label: "智慧創新" },
-    ],
-  },
-  {
-    id: "leed",
-    title: "LEED 類別覆蓋",
-    source: "LEED v4 / v4.1 建築設計與施工的類別。此處只檢查有沒有負責人，不換算點數。",
-    items: [
-      { id: "leed-ip", label: "整合程序" },
-      { id: "leed-lt", label: "交通與選址" },
-      { id: "leed-ss", label: "永續基地" },
-      { id: "leed-we", label: "用水效率" },
-      { id: "leed-ea", label: "能源與大氣" },
-      { id: "leed-mr", label: "材料與資源" },
-      { id: "leed-ieq", label: "室內環境品質" },
-      { id: "leed-inn", label: "創新" },
-      { id: "leed-rp", label: "區域優先" },
-    ],
-  },
-  {
-    id: "well",
-    title: "WELL 概念覆蓋",
-    source: "WELL v2 十個概念。先決條件與優化項的正式分數以 IWBI 送審規定為準。",
-    items: [
-      { id: "well-air", label: "空氣" },
-      { id: "well-water", label: "水" },
-      { id: "well-nourishment", label: "營養" },
-      { id: "well-light", label: "光" },
-      { id: "well-movement", label: "運動" },
-      { id: "well-thermal", label: "熱舒適" },
-      { id: "well-sound", label: "聲" },
-      { id: "well-materials", label: "材料" },
-      { id: "well-mind", label: "心靈" },
-      { id: "well-community", label: "社區" },
-    ],
-  },
-  {
-    id: "carbon",
-    title: "低碳與蘊含碳",
-    source: "建築蘊含碳排標示可與綠建築、能效案件併同申請。係數必須說得出來源。",
-    items: [
-      { id: "carbon-frame", label: "結構梁柱數量已可統計" },
-      { id: "carbon-envelope", label: "樓版與外殼範圍已界定" },
-      { id: "carbon-factor", label: "排放係數出處已註明" },
-      { id: "carbon-joint", label: "是否與能效案件併同申請已決定" },
-    ],
-  },
-];
-
-export const energyLevels = [
-  { id: "1+", label: "1+ 近零碳", detail: "能效第 1 級，且評分尺度為前 50%。" },
-  { id: "1", label: "第 1 級", detail: "高於合格基線的效率目標。" },
-  { id: "2", label: "第 2 級", detail: "" },
-  { id: "3", label: "第 3 級", detail: "" },
-  { id: "4", label: "第 4 級", detail: "公開制度中的合格基線。" },
-  { id: "unset", label: "尚未設定", detail: "" },
-];
-
-export const smartGrades = [
-  { grade: "合格級", score: "60 分以上、未達 70" },
-  { grade: "銅級", score: "70 分以上、未達 100" },
-  { grade: "銀級", score: "100 分以上、未達 130" },
-  { grade: "黃金級", score: "130 分以上、未達 150" },
-  { grade: "鑽石級", score: "150 分以上" },
-];
-
-export const leedGrades = [
-  { grade: "Certified", score: "40–49" },
-  { grade: "Silver", score: "50–59" },
-  { grade: "Gold", score: "60–79" },
-  { grade: "Platinum", score: "80 以上" },
+export const focusAreas = [
+  { title: "土地開發", text: "基地條件、分區限制與開發策略，先落到可比較的空間事實。" },
+  { title: "財務與估價", text: "土開財務、敏感度與評價底稿共用同一組假設與來源。" },
+  { title: "工程管理", text: "契約、進度、成本與品質沿著工程主檔閉環追蹤。" },
+  { title: "建築設計支援", text: "圖面物件化，接產權套繪、數量統計與蘊含碳試算。" },
+  { title: "ESG 永續", text: "指標證據、能耗與碳排軌跡可回溯，服務報告書與送審準備。" },
+  { title: "國土智慧", text: "地政介接、計畫疊圖與招商資訊，把國土資料變成決策底圖。" },
 ];

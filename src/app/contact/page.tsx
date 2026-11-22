@@ -1,18 +1,37 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import { company } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "聯絡",
-  description: "說明基地、階段與需要的服務線。",
+  title: "聯絡我們",
+  description: "歡迎來電或來信，我們將儘速與您聯繫。",
 };
 
 export default function ContactPage() {
   return (
     <section className="section contact">
       <div>
-        <p className="kicker">聯絡</p>
-        <h1>說明你的基地</h1>
-        <p className="lede">告訴我們地點、目前階段，以及五條服務線裡最急的一條。</p>
+        <p className="kicker">聯絡我們</p>
+        <h1>歡迎來電或來信</h1>
+        <p className="lede">一般業務與土地開發案件諮詢，歡迎透過電話或 Email 與我們聯繫。</p>
+        <ul className="contact-facts">
+          <li>
+            <span>地址</span>
+            <strong>{company.address}</strong>
+          </li>
+          <li>
+            <span>電話</span>
+            <strong>
+              <a href={`tel:${company.phoneTel}`}>{company.phoneDisplay}</a>
+            </strong>
+          </li>
+          <li>
+            <span>Email</span>
+            <strong>
+              <a href={`mailto:${company.email}`}>{company.email}</a>
+            </strong>
+          </li>
+        </ul>
       </div>
       <ContactForm />
     </section>

@@ -1,44 +1,125 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { company, focusAreas } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "關於",
-  description: "翰欣科技實業有限公司處理不動產開發中的圖面、工程、地政與永續資訊。",
+  title: "關於我們",
+  description: `${company.nameZh}為${company.group}旗下公司，針對土地開發、財務估價、工程管理、建築設計、ESG 永續與國土智慧提供應用研發支援。`,
 };
 
-const ways = [
-  { title: "盤點", text: "先確認基地、圖說、契約與既有標章版本，標出缺的那一層資料。" },
-  { title: "底圖", text: "地政、設計物件與工程主檔用同一組編號，後面的數字才回得去。" },
-  { title: "並行", text: "指標證據和成本、碳排一起整理，避免報告書和工地各算各的。" },
-  { title: "交付", text: "交出可追溯的清單、差異與假設。簽證與正式評定留給法定專業。" },
+const values = [
+  {
+    title: "專業",
+    text: "以不動產開發與資訊整合經驗，把土地、圖面、工程與永續指標落到可執行的工作底稿。",
+  },
+  {
+    title: "負責",
+    text: "從盤點、建檔到交付，數字與證據都留得出處，對案件品質與資料軌跡負責。",
+  },
+  {
+    title: "效率",
+    text: "掌握開發時程與關鍵節點，讓主辦單位、投資人與專業團隊更快對齊同一組事實。",
+  },
+  {
+    title: "誠懇",
+    text: "清楚說明能做與不能做的邊界；簽證、評定與法定責任仍留給法定專業與主管機關。",
+  },
 ];
 
 export default function AboutPage() {
   return (
-    <section className="section about">
-      <p className="kicker">公司</p>
-      <h1>翰欣科技實業有限公司</h1>
-      <p className="lede">
-        我們做開發流程中間那一層資訊。上游是土地、法規與設計圖，下游是工地進度、認證分數、財務與永續揭露。
-      </p>
-      <div className="ways">
-        {ways.map((way, index) => (
-          <article key={way.title}>
-            <span>0{index + 1}</span>
-            <h2>{way.title}</h2>
-            <p>{way.text}</p>
-          </article>
-        ))}
-      </div>
-      <div className="about-note">
-        <h2>不做的事</h2>
-        <p>
-          不取代建築師、專業技師、不動產估價師、會計師的簽證，也不核發綠建築、智慧建築、能效、LEED 或 WELL。地政個人資料只在授權範圍內處理。
-        </p>
+    <>
+      <section className="page-hero">
+        <div className="page-hero-copy">
+          <p className="kicker">關於我們</p>
+          <h1>{company.nameZh}</h1>
+          <p className="lede">
+            專業、負責、效率、誠懇——以科技與顧問能量，支援土地開發全流程中的資訊整合與應用研發。
+          </p>
+          <p className="lede muted">
+            {company.nameEn}
+            <br />
+            {company.group}旗下公司
+          </p>
+        </div>
+        <div className="page-hero-media">
+          <Image
+            src="/about-cover.jpg"
+            alt="翰欣科技辦公與協作空間"
+            fill
+            sizes="(max-width: 900px) 100vw, 48vw"
+            priority
+          />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <p className="kicker">公司定位</p>
+          <h2>皓欣集團旗下的科技實業公司</h2>
+        </div>
+        <div className="prose-block">
+          <p>
+            {company.nameZh}為{company.group}
+            旗下公司，承接集團在不動產開發顧問領域的長期經驗，進一步聚焦「應用研發」與「資訊整合」：把土地、財務、估價、工程、設計與永續所需要的資料，整理成可追溯、可共用、可決策的工作底圖。
+          </p>
+          <p>
+            我們服務的不是單點工具，而是開發流程中間那一層。上游是地政法規、基地條件與設計圖說；下游是工地進度、認證準備、財務模型與永續揭露。當各專業各自保存表格與圖檔，變更與假設就容易散落；翰欣以系統化方式，協助團隊把事實放回同一條軌跡。
+          </p>
+          <p>
+            面對公共建設、都市更新、土地開發與企業永續需求日增，我們針對土地開發、財務、估價、工程管理、建築設計、ESG
+            永續、國土智慧等領域，持續支援應用研發與資料加值，讓決策者看得懂現況、說得出差異、推得動下一階段。
+          </p>
+        </div>
+      </section>
+
+      <section className="section band soft">
+        <div className="section-head">
+          <p className="kicker">核心領域</p>
+          <h2>六個支援面向，對應開發全生命週期</h2>
+        </div>
+        <div className="focus-grid">
+          {focusAreas.map((item, index) => (
+            <article key={item.title}>
+              <span>0{index + 1}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <p className="kicker">工作理念</p>
+          <h2>專業、負責、效率、誠懇</h2>
+          <p className="section-desc">
+            期以穩健態度，提供開發規劃資訊、工程管理底稿、永續準備與國土資料加值等技術支援。
+          </p>
+        </div>
+        <div className="value-grid">
+          {values.map((value) => (
+            <article key={value.title}>
+              <h3>{value.title}</h3>
+              <p>{value.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section about-note">
+        <div>
+          <h2>我們不做的事</h2>
+          <p>
+            不取代建築師、專業技師、不動產估價師、會計師的簽證，也不核發綠建築、智慧建築、能效、LEED
+            或 WELL。地政個人資料只在授權與法令允許範圍內處理。我們交付的是可追溯的清單、差異、假設與底圖，讓法定專業與評定機構在正確的事實上工作。
+          </p>
+        </div>
         <Link className="btn btn-primary" href="/contact">
-          說明你的基地
+          聯絡我們
         </Link>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
