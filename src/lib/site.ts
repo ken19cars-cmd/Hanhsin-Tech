@@ -144,8 +144,8 @@ export const services: Service[] = [
     short: "地政資料介接、計畫疊圖與招商案件。",
     summary: "在合法資料範圍內，把地號、分區、限制與招商條件放到地圖上比較。",
     lead: "土地要不要進設計與財務，先看地圖。地政、使用分區與招商條件疊在一起，基地限制才不會等到送審才出現。",
-    image: "/services/gis.jpg",
-    imageAlt: "地理資訊與都市空間地圖",
+    image: "/services/gis-map.svg",
+    imageAlt: "數值化 GIS 疊圖與圖層指標",
     modules: [
       {
         title: "地政資料介接",
@@ -169,12 +169,12 @@ export function getService(slug: string) {
   return services.find((service) => service.slug === slug);
 }
 
-export const steps = [
-  { index: "01", title: "土地", text: "地政、分區與招商條件先上圖。" },
-  { index: "02", title: "圖面", text: "設計圖拆成產權、數量與碳排。" },
-  { index: "03", title: "工程", text: "進度、成本與品質沿著主檔走。" },
-  { index: "04", title: "指標", text: "綠建築、能效與國際認證對證據。" },
-  { index: "05", title: "資產", text: "財務、估價與報告書共用數字。" },
+export const capabilities = [
+  { title: "土地", text: "地政、分區與招商條件可單獨盤點上圖。" },
+  { title: "圖面", text: "產權、數量與碳排分析可按案啟用。" },
+  { title: "工程", text: "進度、成本與品質主檔依專案需要導入。" },
+  { title: "指標", text: "綠建築、能效與國際認證證據可獨立準備。" },
+  { title: "資產", text: "財務、估價與報告書可按揭露需求整理。" },
 ];
 
 export const focusAreas = [

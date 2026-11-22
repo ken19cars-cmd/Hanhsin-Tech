@@ -42,6 +42,7 @@ export default async function ServicePage({ params }: Props) {
             fill
             sizes="(max-width: 900px) 100vw, 46vw"
             priority
+            unoptimized={service.image.endsWith(".svg")}
           />
         </div>
       </div>

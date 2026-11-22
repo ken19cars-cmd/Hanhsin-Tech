@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EAF6FC"/>
+      <stop offset="100%" stop-color="#D5ECF7"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#9FD4EA" stroke-width="1" opacity="0.45"/>
+    </pattern>
+  </defs>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <rect width="1400" height="900" fill="url(#grid)"/>
+
+  <g opacity="0.95">
+    <path d="M180 160h220v160H180z" fill="#B9E0F2"/>
+    <path d="M400 160h180v160H400z" fill="#7EC8E3"/>
+    <path d="M580 160h240v160H580z" fill="#3EA0C8"/>
+    <path d="M820 160h200v160H820z" fill="#6EBDDC"/>
+    <path d="M180 320h160v180H180z" fill="#6EBDDC"/>
+    <path d="M340 320h260v180H340z" fill="#2B84AB"/>
+    <path d="M600 320h220v180H600z" fill="#9FD4EA"/>
+    <path d="M820 320h200v180H820z" fill="#4BAFCF"/>
+    <path d="M180 500h300v180H180z" fill="#3EA0C8"/>
+    <path d="M480 500h240v180H480z" fill="#7EC8E3"/>
+    <path d="M720 500h300v180H720z" fill="#B9E0F2"/>
+  </g>
+
+  <g font-family="Sora, Arial, sans-serif" fill="#1F5F7A" font-size="28" font-weight="700">
+    <text x="250" y="250">0.42</text>
+    <text x="460" y="250">0.67</text>
+    <text x="670" y="250">0.91</text>
+    <text x="890" y="250">0.58</text>
+    <text x="230" y="420">1.24</text>
+    <text x="440" y="420">2.08</text>
+    <text x="680" y="420">0.73</text>
+    <text x="890" y="420">1.56</text>
+    <text x="300" y="600">3.12</text>
+    <text x="570" y="600">0.89</text>
+    <text x="840" y="600">1.77</text>
+  </g>
+
+  <rect x="1080" y="160" width="250" height="520" rx="18" fill="#FFFFFF" opacity="0.92"/>
+  <text x="1110" y="210" fill="#2B84AB" font-family="Sora, Arial, sans-serif" font-size="22" font-weight="700">GIS Layers</text>
+  <g font-family="Noto Sans TC, Arial, sans-serif" font-size="18" fill="#4A5B66">
+    <text x="1110" y="260">地籍圖層</text>
+    <text x="1110" y="300">使用分區</text>
+    <text x="1110" y="340">都市計畫</text>
+    <text x="1110" y="380">公告地價</text>
+    <text x="1110" y="420">交通節點</text>
+    <text x="1110" y="460">招商條件</text>
+  </g>
+  <g>
+    <rect x="1110" y="490" width="190" height="12" rx="6" fill="#E8F5FB"/>
+    <rect x="1110" y="490" width="150" height="12" rx="6" fill="#3EA0C8"/>
+    <rect x="1110" y="520" width="190" height="12" rx="6" fill="#E8F5FB"/>
+    <rect x="1110" y="520" width="110" height="12" rx="6" fill="#6EBDDC"/>
+    <rect x="1110" y="550" width="190" height="12" rx="6" fill="#E8F5FB"/>
+    <rect x="1110" y="550" width="170" height="12" rx="6" fill="#2B84AB"/>
+    <rect x="1110" y="580" width="190" height="12" rx="6" fill="#E8F5FB"/>
+    <rect x="1110" y="580" width="90" height="12" rx="6" fill="#9FD4EA"/>
+  </g>
+  <text x="80" y="820" fill="#2B84AB" font-family="Sora, Arial, sans-serif" font-size="26" font-weight="700">Numerical Map Overlay · 數值化疊圖</text>
+</svg>

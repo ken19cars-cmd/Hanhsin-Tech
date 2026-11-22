@@ -23,8 +23,8 @@ export default function ServicesPage() {
                 alt={service.imageAlt}
                 fill
                 sizes="(max-width: 900px) 100vw, 33vw"
+                unoptimized={service.image.endsWith(".svg")}
               />
-              <span className="svc-card-index">{service.index}</span>
             </div>
             <div className="svc-card-body">
               <h3>{service.title}</h3>

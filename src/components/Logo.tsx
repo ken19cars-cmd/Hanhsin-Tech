@@ -9,13 +9,17 @@ export default function Logo({ compact = false }: Props) {
   return (
     <span className={`logo ${compact ? "logo-compact" : ""}`}>
       <Image
-        src="/logo-hanxin.svg"
-        alt={`${company.nameZh} Logo`}
-        width={compact ? 220 : 320}
-        height={compact ? 40 : 56}
+        src="/logo-mark.png"
+        alt=""
+        width={56}
+        height={64}
         priority
-        className="logo-img"
+        className="logo-mark"
       />
+      <span className="logo-text">
+        <span className="logo-zh">{company.nameZh}</span>
+        <span className="logo-en">{company.nameEn}</span>
+      </span>
     </span>
   );
 }
