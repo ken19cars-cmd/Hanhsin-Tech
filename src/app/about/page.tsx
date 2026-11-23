@@ -47,7 +47,7 @@ export default function AboutPage() {
           <div className="page-hero-media">
             <Image
               src="/about-cover.jpg"
-              alt="翰欣科技辦公與協作空間"
+              alt="土地開發與資訊科技整合概念圖"
               fill
               sizes="(max-width: 900px) 100vw, 48vw"
               priority
