@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { capabilities, company, services } from "@/lib/site";
+import {
+  advantages,
+  capabilities,
+  company,
+  platformStages,
+  services,
+  valueProps,
+} from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -22,17 +29,18 @@ export default function HomePage() {
             <p className="eyebrow">
               {company.group}旗下｜{company.tagline}
             </p>
-            <h1>土地開發與永續科技的專業夥伴</h1>
+            <h1>讓開發案的數據，變成您敢拿去談的決策</h1>
             <p className="lede">
-              翰欣科技以資訊整合與應用研發，支援土地開發、建築規劃、營建管理、綠建築標章、企業
-              ESG 與 GIS 加值，協助案件推進與決策。
+              {company.nameEn}{" "}
+              以應用系統協助不動產分析、策略整理與資產評鑑準備——從土地條件、工程進度、綠建築標章到企業
+              ESG，把分散的事實收成可追蹤、可對外說明的工作底圖。
             </p>
             <div className="hero-actions">
-              <Link className="btn btn-primary" href="/services">
-                瀏覽服務項目
+              <Link className="btn btn-primary" href="/contact">
+                預約了解系統
               </Link>
-              <Link className="btn btn-ghost" href="/contact">
-                聯絡我們
+              <Link className="btn btn-ghost" href="/services">
+                瀏覽服務項目
               </Link>
             </div>
           </div>
@@ -42,10 +50,30 @@ export default function HomePage() {
       <section className="section">
         <div className="shell">
           <div className="section-head">
-            <p className="kicker">服務項目</p>
-            <h2>我們提供的專業服務</h2>
+            <p className="kicker">您最在意的結果</p>
+            <h2>為什麼開發案主與企業會需要這套做法</h2>
             <p className="section-desc">
-              涵蓋營建管理、建築規劃設計、綠建築標章、企業 ESG 與地理資訊加值。
+              不是多一個報表系統，而是讓分析、策略與評鑑用同一組可驗證的事實說話。
+            </p>
+          </div>
+          <div className="value-grid">
+            {valueProps.map((item) => (
+              <article key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="shell">
+          <div className="section-head">
+            <p className="kicker">服務項目</p>
+            <h2>依您的案件節奏，選擇先啟動的模組</h2>
+            <p className="section-desc">
+              營建管理、建築規劃、標章評估、ESG 與資產評價、地理資訊加值——可單點切入，也可串成全流程。
             </p>
           </div>
           <div className="svc-cards">
@@ -65,7 +93,7 @@ export default function HomePage() {
                 <div className="svc-card-body">
                   <h3>{service.title}</h3>
                   <p>{service.short}</p>
-                  <span className="svc-card-go">了解更多</span>
+                  <span className="svc-card-go">了解如何幫到您</span>
                 </div>
               </Link>
             ))}
@@ -77,7 +105,7 @@ export default function HomePage() {
         <div className="shell band-inner">
           <div className="section-head light">
             <p className="kicker">專業範疇</p>
-            <h2>從土地到永續指標的整合支援</h2>
+            <h2>從土地到永續指標，支援您一次對齊</h2>
           </div>
           <ul className="capability-grid">
             {capabilities.map((item) => (
@@ -92,17 +120,66 @@ export default function HomePage() {
 
       <section className="section">
         <div className="shell">
+          <div className="section-head">
+            <p className="kicker">系統如何運作</p>
+            <h2>四個步驟，把永續與開發資料變成可決策資訊</h2>
+            <p className="section-desc">
+              參考企業永續治理常見節奏，結合不動產開發現場需求重新設計——內容與介面皆為我們自有應用。
+            </p>
+          </div>
+          <ol className="stage-list">
+            {platformStages.map((item) => (
+              <li key={item.step}>
+                <span className="stage-num">{item.step}</span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="shell">
+          <div className="section-head">
+            <p className="kicker">選擇我們的理由</p>
+            <h2>應用系統帶來的實質優勢</h2>
+            <p className="section-desc">
+              透過翰欣的應用系統，協助您分析不動產、整理策略方向，並提升資產評鑑與對外溝通的說服力。
+            </p>
+          </div>
+          <div className="advantage-grid">
+            {advantages.map((item) => (
+              <article key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="shell">
           <div className="cta-panel">
             <div>
-              <p className="kicker">聯絡我們</p>
-              <h2>歡迎洽詢合作與專案需求</h2>
+              <p className="kicker">下一步</p>
+              <h2>想先討論您手上的案件？</h2>
               <p>
-                若有土地開發、工程管理、標章準備或資料加值需求，歡迎來電或來信，我們將盡速回覆。
+                告訴我們您最急的是標章準備、ESG
+                揭露、資產評價還是工程督導。我們會依案件現況建議最適合的啟動方式，並說明系統能幫您省下哪些對齊成本。
               </p>
             </div>
-            <Link className="btn btn-primary" href="/contact">
-              前往聯絡我們
-            </Link>
+            <div className="cta-actions">
+              <Link className="btn btn-primary" href="/contact">
+                聯絡我們
+              </Link>
+              <Link className="btn btn-ghost" href="/services/esg">
+                先看 ESG 與資產評價
+              </Link>
+            </div>
           </div>
         </div>
       </section>

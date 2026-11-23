@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { company, focusAreas } from "@/lib/site";
+import { advantages, company, focusAreas } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "關於我們",
@@ -36,7 +36,7 @@ export default function AboutPage() {
             <p className="kicker">關於我們</p>
             <h1>{company.nameZh}</h1>
             <p className="lede">
-              專業、負責、效率、誠懇——以科技與顧問能量，支援土地開發全流程中的資訊整合與應用研發。
+              專業、負責、效率、誠懇——以應用系統協助您看清案況、整理策略，並把可追溯的結果用於資產評鑑與對外溝通。
             </p>
             <p className="lede muted">
               {company.nameEn}
@@ -102,7 +102,7 @@ export default function AboutPage() {
             <p className="kicker">工作理念</p>
             <h2>專業、負責、效率、誠懇</h2>
             <p className="section-desc">
-              期以穩健態度，提供開發規劃資訊、工程管理底稿、永續準備與國土資料加值等技術支援。
+              以穩健態度協助您推進開發與永續準備——交付可開會、可融資說明、可稽核追蹤的工作底稿。
             </p>
           </div>
           <div className="value-grid">
@@ -118,12 +118,31 @@ export default function AboutPage() {
 
       <section className="section">
         <div className="shell">
+          <div className="section-head left">
+            <p className="kicker">系統優勢</p>
+            <h2>為什麼客戶選擇與我們合作</h2>
+            <p className="section-desc">
+              透過應用系統協助不動產分析、策略整理與資產評鑑準備，讓科技直接服務決策與對外溝通。
+            </p>
+          </div>
+          <div className="advantage-grid">
+            {advantages.map((item) => (
+              <article key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="shell">
           <div className="about-note">
             <div>
-              <h2>我們不做的事</h2>
+              <h2>想評估是否適合您的案件？</h2>
               <p>
-                不取代建築師、專業技師、不動產估價師、會計師的簽證，也不核發綠建築、智慧建築、能效、LEED
-                或 WELL。地政個人資料只在授權與法令允許範圍內處理。我們交付的是可追溯的清單、差異、假設與底圖，讓法定專業與評定機構在正確的事實上工作。
+                我們不取代建築師、專業技師、估價師或會計師的簽證，也不核發各類標章。我們交付的是可追溯的清單、差異、假設與底圖，讓法定專業與評定機構在正確的事實上工作。歡迎先討論您手上的開發或永續需求。
               </p>
             </div>
             <Link className="btn btn-primary" href="/contact">
