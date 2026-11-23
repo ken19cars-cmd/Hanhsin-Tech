@@ -92,8 +92,8 @@ export const services: Service[] = [
     summary: "以建築設計平面圖與 BIM 為核心，整理可核算物件，並可導入 EC 階段低碳建築計算。",
     lead:
       "建築規劃設計的重點，是讓平面圖與 BIM 模型變成可討論、可統計的工作底圖。梁柱等構件的蘊含碳可透過 BIM 導入 EC（Embodied Carbon）階段的低碳建築計算，並依國內公開標準與係數進行試算，供設計調整與後續標章準備使用。",
-    image: "/systems/drawings-svc.jpg",
-    imageAlt: "建築規劃設計圖面分析",
+    image: "/systems/drawings-floorplan-ui.png",
+    imageAlt: "建築平面圖分析工作台",
     modules: [
       {
         title: "建築設計平面圖",
@@ -116,14 +116,14 @@ export const services: Service[] = [
     boundary: "試算為設計與送審前底稿，須由設計單位抽核。不取代正式測量、結構簽證或主管機關核定結果。",
     systems: [
       {
-        src: "/systems/drawings-svc.jpg",
-        alt: "建築圖面分析",
+        src: "/systems/drawings-floorplan-ui.png",
+        alt: "平面圖分析工作台",
         caption: "平面圖與空間單元整理，讓規劃討論有同一套圖說",
       },
       {
-        src: "/systems/plan-svc.jpg",
-        alt: "規劃設計圖資",
-        caption: "圖說版次、面積與設計條件對位，方便跨單位對齊",
+        src: "/systems/drawings-bim-ui.png",
+        alt: "BIM 構件與 EC 試算介面",
+        caption: "BIM 構件清單與 EC 蘊含碳試算，便於設計調整比較",
       },
       {
         src: "/systems/construction-site.png",
