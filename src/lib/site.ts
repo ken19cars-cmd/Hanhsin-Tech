@@ -26,7 +26,7 @@ export type Service = {
 
 export const company = {
   nameZh: "翰欣科技實業有限公司",
-  nameEn: "Hanxin Technology Industrial Co., Ltd.",
+  nameEn: "Hanhsin-Tech",
   group: "皓欣集團",
   tagline: "土地開發 × 智慧應用 × 永續科技",
   address: "臺北市松山區民權東路三段144號5F-4",
