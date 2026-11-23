@@ -140,8 +140,8 @@ export const services: Service[] = [
     summary: "把 GRESB／綠建築／能效／低碳標章做成可切換模組的評估與試算工作台。",
     lead:
       "同一案件常同時面對 EEWH 綠建築九大指標、BERS 建築能效、LEBR 低碳標示與相關永續評比。我們協助整理指標門檻、缺口試算與證據準備，讓送審前先對齊，而不是核發後再補洞。",
-    image: "/systems/green-esg-page.png",
-    imageAlt: "綠建築與永續標章評估",
+    image: "/systems/green-cert-logos.png",
+    imageAlt: "綠建築、智慧建築、LEED、低碳等標章",
     modules: [
       {
         title: "標章模組切換",
@@ -164,6 +164,11 @@ export const services: Service[] = [
     boundary: "正式綠建築標章、能效標示與低碳標示，以主管機關及評定機構現行手冊與核定結果為準。",
     systems: [
       {
+        src: "/systems/green-cert-logos.png",
+        alt: "綠建築與相關標章",
+        caption: "綠建築、智慧建築、LEED、低碳建築、能效與 GRESB 等標章",
+      },
+      {
         src: "/systems/green-esg-page.png",
         alt: "標章評估工作台",
         caption: "GRESB、EEWH、BERS、LEBR 等標章模組，依案件切換評估",
@@ -172,11 +177,6 @@ export const services: Service[] = [
         src: "/systems/green-eewh-nine.jpg",
         alt: "綠建築九大指標",
         caption: "EEWH 九大指標對照，掌握門檻與準備重點",
-      },
-      {
-        src: "/systems/green-bers-cei.jpg",
-        alt: "建築能效與碳排",
-        caption: "建築能效分級與碳排密度試算，支援送審前檢討",
       },
     ],
   },
