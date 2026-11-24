@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     default: `${company.nameZh}｜${company.tagline}`,
     template: `%s｜${company.nameZh}`,
   },
-  description: `${company.nameZh}為${company.group}旗下公司，支援土地開發、財務估價、工程管理、建築設計、ESG 永續與國土智慧應用研發。`,
+  description: `${company.nameZh}為${company.group}${company.relation}，支援土地開發、財務估價、工程管理、建築設計、ESG 永續與國土智慧應用研發。`,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

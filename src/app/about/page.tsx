@@ -5,7 +5,7 @@ import { advantages, company, focusAreas } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "關於我們",
-  description: `${company.nameZh}為${company.group}旗下公司，針對土地開發、財務估價、工程管理、建築設計、ESG 永續與國土智慧提供應用研發支援。`,
+  description: `${company.nameZh}為${company.group}${company.relation}，針對土地開發、財務估價、工程管理、建築設計、ESG 永續與國土智慧提供應用研發支援。`,
 };
 
 const values = [
@@ -41,7 +41,8 @@ export default function AboutPage() {
             <p className="lede muted">
               {company.nameEn}
               <br />
-              {company.group}旗下公司
+              {company.group}
+              {company.relation}
             </p>
           </div>
           <div className="page-hero-media">
@@ -60,12 +61,16 @@ export default function AboutPage() {
         <div className="shell">
           <div className="section-head left">
             <p className="kicker">公司定位</p>
-            <h2>皓欣集團旗下的科技實業公司</h2>
+            <h2>
+              {company.group}
+              {company.relation}
+            </h2>
           </div>
           <div className="prose-block">
             <p>
               {company.nameZh}為{company.group}
-              旗下公司，承接集團在不動產開發顧問領域的長期經驗，進一步聚焦「應用研發」與「資訊整合」：把土地、財務、估價、工程、設計與永續所需要的資料，整理成可追溯、可共用、可決策的工作底圖。
+              {company.relation}
+              ，承接不動產開發顧問領域的長期經驗，進一步聚焦「應用研發」與「資訊整合」：把土地、財務、估價、工程、設計與永續所需要的資料，整理成可追溯、可共用、可決策的工作底圖。
             </p>
             <p>
               開發案件常同時牽涉地政法規、基地條件、設計圖說、工地進度、認證準備、財務模型與永續揭露。當資料分散在各專業單位，變更與假設容易對不齊；翰欣以系統化方式，協助把關鍵事實整理成可共用、可追溯的工作底圖。

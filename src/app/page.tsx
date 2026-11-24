@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { company, services } from "@/lib/site";
+import MediaLightbox from "@/components/MediaLightbox";
+import { company, mediaMotion, services } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -45,12 +46,12 @@ export default function HomePage() {
             <div className="prose-block">
               <p>
                 {company.nameZh}（{company.nameEn}）為{company.group}
-                旗下公司，專注土地開發、建築與永續相關的資訊整合與系統導入，以軟體與資料流程支援案場與企業日常協作。
+                {company.relation}，專注土地開發、建築與永續相關的資訊整合與系統導入，以軟體與資料流程支援案場與企業日常協作。
               </p>
               <p>
                 目前服務涵蓋五大面向：營建工程管理、建築圖面與 BIM
                 分析、綠建築與智慧建築指標、企業 ESG 與資產評價，以及 GIS
-                地理資訊加值。您可依案件階段單點導入，也可逐步串接。
+                地理資訊加值。可依需求單點導入，也可逐步串接。
               </p>
             </div>
           </div>
@@ -87,27 +88,19 @@ export default function HomePage() {
 
       <section className="section">
         <div className="shell">
-          <div className="home-preview">
-            {services.slice(0, 3).map((service) => (
-              <figure key={service.slug} className="home-preview-card">
-                <div className="home-preview-media">
-                  <Image
-                    src={service.image}
-                    alt={service.imageAlt}
-                    fill
-                    sizes="(max-width: 900px) 100vw, 33vw"
-                    unoptimized={
-                      service.image.endsWith(".svg") || service.image.endsWith(".png")
-                    }
-                  />
-                </div>
-                <figcaption>
-                  <strong>{service.title}</strong>
-                  <span>{service.summary}</span>
-                </figcaption>
-              </figure>
-            ))}
+          <div className="section-head left">
+            <p className="kicker">畫面預覽</p>
+            <h2>點擊可放大觀看動態畫面</h2>
           </div>
+          <MediaLightbox
+            className="home-preview-grid"
+            items={services.slice(0, 3).map((service) => ({
+              src: service.image,
+              alt: service.imageAlt,
+              caption: `${service.title}｜${service.summary}`,
+              motion: mediaMotion(service.image),
+            }))}
+          />
         </div>
       </section>
 
@@ -116,13 +109,13 @@ export default function HomePage() {
           <div className="cta-panel">
             <div>
               <p className="kicker">聯絡我們</p>
-              <h2>告訴我們您目前的案件階段</h2>
+              <h2>有需求，歡迎與我們聯繫</h2>
               <p>
-                無論是工程督導、標章資料整理、ESG 揭露或基地條件查詢，歡迎來電或來信。我們會依現況說明適合導入的系統範圍。
+                工程管理、標章資料整理、ESG 揭露、資產評價或基地條件查詢，只要有需要，歡迎來電或來信，我們將盡速回覆。
               </p>
             </div>
             <Link className="btn btn-primary" href="/contact">
-              聯絡我們
+              立即聯絡
             </Link>
           </div>
         </div>

@@ -8,7 +8,8 @@ export default function Footer() {
       <div className="footer-brand">
         <Logo compact />
         <p>
-          {company.group}旗下公司
+          {company.group}
+          {company.relation}
           <br />
           {company.tagline}
         </p>

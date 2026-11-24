@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getService, services } from "@/lib/site";
+import MediaLightbox from "@/components/MediaLightbox";
+import OpenableMedia from "@/components/OpenableMedia";
+import { getService, mediaMotion, services } from "@/lib/site";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -37,7 +38,7 @@ export default async function ServicePage({ params }: Props) {
             <p className="lede">{service.lead}</p>
             <div className="hero-actions service-hero-actions">
               <Link className="btn btn-primary" href="/contact">
-                諮詢此服務
+                立即洽詢
               </Link>
               <Link className="btn btn-ghost" href="/services">
                 全部服務
@@ -45,24 +46,41 @@ export default async function ServicePage({ params }: Props) {
             </div>
           </div>
           <div className="service-hero-media">
-            <Image
+            <OpenableMedia
               src={service.image}
               alt={service.imageAlt}
-              fill
+              motion={mediaMotion(service.image)}
               sizes="(max-width: 900px) 100vw, 46vw"
               priority
-              unoptimized={service.image.endsWith(".svg") || service.image.endsWith(".png")}
             />
+          </div>
+        </div>
+
+        <div className="detail-block">
+          <div className="section-head left">
+            <p className="kicker">功能重點</p>
+            <h2>這個系統幫您處理什麼</h2>
+          </div>
+          <div className="feature-list">
+            {service.modules.map((module, index) => (
+              <article key={module.title} className="feature-item">
+                <div className="feature-index">{String(index + 1).padStart(2, "0")}</div>
+                <div className="feature-body">
+                  <h3>{module.title}</h3>
+                  <p>{module.text}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
 
         {service.outcomes && service.outcomes.length > 0 ? (
           <div className="detail-block">
             <div className="section-head left">
-              <p className="kicker">對您的價值</p>
-              <h2>這項服務能幫您做到什麼</h2>
+              <p className="kicker">對您的幫助</p>
+              <h2>導入後可以怎麼用</h2>
             </div>
-            <div className="value-grid">
+            <div className="outcome-strip">
               {service.outcomes.map((item) => (
                 <article key={item.title}>
                   <h3>{item.title}</h3>
@@ -73,63 +91,20 @@ export default async function ServicePage({ params }: Props) {
           </div>
         ) : null}
 
-        {service.stages && service.stages.length > 0 ? (
-          <div className="detail-block">
-            <div className="section-head left">
-              <p className="kicker">導入節奏</p>
-              <h2>如何把資料變成可決策資訊</h2>
-            </div>
-            <ol className="stage-list">
-              {service.stages.map((item, index) => (
-                <li key={item.title}>
-                  <span className="stage-num">{String(index + 1).padStart(2, "0")}</span>
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.text}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-        ) : null}
-
-        <div className="detail-block">
-          <div className="section-head left">
-            <p className="kicker">功能重點</p>
-            <h2>系統與顧問怎麼支援您</h2>
-          </div>
-          <div className="module-grid">
-            {service.modules.map((module) => (
-              <article key={module.title}>
-                <h2>{module.title}</h2>
-                <p>{module.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-
         {service.systems.length > 0 ? (
           <div className="system-gallery">
             <div className="section-head left">
               <p className="kicker">畫面示意</p>
-              <h2>實際工作介面與成果參考</h2>
+              <h2>點擊可放大觀看動態畫面</h2>
             </div>
-            <div className="system-grid">
-              {service.systems.map((shot) => (
-                <figure key={shot.src} className="system-card">
-                  <div className="system-card-media">
-                    <Image
-                      src={shot.src}
-                      alt={shot.alt}
-                      fill
-                      sizes="(max-width: 900px) 100vw, 33vw"
-                      unoptimized={shot.src.endsWith(".svg") || shot.src.endsWith(".png")}
-                    />
-                  </div>
-                  <figcaption>{shot.caption}</figcaption>
-                </figure>
-              ))}
-            </div>
+            <MediaLightbox
+              items={service.systems.map((shot) => ({
+                src: shot.src,
+                alt: shot.alt,
+                caption: shot.caption,
+                motion: shot.motion,
+              }))}
+            />
           </div>
         ) : null}
 
@@ -146,7 +121,7 @@ export default async function ServicePage({ params }: Props) {
             <h2>使用說明</h2>
             <p>{service.boundary}</p>
             <Link className="btn btn-primary" href="/contact">
-              想用於自家案件？聯絡我們
+              有需求？聯絡我們
             </Link>
           </div>
         </div>

@@ -7,7 +7,14 @@ export type SystemShot = {
   src: string;
   alt: string;
   caption: string;
+  /** Looping motion preview opened in the lightbox. */
+  motion?: string;
 };
+
+function motionFor(src: string) {
+  const base = src.split("/").pop()?.replace(/\.(png|jpg|jpeg|webp|svg)$/i, "") ?? "";
+  return `/systems/motion/${base}.mp4`;
+}
 
 export type Service = {
   slug: string;
@@ -31,7 +38,8 @@ export type Service = {
 export const company = {
   nameZh: "翰欣科技實業有限公司",
   nameEn: "Hanhsin-Tech",
-  group: "皓欣集團",
+  group: "皓欣不動產規劃顧問有限公司",
+  relation: "相關企業",
   tagline: "土地開發 × 智慧應用 × 永續科技",
   address: "臺北市松山區民權東路三段144號5F-4",
   phoneDisplay: "0963-511-091",
@@ -342,8 +350,19 @@ export const services: Service[] = [
   },
 ];
 
+for (const service of services) {
+  service.systems = service.systems.map((shot) => ({
+    ...shot,
+    motion: shot.motion ?? motionFor(shot.src),
+  }));
+}
+
 export function getService(slug: string) {
   return services.find((service) => service.slug === slug);
+}
+
+export function mediaMotion(src: string) {
+  return motionFor(src);
 }
 
 export const capabilities = [

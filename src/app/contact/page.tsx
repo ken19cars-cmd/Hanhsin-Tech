@@ -13,9 +13,9 @@ export default function ContactPage() {
       <div className="shell contact">
         <div>
           <p className="kicker">聯絡我們</p>
-          <h1>歡迎來電或來信</h1>
+          <h1>有需求，歡迎與我們聯繫</h1>
           <p className="lede">
-            工程管理、圖面與標章資料、ESG 與資產評價，或 GIS 查詢，歡迎說明案件階段，我們會回覆適合的系統範圍。
+            工程管理、圖面與標章資料、ESG 與資產評價，或 GIS 查詢，只要有需要，歡迎來電、來信或留下訊息，我們將盡速回覆。
           </p>
           <ul className="contact-facts">
             <li>

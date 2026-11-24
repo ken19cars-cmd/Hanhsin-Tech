@@ -44,13 +44,13 @@ export default function ServicesPage() {
         <div className="cta-panel cta-panel-spaced">
           <div>
             <p className="kicker">聯絡我們</p>
-            <h2>告訴我們您目前的案件階段</h2>
+            <h2>有需求，歡迎與我們聯繫</h2>
             <p>
-              標章資料整理、ESG 揭露、工程督導或基地查詢，歡迎先說明現況，我們會回覆適合的系統範圍。
+              標章資料整理、ESG 揭露、工程督導或基地查詢，只要有需要，歡迎來電或來信。
             </p>
           </div>
           <Link className="btn btn-primary" href="/contact">
-            聯絡我們
+            立即聯絡
           </Link>
         </div>
       </div>
