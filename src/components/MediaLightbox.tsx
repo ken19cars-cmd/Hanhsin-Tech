@@ -64,26 +64,17 @@ export default function MediaLightbox({ items, className }: Props) {
             aria-label={`放大檢視：${item.alt}`}
           >
             <div className="system-card-media">
-              {item.motion ? (
-                <video
-                  className="system-card-video"
-                  src={item.motion}
-                  muted
-                  loop
-                  playsInline
-                  autoPlay
-                  preload="metadata"
-                  aria-hidden="true"
-                />
-              ) : (
-                <Image
-                  src={item.src}
-                  alt=""
-                  fill
-                  sizes="(max-width: 900px) 100vw, 33vw"
-                  unoptimized={item.src.endsWith(".svg") || item.src.endsWith(".png")}
-                />
-              )}
+              <Image
+                src={item.src}
+                alt=""
+                fill
+                sizes="(max-width: 900px) 100vw, 33vw"
+                unoptimized={
+                  item.src.endsWith(".svg") ||
+                  item.src.endsWith(".png") ||
+                  item.src.endsWith(".jpg")
+                }
+              />
             </div>
             {item.caption ? <span className="system-card-caption">{item.caption}</span> : null}
           </button>

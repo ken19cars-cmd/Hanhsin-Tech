@@ -45,27 +45,14 @@ export default function OpenableMedia({
         onClick={() => setOpen(true)}
         aria-label={`放大檢視：${alt}`}
       >
-        {motion ? (
-          <video
-            className="openable-media-video"
-            src={motion}
-            muted
-            loop
-            playsInline
-            autoPlay
-            preload="metadata"
-            aria-hidden="true"
-          />
-        ) : (
-          <Image
-            src={src}
-            alt=""
-            fill
-            sizes={sizes}
-            priority={priority}
-            unoptimized={src.endsWith(".svg") || src.endsWith(".png")}
-          />
-        )}
+        <Image
+          src={src}
+          alt=""
+          fill
+          sizes={sizes}
+          priority={priority}
+          unoptimized={src.endsWith(".svg") || src.endsWith(".png") || src.endsWith(".jpg")}
+        />
       </button>
 
       {open ? (
