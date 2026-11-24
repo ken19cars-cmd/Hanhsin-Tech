@@ -8,7 +8,6 @@ export default function DomainMap() {
       <div className="domain-board-spine" aria-hidden="true">
         <div className="domain-board-core">
           <strong>系統應用</strong>
-          <span>土地 · 工程 · 永續</span>
         </div>
       </div>
 

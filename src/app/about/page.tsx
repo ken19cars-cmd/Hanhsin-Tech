@@ -3,32 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import AdvantageStack from "@/components/AdvantageStack";
 import DomainMap from "@/components/DomainMap";
-import ValueFlow from "@/components/ValueFlow";
 import { advantages, company } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "關於我們",
   description: `${company.nameZh}為${company.group}${company.relation}，針對土地開發、財務估價、工程管理、建築設計、ESG 永續與國土智慧提供應用研發支援。`,
 };
-
-const values = [
-  {
-    title: "專業",
-    text: "以不動產開發與資訊整合經驗，把土地、圖面、工程與永續指標落到可執行的工作底稿。",
-  },
-  {
-    title: "負責",
-    text: "從盤點、建檔到交付，數字與證據都留得出處，對案件品質與資料軌跡負責。",
-  },
-  {
-    title: "效率",
-    text: "掌握開發時程與關鍵節點，讓主辦單位、投資人與專業團隊更快對齊同一組事實。",
-  },
-  {
-    title: "誠懇",
-    text: "清楚說明能做與不能做的邊界；簽證、評定與法定責任仍留給法定專業與主管機關。",
-  },
-];
 
 export default function AboutPage() {
   return (
@@ -89,16 +69,6 @@ export default function AboutPage() {
             </p>
           </div>
           <DomainMap />
-        </div>
-      </section>
-
-      <section className="section about-page">
-        <div className="shell about-block">
-          <div className="section-head">
-            <p className="kicker">工作理念</p>
-            <h2>專業、負責、效率、誠懇</h2>
-          </div>
-          <ValueFlow items={values} />
         </div>
       </section>
 

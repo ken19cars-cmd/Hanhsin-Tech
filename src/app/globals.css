@@ -1087,12 +1087,6 @@ p {
 .domain-board-core strong {
   display: block;
   font-size: 1.35rem;
-  margin-bottom: 0.7rem;
-}
-
-.domain-board-core span {
-  font-size: 0.84rem;
-  opacity: 0.92;
 }
 
 .domain-board-grid {
