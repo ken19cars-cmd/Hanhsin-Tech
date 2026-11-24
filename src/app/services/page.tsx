@@ -5,7 +5,7 @@ import ServiceOrbit from "@/components/ServiceOrbit";
 export const metadata: Metadata = {
   title: "服務項目",
   description:
-    "PMIS、建築規劃設計、綠建築標章、企業 ESG 與資產評價、GIS 加值——協助您分析、決策並提升評鑑說服力。",
+    "PMIS、平面圖說辨識分析、綠建築標章、企業 ESG 與資產評價、GIS 加值。",
 };
 
 export default function ServicesPage() {
@@ -15,7 +15,7 @@ export default function ServicesPage() {
         <p className="kicker">服務項目</p>
         <h1>五大系統應用</h1>
         <p className="lede">
-          營建工程管理、建築圖面分析、綠建築與智慧建築指標、企業 ESG
+          營建工程管理、平面圖說辨識分析、綠建築與智慧建築指標、企業 ESG
           與資產評價、GIS 地理資訊加值。
         </p>
         <ServiceOrbit />
