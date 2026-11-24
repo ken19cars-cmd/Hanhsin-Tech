@@ -30,7 +30,7 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <section className="section">
+      <section className="section about-page">
         <div className="shell page-hero">
           <div className="page-hero-copy">
             <p className="kicker">關於我們</p>
@@ -57,16 +57,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="shell">
-          <div className="section-head left">
+      <section className="section about-page">
+        <div className="shell about-block">
+          <div className="section-head">
             <p className="kicker">公司定位</p>
             <h2>
               {company.group}
               {company.relation}
             </h2>
           </div>
-          <div className="prose-block">
+          <div className="prose-block about-prose">
             <p>
               {company.nameZh}為{company.group}
               {company.relation}
@@ -83,27 +83,29 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="shell band soft">
-          <div className="section-head left">
-            <p className="kicker">核心領域</p>
-            <h2>核心業務領域</h2>
-          </div>
-          <div className="focus-grid">
-            {focusAreas.map((item, index) => (
-              <article key={item.title}>
-                <span>0{index + 1}</span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
+      <section className="section about-page">
+        <div className="shell">
+          <div className="band soft about-band">
+            <div className="section-head">
+              <p className="kicker">核心領域</p>
+              <h2>核心業務領域</h2>
+            </div>
+            <div className="focus-grid">
+              {focusAreas.map((item, index) => (
+                <article key={item.title}>
+                  <span>0{index + 1}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="section">
-        <div className="shell">
-          <div className="section-head left">
+      <section className="section about-page">
+        <div className="shell about-block">
+          <div className="section-head">
             <p className="kicker">工作理念</p>
             <h2>專業、負責、效率、誠懇</h2>
             <p className="section-desc">
@@ -121,9 +123,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="shell">
-          <div className="section-head left">
+      <section className="section about-page">
+        <div className="shell about-block">
+          <div className="section-head">
             <p className="kicker">系統優勢</p>
             <h2>為什麼客戶選擇與我們合作</h2>
             <p className="section-desc">
@@ -141,13 +143,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section about-page">
         <div className="shell">
           <div className="about-note">
             <div>
-              <h2>想評估是否適合您的案件？</h2>
+              <h2>有需求，歡迎與我們聯繫</h2>
               <p>
-                我們不取代建築師、專業技師、估價師或會計師的簽證，也不核發各類標章。我們交付的是可追溯的清單、差異、假設與底圖，讓法定專業與評定機構在正確的事實上工作。歡迎先討論您手上的開發或永續需求。
+                我們不取代建築師、專業技師、估價師或會計師的簽證，也不核發各類標章。我們交付的是可追溯的清單、差異、假設與底圖，讓法定專業與評定機構在正確的事實上工作。
               </p>
             </div>
             <Link className="btn btn-primary" href="/contact">
