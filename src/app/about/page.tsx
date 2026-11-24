@@ -83,9 +83,9 @@ export default function AboutPage() {
         <div className="shell">
           <div className="section-head">
             <p className="kicker">核心領域</p>
-            <h2>六大領域圍繞系統核心</h2>
+            <h2>以系統應用串起六大專業領域</h2>
             <p className="section-desc">
-              以系統應用為中心，串起土地、財務、工程、設計、ESG 與國土資訊。
+              土地、財務、工程、設計、ESG 與國土資訊，透過同一套系統底圖互相對齊。
             </p>
           </div>
           <DomainMap />
