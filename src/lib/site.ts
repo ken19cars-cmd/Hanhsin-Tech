@@ -105,7 +105,7 @@ export const services: Service[] = [
     lead:
       "規劃階段需要同一套可討論的圖說與物件清單。系統協助整理平面圖、BIM 構件，並可依公開係數進行 EC（Embodied Carbon）階段試算，供設計調整與後續標章準備參考。",
     image: "/systems/drawings-floorplan-ui.png",
-    imageAlt: "建築平面圖分析工作台",
+    imageAlt: "住宅平面配置圖",
     modules: [
       {
         title: "建築設計平面圖",
@@ -129,18 +129,18 @@ export const services: Service[] = [
     systems: [
       {
         src: "/systems/drawings-floorplan-ui.png",
-        alt: "平面圖分析工作台",
-        caption: "平面圖與空間單元整理，讓規劃討論有同一套圖說",
+        alt: "住宅平面配置圖",
+        caption: "住宅平面與空間尺度整理，供規劃討論使用",
+      },
+      {
+        src: "/systems/drawings-studio-plan.png",
+        alt: "套房式平面配置圖",
+        caption: "機能分區平面示意，對齊面積與空間單元",
       },
       {
         src: "/systems/drawings-bim-ui.png",
         alt: "BIM 構件與 EC 試算介面",
         caption: "BIM 構件清單與 EC 蘊含碳試算，便於設計調整比較",
-      },
-      {
-        src: "/systems/construction-site.png",
-        alt: "基地與規劃資訊",
-        caption: "基地位置、規模與規劃構想可一併對外說明",
       },
     ],
   },
