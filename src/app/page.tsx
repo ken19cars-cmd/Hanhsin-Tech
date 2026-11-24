@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import MediaLightbox from "@/components/MediaLightbox";
+import ServiceOrbit from "@/components/ServiceOrbit";
 import { company, mediaMotion, services } from "@/lib/site";
 
 export default function HomePage() {
@@ -17,14 +18,14 @@ export default function HomePage() {
             sizes="100vw"
           />
           <div className="hero-veil" />
+          <div className="hero-grid" aria-hidden="true" />
         </div>
         <div className="shell hero-inner">
           <div className="hero-copy">
             <p className="eyebrow">{company.nameZh}</p>
             <h1>土地開發與永續管理的系統應用</h1>
             <p className="lede">
-              我們開發並導入應用系統，協助案件團隊整理工程進度、圖面與標章資料、企業 ESG
-              與資產資訊，以及地理條件查詢——讓日常工作有同一套可追蹤的資料。
+              以應用系統串接工程進度、圖面與標章、企業 ESG 與資產資訊，以及地理條件查詢，讓案件團隊共用同一套可追蹤資料。
             </p>
             <div className="hero-actions">
               <Link className="btn btn-primary" href="/services">
@@ -39,22 +40,27 @@ export default function HomePage() {
       </section>
 
       <section className="section">
-        <div className="shell">
+        <div className="shell intro-split">
           <div className="intro-block">
             <p className="kicker">關於翰欣</p>
-            <h2>土地開發與永續的系統應用</h2>
+            <h2>系統把分散資料收成可決策底圖</h2>
             <div className="prose-block">
               <p>
                 {company.nameZh}（{company.nameEn}）為{company.group}
-                {company.relation}，專注土地開發、建築與永續相關的資訊整合與系統導入，以軟體與資料流程支援案場與企業日常協作。
-              </p>
-              <p>
-                目前服務涵蓋五大面向：營建工程管理、建築圖面與 BIM
-                分析、綠建築與智慧建築指標、企業 ESG 與資產評價，以及 GIS
-                地理資訊加值。可依需求單點導入，也可逐步串接。
+                {company.relation}，專注土地開發、建築與永續的資訊整合與系統導入。
               </p>
             </div>
           </div>
+          <aside className="intro-signal" aria-label="服務涵蓋">
+            <div className="intro-signal-ring" aria-hidden="true" />
+            <ul>
+              <li>PMIS 工程管理</li>
+              <li>圖面／BIM 分析</li>
+              <li>標章指標評估</li>
+              <li>ESG／資產評價</li>
+              <li>GIS 地理加值</li>
+            </ul>
+          </aside>
         </div>
       </section>
 
@@ -63,31 +69,18 @@ export default function HomePage() {
           <div className="section-head left">
             <p className="kicker">服務項目</p>
             <h2>五大系統應用</h2>
-            <p className="section-desc">
-              以下為現行服務方向與簡要說明；細部項目將依貴公司需求再行整理。
-            </p>
+            <p className="section-desc">依需求單點導入，也可逐步串接成完整流程。</p>
           </div>
-          <div className="home-svc-list">
-            {services.map((service) => (
-              <Link
-                key={service.slug}
-                className="home-svc-item"
-                href={`/services/${service.slug}`}
-              >
-                <span className="home-svc-index">{service.index}</span>
-                <div className="home-svc-copy">
-                  <h3>{service.title}</h3>
-                  <p>{service.short}</p>
-                </div>
-                <span className="home-svc-go">了解更多</span>
-              </Link>
-            ))}
-          </div>
+          <ServiceOrbit />
         </div>
       </section>
 
       <section className="section">
         <div className="shell">
+          <div className="section-head left">
+            <p className="kicker">畫面預覽</p>
+            <h2>實際介面參考</h2>
+          </div>
           <MediaLightbox
             className="home-preview-grid"
             items={services.slice(0, 3).map((service) => ({
@@ -102,12 +95,12 @@ export default function HomePage() {
 
       <section className="section">
         <div className="shell">
-          <div className="cta-panel">
+          <div className="cta-panel cta-panel-tech">
             <div>
               <p className="kicker">聯絡我們</p>
               <h2>有需求，歡迎與我們聯繫</h2>
               <p>
-                工程管理、標章資料整理、ESG 揭露、資產評價或基地條件查詢，只要有需要，歡迎來電或來信，我們將盡速回覆。
+                工程管理、標章資料、ESG 揭露、資產評價或基地查詢，歡迎來電或來信。
               </p>
             </div>
             <Link className="btn btn-primary" href="/contact">

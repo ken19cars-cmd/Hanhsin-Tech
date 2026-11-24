@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { advantages, company, focusAreas } from "@/lib/site";
+import AdvantageStack from "@/components/AdvantageStack";
+import DomainMap from "@/components/DomainMap";
+import ValueFlow from "@/components/ValueFlow";
+import { advantages, company } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "關於我們",
@@ -36,7 +39,7 @@ export default function AboutPage() {
             <p className="kicker">關於我們</p>
             <h1>{company.nameZh}</h1>
             <p className="lede">
-              專業、負責、效率、誠懇——以應用系統協助您看清案況、整理策略，並把可追溯的結果用於資產評鑑與對外溝通。
+              以系統把土地、工程與永續資料串成可追蹤的工作底圖，協助決策與對外說明。
             </p>
             <p className="lede muted">
               {company.nameEn}
@@ -45,7 +48,7 @@ export default function AboutPage() {
               {company.relation}
             </p>
           </div>
-          <div className="page-hero-media">
+          <div className="page-hero-media tech-frame">
             <Image
               src="/about-cover.jpg"
               alt="土地開發與資訊科技整合概念圖"
@@ -70,14 +73,7 @@ export default function AboutPage() {
             <p>
               {company.nameZh}為{company.group}
               {company.relation}
-              ，承接不動產開發顧問領域的長期經驗，進一步聚焦「應用研發」與「資訊整合」：把土地、財務、估價、工程、設計與永續所需要的資料，整理成可追溯、可共用、可決策的工作底圖。
-            </p>
-            <p>
-              開發案件常同時牽涉地政法規、基地條件、設計圖說、工地進度、認證準備、財務模型與永續揭露。當資料分散在各專業單位，變更與假設容易對不齊；翰欣以系統化方式，協助把關鍵事實整理成可共用、可追溯的工作底圖。
-            </p>
-            <p>
-              面對公共建設、都市更新、土地開發與企業永續需求日增，我們針對土地開發、財務、估價、工程管理、建築設計、ESG
-              永續、國土智慧等領域，持續支援應用研發與資料加值，讓決策者看得懂現況、說得出差異、推得動下一階段。
+              ，承接不動產開發顧問領域的長期經驗，聚焦應用研發與資訊整合：把土地、財務、估價、工程、設計與永續所需資料，整理成可追溯、可共用、可決策的工作底圖。
             </p>
           </div>
         </div>
@@ -85,21 +81,14 @@ export default function AboutPage() {
 
       <section className="section about-page">
         <div className="shell">
-          <div className="band soft about-band">
-            <div className="section-head">
-              <p className="kicker">核心領域</p>
-              <h2>核心業務領域</h2>
-            </div>
-            <div className="focus-grid">
-              {focusAreas.map((item, index) => (
-                <article key={item.title}>
-                  <span>0{index + 1}</span>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </article>
-              ))}
-            </div>
+          <div className="section-head">
+            <p className="kicker">核心領域</p>
+            <h2>六大領域圍繞系統核心</h2>
+            <p className="section-desc">
+              以系統應用為中心，串起土地、財務、工程、設計、ESG 與國土資訊。
+            </p>
           </div>
+          <DomainMap />
         </div>
       </section>
 
@@ -108,18 +97,8 @@ export default function AboutPage() {
           <div className="section-head">
             <p className="kicker">工作理念</p>
             <h2>專業、負責、效率、誠懇</h2>
-            <p className="section-desc">
-              以穩健態度協助您推進開發與永續準備——交付可開會、可融資說明、可稽核追蹤的工作底稿。
-            </p>
           </div>
-          <div className="value-grid">
-            {values.map((value) => (
-              <article key={value.title}>
-                <h3>{value.title}</h3>
-                <p>{value.text}</p>
-              </article>
-            ))}
-          </div>
+          <ValueFlow items={values} />
         </div>
       </section>
 
@@ -127,19 +106,9 @@ export default function AboutPage() {
         <div className="shell about-block">
           <div className="section-head">
             <p className="kicker">系統優勢</p>
-            <h2>為什麼客戶選擇與我們合作</h2>
-            <p className="section-desc">
-              透過應用系統協助不動產分析、策略整理與資產評鑑準備，讓科技直接服務決策與對外溝通。
-            </p>
+            <h2>為什麼選擇與我們合作</h2>
           </div>
-          <div className="advantage-grid">
-            {advantages.map((item) => (
-              <article key={item.title}>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
+          <AdvantageStack items={advantages} />
         </div>
       </section>
 
@@ -149,7 +118,7 @@ export default function AboutPage() {
             <div>
               <h2>有需求，歡迎與我們聯繫</h2>
               <p>
-                我們不取代建築師、專業技師、估價師或會計師的簽證，也不核發各類標章。我們交付的是可追溯的清單、差異、假設與底圖，讓法定專業與評定機構在正確的事實上工作。
+                我們不取代建築師、專業技師、估價師或會計師的簽證，也不核發各類標章。我們交付可追溯的清單、差異、假設與底圖。
               </p>
             </div>
             <Link className="btn btn-primary" href="/contact">
