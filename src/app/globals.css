@@ -56,16 +56,29 @@ a {
 
 img {
   max-width: 100%;
+  height: auto;
+}
+
+main,
+section,
+.shell,
+.intro-block,
+.prose-block,
+.home-svc-list,
+.home-preview,
+.cta-panel {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .shell {
   box-sizing: border-box;
   width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  /* Keep at least --gutter from the viewport edge; on wide screens mirror a max-width column. */
-  padding-left: max(var(--gutter), calc((100% - var(--max)) / 2));
-  padding-right: max(var(--gutter), calc((100% - var(--max)) / 2));
+  max-width: calc(var(--max) + 2 * var(--gutter));
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
 }
 
 main {
@@ -219,16 +232,20 @@ p {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(245, 251, 254, 0.94) 0%, rgba(245, 251, 254, 0.8) 48%, rgba(245, 251, 254, 0.35) 100%),
-    linear-gradient(180deg, rgba(43, 132, 171, 0.08), rgba(245, 251, 254, 0.2));
+    linear-gradient(90deg, rgba(245, 251, 254, 0.96) 0%, rgba(245, 251, 254, 0.88) 42%, rgba(245, 251, 254, 0.55) 72%, rgba(245, 251, 254, 0.28) 100%),
+    linear-gradient(180deg, rgba(245, 251, 254, 0.35), rgba(245, 251, 254, 0.12));
 }
 
 .hero-copy {
   position: relative;
   z-index: 1;
   padding: 1.1rem 0;
-  max-width: 44rem;
-  animation: rise 700ms ease both;
+  max-width: min(44rem, 100%);
+  color: var(--ink);
+}
+
+.hero-copy .lede {
+  color: var(--ink-soft);
 }
 
 .hero-copy h1 {
@@ -323,11 +340,17 @@ p {
 }
 
 .intro-block {
-  max-width: 46rem;
+  width: 100%;
+  max-width: 42rem;
 }
 
 .intro-block h2 {
   margin-bottom: 1rem;
+}
+
+.intro-block .prose-block,
+.intro-block .prose-block p {
+  max-width: 100%;
 }
 
 .home-svc-list {
@@ -523,6 +546,11 @@ p {
   border-radius: 0;
   background: linear-gradient(135deg, #3ea0c8 0%, #2b84ab 55%, #1f6f94 100%);
   color: var(--white);
+}
+
+.band > .shell,
+.hero > .shell {
+  max-width: calc(var(--max) + 2 * var(--gutter));
 }
 
 .band .section-head {
@@ -948,6 +976,10 @@ p {
 }
 
 @media (max-width: 980px) {
+  :root {
+    --gutter: 1.5rem;
+  }
+
   .svc-cards {
     grid-template-columns: 1fr 1fr;
   }
@@ -964,7 +996,8 @@ p {
   .capability-grid,
   .system-grid,
   .advantage-grid,
-  .stage-list {
+  .stage-list,
+  .home-preview {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -978,12 +1011,14 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .cta-actions {
-    justify-content: flex-start;
+  .cta-panel,
+  .about-note,
+  .site-footer {
+    display: grid;
   }
 
-  .home-preview {
-    grid-template-columns: 1fr 1fr;
+  .cta-actions {
+    justify-content: flex-start;
   }
 
   .home-svc-item {
@@ -994,37 +1029,44 @@ p {
     display: none;
   }
 
-  .cta-panel,
-  .about-note,
-  .site-footer {
-    display: grid;
-  }
-
   .capability-grid li {
     text-align: left;
   }
 
+  .logo-zh,
   .logo-en {
     white-space: normal;
+  }
+
+  .hero-home {
+    min-height: clamp(240px, 38vh, 360px);
+    height: auto;
   }
 }
 
 @media (max-width: 700px) {
-  .site-header {
-    flex-direction: column;
-    align-items: flex-start;
+  :root {
+    --gutter: 1.15rem;
   }
 
-  .section-head {
+  .site-header {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem 1rem;
+  }
+
+  .site-header nav {
+    gap: 0.55rem 0.95rem;
+    font-size: 0.9rem;
+  }
+
+  .section-head,
+  .band .section-head {
     text-align: left;
   }
 
   .section-head .section-desc {
     margin-left: 0;
-  }
-
-  .band .section-head {
-    text-align: left;
   }
 
   .svc-cards,
@@ -1034,22 +1076,47 @@ p {
   .capability-grid,
   .system-grid,
   .advantage-grid,
-  .stage-list {
+  .stage-list,
+  .home-preview {
     grid-template-columns: 1fr;
   }
 
   .hero,
   .hero-home {
     height: auto;
-    min-height: 260px;
+    min-height: 220px;
+  }
+
+  .hero-veil {
+    background: linear-gradient(
+      180deg,
+      rgba(245, 251, 254, 0.96) 0%,
+      rgba(245, 251, 254, 0.92) 55%,
+      rgba(245, 251, 254, 0.78) 100%
+    );
   }
 
   .hero-copy {
     padding: 1.2rem 0;
+    max-width: 100%;
   }
 
-  .home-preview {
-    grid-template-columns: 1fr;
+  .hero-home .hero-copy h1 {
+    font-size: clamp(1.45rem, 7vw, 1.9rem);
+  }
+
+  .logo-mark {
+    width: 40px;
+  }
+
+  .brand,
+  .logo,
+  .logo-text {
+    max-width: 100%;
+  }
+
+  .cta-panel {
+    padding: 1.2rem 1.1rem;
   }
 
   .band {
@@ -1062,5 +1129,10 @@ p {
 
   .logo-en {
     font-size: 0.62rem;
+  }
+
+  .home-svc-item {
+    align-items: start;
+    padding: 1rem 0;
   }
 }

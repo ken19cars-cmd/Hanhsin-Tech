@@ -38,19 +38,21 @@ export default function HomePage() {
       </section>
 
       <section className="section">
-        <div className="shell intro-block">
-          <p className="kicker">關於翰欣</p>
-          <h2>系統應用，不是標章代辦</h2>
-          <div className="prose-block">
-            <p>
-              {company.nameZh}（{company.nameEn}）為{company.group}
-              旗下公司，專注土地開發、建築與永續相關的資訊整合與系統導入。與僅提供標章顧問的公司不同，我們以軟體與資料流程，支援案場與企業日常協作。
-            </p>
-            <p>
-              目前服務涵蓋五大面向：營建工程管理、建築圖面與 BIM
-              分析、綠建築與智慧建築指標、企業 ESG 與資產評價，以及 GIS
-              地理資訊加值。您可依案件階段單點導入，也可逐步串接。
-            </p>
+        <div className="shell">
+          <div className="intro-block">
+            <p className="kicker">關於翰欣</p>
+            <h2>系統應用，不是標章代辦</h2>
+            <div className="prose-block">
+              <p>
+                {company.nameZh}（{company.nameEn}）為{company.group}
+                旗下公司，專注土地開發、建築與永續相關的資訊整合與系統導入。與僅提供標章顧問的公司不同，我們以軟體與資料流程，支援案場與企業日常協作。
+              </p>
+              <p>
+                目前服務涵蓋五大面向：營建工程管理、建築圖面與 BIM
+                分析、綠建築與智慧建築指標、企業 ESG 與資產評價，以及 GIS
+                地理資訊加值。您可依案件階段單點導入，也可逐步串接。
+              </p>
+            </div>
           </div>
         </div>
       </section>
