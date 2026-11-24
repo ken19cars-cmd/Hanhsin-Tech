@@ -41,11 +41,11 @@ export default function HomePage() {
         <div className="shell">
           <div className="intro-block">
             <p className="kicker">關於翰欣</p>
-            <h2>系統應用，不是標章代辦</h2>
+            <h2>土地開發與永續的系統應用</h2>
             <div className="prose-block">
               <p>
                 {company.nameZh}（{company.nameEn}）為{company.group}
-                旗下公司，專注土地開發、建築與永續相關的資訊整合與系統導入。與僅提供標章顧問的公司不同，我們以軟體與資料流程，支援案場與企業日常協作。
+                旗下公司，專注土地開發、建築與永續相關的資訊整合與系統導入，以軟體與資料流程支援案場與企業日常協作。
               </p>
               <p>
                 目前服務涵蓋五大面向：營建工程管理、建築圖面與 BIM
