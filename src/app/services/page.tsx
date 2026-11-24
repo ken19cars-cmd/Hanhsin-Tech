@@ -14,10 +14,10 @@ export default function ServicesPage() {
     <section className="section">
       <div className="shell">
         <p className="kicker">服務項目</p>
-        <h1>為開發案與企業永續準備的應用服務</h1>
+        <h1>五大系統應用</h1>
         <p className="lede">
-          從工程督導、圖面與標章，到 ESG
-          揭露與資產評價——我們用系統把分散資料收成您願意拿去開會、融資與對外說明的依據。
+          營建工程管理、建築圖面分析、綠建築與智慧建築指標、企業 ESG
+          與資產評價、GIS 地理資訊加值。以下為現行說明，細部項目可依案件再調整。
         </p>
         <div className="svc-cards">
           {services.map((service) => (
@@ -36,17 +36,17 @@ export default function ServicesPage() {
               <div className="svc-card-body">
                 <h3>{service.title}</h3>
                 <p>{service.summary}</p>
-                <span className="svc-card-go">了解如何幫到您</span>
+                <span className="svc-card-go">了解更多</span>
               </div>
             </Link>
           ))}
         </div>
         <div className="cta-panel cta-panel-spaced">
           <div>
-            <p className="kicker">不確定從哪裡開始？</p>
-            <h2>告訴我們您手上的案件階段</h2>
+            <p className="kicker">聯絡我們</p>
+            <h2>告訴我們您目前的案件階段</h2>
             <p>
-              無論是送審前的標章缺口、年度 ESG 揭露，或是資產評價需要更完整的永續論述，我們都能協助評估適合的模組。
+              標章資料整理、ESG 揭露、工程督導或基地查詢，歡迎先說明現況，我們會回覆適合的系統範圍。
             </p>
           </div>
           <Link className="btn btn-primary" href="/contact">
