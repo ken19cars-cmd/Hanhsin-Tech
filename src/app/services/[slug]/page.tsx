@@ -61,9 +61,7 @@ export default async function ServicePage({ params }: Props) {
             <p className="kicker">功能重點</p>
             <h2>這個系統幫您處理什麼</h2>
           </div>
-          <div
-            className={`feature-flow${service.modules.length === 3 ? " feature-flow-3" : ""}`}
-          >
+          <div className="feature-flow">
             {service.modules.map((module, index) => (
               <article key={module.title} className="feature-flow-card">
                 <span className="feature-flow-num">{String(index + 1).padStart(2, "0")}</span>
@@ -74,39 +72,35 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </div>
 
-        {service.outcomes && service.outcomes.length > 0 ? (
-          <div className="detail-block">
-            <div className="section-head left">
-              <p className="kicker">對您的幫助</p>
-              <h2>導入後可以怎麼用</h2>
-            </div>
-            <div className="outcome-strip">
-              {service.outcomes.map((item) => (
-                <article key={item.title}>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </article>
-              ))}
-            </div>
+        <div className="detail-block">
+          <div className="section-head left">
+            <p className="kicker">對您的幫助</p>
+            <h2>導入後可以怎麼用</h2>
           </div>
-        ) : null}
+          <div className="outcome-strip">
+            {service.outcomes.map((item) => (
+              <article key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
 
-        {service.systems.length > 0 ? (
-          <div className="system-gallery">
-            <div className="section-head left">
-              <p className="kicker">畫面示意</p>
-              <h2>實際工作介面參考</h2>
-            </div>
-            <MediaLightbox
-              items={service.systems.map((shot) => ({
-                src: shot.src,
-                alt: shot.alt,
-                caption: shot.caption,
-                motion: shot.motion,
-              }))}
-            />
+        <div className="system-gallery">
+          <div className="section-head left">
+            <p className="kicker">畫面示意</p>
+            <h2>實際工作介面參考</h2>
           </div>
-        ) : null}
+          <MediaLightbox
+            items={service.systems.map((shot) => ({
+              src: shot.src,
+              alt: shot.alt,
+              caption: shot.caption,
+              motion: shot.motion,
+            }))}
+          />
+        </div>
 
         <div className="deliver">
           <div>
