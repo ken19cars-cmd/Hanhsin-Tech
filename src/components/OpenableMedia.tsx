@@ -66,7 +66,6 @@ export default function OpenableMedia({
             unoptimized={src.endsWith(".svg") || src.endsWith(".png")}
           />
         )}
-        <span className="system-card-zoom">點擊放大</span>
       </button>
 
       {open ? (

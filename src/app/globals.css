@@ -948,20 +948,6 @@ p {
   inset: 0;
 }
 
-.system-card-zoom {
-  position: absolute;
-  right: 0.7rem;
-  bottom: 0.7rem;
-  z-index: 2;
-  padding: 0.35rem 0.65rem;
-  border-radius: 999px;
-  background: rgba(15, 26, 34, 0.72);
-  color: #fff;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
 .system-card-caption,
 .system-card figcaption {
   display: block;

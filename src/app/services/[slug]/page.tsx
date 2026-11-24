@@ -95,7 +95,7 @@ export default async function ServicePage({ params }: Props) {
           <div className="system-gallery">
             <div className="section-head left">
               <p className="kicker">畫面示意</p>
-              <h2>點擊可放大觀看動態畫面</h2>
+              <h2>實際工作介面參考</h2>
             </div>
             <MediaLightbox
               items={service.systems.map((shot) => ({

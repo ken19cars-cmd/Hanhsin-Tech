@@ -84,7 +84,6 @@ export default function MediaLightbox({ items, className }: Props) {
                   unoptimized={item.src.endsWith(".svg") || item.src.endsWith(".png")}
                 />
               )}
-              <span className="system-card-zoom">點擊放大</span>
             </div>
             {item.caption ? <span className="system-card-caption">{item.caption}</span> : null}
           </button>

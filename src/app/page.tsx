@@ -88,10 +88,6 @@ export default function HomePage() {
 
       <section className="section">
         <div className="shell">
-          <div className="section-head left">
-            <p className="kicker">畫面預覽</p>
-            <h2>點擊可放大觀看動態畫面</h2>
-          </div>
           <MediaLightbox
             className="home-preview-grid"
             items={services.slice(0, 3).map((service) => ({
