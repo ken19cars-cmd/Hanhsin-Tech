@@ -55,7 +55,7 @@ export default function HomePage() {
             <div className="intro-signal-ring" aria-hidden="true" />
             <ul>
               <li>PMIS 工程管理</li>
-              <li>圖面／BIM 分析</li>
+              <li>平面圖說辨識</li>
               <li>標章指標評估</li>
               <li>ESG／資產評價</li>
               <li>GIS 地理加值</li>

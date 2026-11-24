@@ -61,14 +61,14 @@ export default async function ServicePage({ params }: Props) {
             <p className="kicker">功能重點</p>
             <h2>這個系統幫您處理什麼</h2>
           </div>
-          <div className="feature-list">
+          <div
+            className={`feature-flow${service.modules.length === 3 ? " feature-flow-3" : ""}`}
+          >
             {service.modules.map((module, index) => (
-              <article key={module.title} className="feature-item">
-                <div className="feature-index">{String(index + 1).padStart(2, "0")}</div>
-                <div className="feature-body">
-                  <h3>{module.title}</h3>
-                  <p>{module.text}</p>
-                </div>
+              <article key={module.title} className="feature-flow-card">
+                <span className="feature-flow-num">{String(index + 1).padStart(2, "0")}</span>
+                <h3>{module.title}</h3>
+                <p>{module.text}</p>
               </article>
             ))}
           </div>

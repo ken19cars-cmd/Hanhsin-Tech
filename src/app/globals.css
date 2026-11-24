@@ -1443,6 +1443,65 @@ p {
   font-size: 0.96rem;
 }
 
+.feature-flow {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.feature-flow-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  position: relative;
+}
+
+.feature-flow-3::before {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 1.55rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue-300), var(--teal), var(--blue-500));
+  opacity: 0.55;
+  z-index: 0;
+}
+
+.feature-flow-card {
+  position: relative;
+  z-index: 1;
+  padding: 1.15rem 1.1rem 1.2rem;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid rgba(14, 165, 201, 0.2);
+  box-shadow: 0 12px 28px rgba(10, 127, 163, 0.08);
+}
+
+.feature-flow-num {
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 0.7rem;
+  border-radius: 50%;
+  background: var(--blue-500);
+  color: #fff;
+  font-family: var(--font-display), "Sora", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 18px rgba(14, 165, 201, 0.28);
+}
+
+.feature-flow-card h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.12rem;
+}
+
+.feature-flow-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  font-size: 0.94rem;
+}
+
 .outcome-strip {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1636,6 +1695,14 @@ p {
 
   .intro-split {
     grid-template-columns: 1fr;
+  }
+
+  .feature-flow-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-flow-3::before {
+    display: none;
   }
 
   .domain-board {
