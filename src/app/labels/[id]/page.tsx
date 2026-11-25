@@ -149,11 +149,11 @@ export default async function LabelPage({ params }: Props) {
                 </li>
               </ul>
               <div className="hero-actions">
-                <Link className="btn btn-primary" href="/contact">
-                  洽詢此標章
+                <Link className="btn btn-primary" href={`/labels/${label.id}/assess`}>
+                  填寫評估表
                 </Link>
-                <Link className="btn btn-ghost" href="/services/green">
-                  標章評估系統
+                <Link className="btn btn-ghost" href="/contact">
+                  洽詢此標章
                 </Link>
               </div>
             </div>
