@@ -146,10 +146,6 @@ export default function Header() {
   return (
     <>
       <div className="topbar">
-        <span className="topbar-group">
-          {company.group}
-          {company.relation}
-        </span>
         <span className="topbar-contact">
           <a href={`tel:${company.phoneTel}`}>服務專線 {company.phoneDisplay}</a>
           <a className="topbar-email" href={`mailto:${company.email}`}>

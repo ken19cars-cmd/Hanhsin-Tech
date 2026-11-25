@@ -143,7 +143,7 @@ p {
 .topbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1rem;
   padding: 0.45rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -671,13 +671,8 @@ a.nav-group-title:hover {
 }
 
 @media (max-width: 700px) {
-  .topbar-email,
-  .topbar-group {
+  .topbar-email {
     display: none;
-  }
-
-  .topbar {
-    justify-content: flex-end;
   }
 }
 
