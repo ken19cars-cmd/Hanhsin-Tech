@@ -71,8 +71,9 @@ export default function PptIcon({ name, className }: IconProps) {
     case "land":
       return (
         <svg {...common}>
-          <path d="M14 34l10-20 10 20H14z" />
-          <circle cx="24" cy="26" r="3" />
+          <path d="M10 18h28v16H10z" />
+          <path d="M10 24h28M22 18v16" />
+          <path d="M16 14h8l4 4" />
         </svg>
       );
     case "version":
