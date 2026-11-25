@@ -2,7 +2,7 @@ import Link from "next/link";
 import Logo from "./Logo";
 import SiteNav, { type NavMenu } from "./SiteNav";
 import { labelFamilies, labelHref, labels } from "@/lib/labels";
-import { company, moduleHref, serviceShortLabels, services } from "@/lib/site";
+import { company, moduleHref, services } from "@/lib/site";
 
 const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(company.address)}`;
 
@@ -48,29 +48,6 @@ const menus: NavMenu[] = [
       },
     ],
     footer: { label: `國內外 ${labels.length} 種永續標章總覽`, href: "/labels" },
-  },
-  {
-    id: "support",
-    label: "導入與問答",
-    href: "/faq",
-    layout: "split",
-    groups: [
-      {
-        title: "導入流程",
-        links: services.map((service) => ({
-          label: serviceShortLabels[service.slug] ?? service.title,
-          href: `/services/${service.slug}#process`,
-        })),
-      },
-      {
-        title: "常見問題",
-        links: services.map((service) => ({
-          label: serviceShortLabels[service.slug] ?? service.title,
-          href: `/faq#${service.slug}`,
-        })),
-      },
-    ],
-    footer: { label: "常見問題總覽", href: "/faq" },
   },
   {
     id: "about",
