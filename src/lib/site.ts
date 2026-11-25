@@ -23,9 +23,9 @@ export const company = {
   group: "皓欣不動產規劃顧問有限公司",
   relation: "相關企業",
   tagline: "土地開發 × 智慧應用 × 永續科技",
-  address: "臺北市松山區民權東路三段144號5F-4",
-  phoneDisplay: "0963-511-091",
-  phoneTel: "+886963511091",
+  address: "臺北市松山區民權東路三段144號5樓之7",
+  phoneDisplay: "02-2546-9208",
+  phoneTel: "+886225469208",
   email: "service.haohsin@gmail.com",
 };
 
