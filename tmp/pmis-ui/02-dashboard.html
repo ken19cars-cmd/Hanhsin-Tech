@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <title>PMIS 進度儀表板</title>
+  <link rel="stylesheet" href="common.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="brand"><i></i>Hanhsin PMIS｜營建工程管理</div>
+      <nav>
+        <a href="#">總覽</a>
+        <a href="#">公文</a>
+        <a class="on" href="#">進度</a>
+        <a href="#">查核</a>
+        <a href="#">會議</a>
+        <a href="#">文件</a>
+        <a href="#">採購</a>
+        <a href="#">影像</a>
+      </nav>
+      <div class="top-meta">
+        <span class="pill">案件：板橋文化段都更案</span>
+        <span class="pill">角色：PCM 督導</span>
+      </div>
+    </header>
+    <aside class="side">
+      <h4>進度模組</h4>
+      <a class="on" href="#">進度儀表板</a>
+      <a href="#">S 曲線比對</a>
+      <a href="#">甘特圖</a>
+      <a href="#">落後說明</a>
+      <a href="#">風險清單</a>
+      <h4>相關功能</h4>
+      <a href="#">文件版次檢核</a>
+      <a href="#">會議決議追蹤</a>
+      <a href="#">報表匯出</a>
+    </aside>
+    <main class="main">
+      <div class="crumb">案件 / 板橋文化段都更案 / 進度 / <strong>儀表板</strong></div>
+      <div class="toolbar">
+        <h1>進度儀表板｜預定／實際／風險</h1>
+        <select class="select"><option>基準日：2026-11-25</option></select>
+        <select class="select"><option>工項層級：Level 3</option></select>
+        <button class="btn ghost">重新計算</button>
+        <button class="btn primary">產出落後說明</button>
+      </div>
+      <div class="body">
+        <div class="kpi-row">
+          <div class="kpi"><b>54%</b><small>預定進度</small></div>
+          <div class="kpi"><b>48%</b><small>實際進度</small></div>
+          <div class="kpi"><b>-6%</b><small>差異</small></div>
+          <div class="kpi"><b>3</b><small>高風險工項</small></div>
+          <div class="kpi"><b>5</b><small>待回送審</small></div>
+          <div class="kpi"><b>2</b><small>本週會議決議</small></div>
+        </div>
+        <div class="split-3">
+          <section class="panel">
+            <div class="panel-h">關鍵路徑甘特（摘錄） <span>單位：週</span></div>
+            <div class="gantt">
+              <div class="gantt-row"><span>基礎工程</span><div class="gantt-track"><i class="plan" style="left:0%;width:28%"></i><i class="act" style="left:0%;width:28%"></i></div></div>
+              <div class="gantt-row"><span>地下結構</span><div class="gantt-track"><i class="plan" style="left:18%;width:30%"></i><i class="act" style="left:18%;width:30%"></i></div></div>
+              <div class="gantt-row"><span>地上結構</span><div class="gantt-track"><i class="plan" style="left:40%;width:26%"></i><i class="act" style="left:40%;width:20%"></i></div></div>
+              <div class="gantt-row"><span>機電管線</span><div class="gantt-track"><i class="plan" style="left:48%;width:34%"></i><i class="act" style="left:48%;width:22%"></i></div></div>
+              <div class="gantt-row"><span>外牆帷幕</span><div class="gantt-track"><i class="plan" style="left:62%;width:24%"></i><i class="act" style="left:62%;width:6%"></i></div></div>
+              <div class="gantt-row"><span>室內裝修</span><div class="gantt-track"><i class="plan" style="left:72%;width:22%"></i></div></div>
+              <div class="gantt-row"><span>驗收移交</span><div class="gantt-track"><i class="plan" style="left:88%;width:10%"></i></div></div>
+            </div>
+            <div class="foot"><span>■ 預定　■ 實際</span><span>關鍵路徑：地上結構 → 機電</span></div>
+          </section>
+          <section class="panel">
+            <div class="panel-h">落後／風險清單</div>
+            <table>
+              <thead>
+                <tr><th>代碼</th><th>項目</th><th>差異</th><th>等級</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>R-01</td><td>地上結構進度</td><td>-6%</td><td><span class="tag red">高</span></td></tr>
+                <tr><td>R-02</td><td>機電界面衝突</td><td>本週</td><td><span class="tag amber">中</span></td></tr>
+                <tr><td>R-03</td><td>結構圖說待回</td><td>3 件</td><td><span class="tag amber">中</span></td></tr>
+                <tr><td>R-04</td><td>臨時用電缺失</td><td>1 件</td><td><span class="tag blue">低</span></td></tr>
+                <tr><td>R-05</td><td>帷幕樣板確認</td><td>未啟動</td><td><span class="tag gray">觀察</span></td></tr>
+                <tr><td>R-06</td><td>變更設計第3次</td><td>審核中</td><td><span class="tag amber">中</span></td></tr>
+              </tbody>
+            </table>
+            <div class="foot"><span>依風險等級排序</span><span>可匯出督導摘要</span></div>
+          </section>
+          <section class="panel">
+            <div class="panel-h">文件／會議摘要</div>
+            <ul class="list">
+              <li><span class="tag red">待回</span><span>結構圖說 3 件逾時</span><span>D-088</span></li>
+              <li><span class="tag amber">版次</span><span>機電綜合圖 v0.6</span><span>差 2</span></li>
+              <li><span class="tag blue">會議</span><span>11/22 界面協調 2 項未結</span><span>M-017</span></li>
+              <li><span class="tag green">完成</span><span>混凝土報告已歸檔</span><span>F-052</span></li>
+              <li><span class="tag gray">預估</span><span>下月預定追上 2%</span><span>—</span></li>
+            </ul>
+            <div class="foot" style="gap:6px;justify-content:flex-start;">
+              <button class="btn primary">產出督導摘要</button>
+              <button class="btn">匯出報表</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

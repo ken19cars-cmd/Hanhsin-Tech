@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <title>PMIS 工程公開資訊</title>
+  <link rel="stylesheet" href="common.css" />
+  <style>
+    .app { grid-template-columns: 1fr; }
+    .public-main {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-rows: auto auto auto 1fr;
+      background: #f0f4f7;
+      min-height: 0;
+    }
+    .hero-bar {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr;
+      gap: 10px;
+      padding: 10px 12px;
+      background: #fff;
+      border-bottom: 1px solid #d5dee5;
+    }
+    .hero-bar h1 { font-size: 16px; margin: 4px 0 6px; }
+    .hero-bar p { color: #4d6270; line-height: 1.55; }
+    .meta-line { color: #6a7c88; font-size: 11px; margin-bottom: 4px; }
+    .status-box {
+      border: 1px solid #d5dee5;
+      background: #f8fafb;
+      padding: 10px;
+      border-radius: 2px;
+    }
+    .status-box h3 { font-size: 12px; margin-bottom: 8px; }
+    .row { display: grid; grid-template-columns: 70px 1fr 40px; gap: 6px; align-items: center; margin: 6px 0; font-size: 11px; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="brand"><i></i>工程公開資訊｜板橋文化段都市更新案</div>
+      <nav>
+        <a class="on" href="#">基地資料</a>
+        <a href="#">大事紀</a>
+        <a href="#">工期進度</a>
+        <a href="#">施工照片</a>
+        <a href="#">說明會</a>
+      </nav>
+      <div class="top-meta">
+        <span class="pill">資料更新 2026-11-25 08:30</span>
+      </div>
+    </header>
+    <div class="public-main">
+      <div class="hero-bar">
+        <div>
+          <div class="meta-line">示範案件　｜　新北都更第 113-088 號（示範）</div>
+          <h1>板橋文化段都市更新案</h1>
+          <p>基地資料、預定／實際進度、工期與工地紀錄集中於同一案件主檔，供主辦機關、PCM 與專案團隊對齊。</p>
+          <div style="margin-top:8px;display:flex;gap:6px;">
+            <button class="btn primary">查看工期進度</button>
+            <button class="btn">下載最新報表</button>
+            <button class="btn ghost">工地影像</button>
+          </div>
+        </div>
+        <div class="status-box">
+          <h3>目前階段：地上結構施工</h3>
+          <div class="row"><span>預定</span><div class="bar"><i style="width:54%"></i></div><b>54%</b></div>
+          <div class="row"><span>實際</span><div class="bar warn"><i style="width:48%"></i></div><b>48%</b></div>
+          <div class="row"><span>差異</span><div><span class="tag red">落後 6 個百分點</span></div><span></span></div>
+          <div class="row"><span>開工</span><div>2025-08-18</div><span></span></div>
+          <div class="row"><span>預定完工</span><div>2027-12-31</div><span></span></div>
+        </div>
+      </div>
+      <div class="tabs">
+        <a class="on" href="#">基地資料</a>
+        <a href="#">地籍／權屬</a>
+        <a href="#">契約資訊</a>
+        <a href="#">進度曲線</a>
+        <a href="#">查核紀錄</a>
+        <a href="#">文件清冊</a>
+      </div>
+      <div class="body" style="grid-template-columns: 1fr 1.15fr; display:grid;">
+        <section class="panel">
+          <div class="panel-h">基地位置示意 <span>文化路一段／民生路口</span></div>
+          <div class="mapbox">
+            <div class="road v">民生路</div>
+            <div class="road h">文化路一段</div>
+            <div class="parcel"></div>
+            <div style="position:absolute;left:34%;top:36%;font-size:11px;font-weight:700;color:#0a7fa3;">本案基地<br>3,286 m²</div>
+          </div>
+          <div class="foot"><span>示意範圍，非正式測量成果</span><span>座標系統：TWD97</span></div>
+        </section>
+        <section class="panel">
+          <div class="panel-h">基地／建築基本資料</div>
+          <div class="form-grid">
+            <label>基地面積</label><div>3,286 m²</div>
+            <label>地號</label><div>文化段 812、813、814</div>
+            <label>使用分區</label><div>商業區</div>
+            <label>建蔽／容積</label><div>60% / 560%</div>
+            <label>建築規模</label><div>地上 29 層／地下 5 層</div>
+            <label>總樓地板</label><div>48,920 m²</div>
+            <label>住宅／店面</label><div>186 戶 / 8 戶</div>
+            <label>公共設施</label><div>托嬰中心、人行空間、廣場 860 m²</div>
+            <label>臨路情形</label><div>文化路一段、民生路</div>
+            <label>實施者</label><div>〇〇都市更新股份有限公司（示範）</div>
+            <label>PCM</label><div>翰欣科技／皓欣顧問團隊</div>
+            <label>監造單位</label><div>△△建築師事務所</div>
+            <label>開工日期</label><div>2025-08-18</div>
+            <label>預定完工</label><div>2027-12-31</div>
+            <label>契約金額</label><div>（依契約權限顯示）</div>
+            <label>資料狀態</label><div><span class="tag green">已核定主檔</span></div>
+          </div>
+          <div class="foot"><span>欄位依主辦機關權限控管</span><span>版本 v1.8</span></div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

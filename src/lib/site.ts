@@ -55,7 +55,7 @@ export const services: Service[] = [
     lead:
       "公辦都更與促參等案件進入興建期後，文件與協調事項快速增加。PMIS 將公文、進度、查核、送審與影像歸檔放在同一平台，並以儀表板協助督導掌握落後工項與介面重點。",
     image: "/systems/pmis-ai-workflow.png",
-    imageAlt: "營建工程管理平台總覽",
+    imageAlt: "PMIS 工程管理系統總覽",
     outcomes: [
       {
         title: "現場與文件同一視線",
@@ -76,8 +76,8 @@ export const services: Service[] = [
         text: "人員權限、公文管理、會議管理、進度管理、查核管理、文件管理、採購發包、影像紀錄與儀表板，可依主辦機關作業習慣彈性配置。",
       },
       {
-        title: "AI 輔助儀表板",
-        text: "進度預測、文件智慧審核、風險預警與會議摘要生成，協助 PCM 督導更快掌握落後工項與介面協調重點。",
+        title: "進度儀表板",
+        text: "比對預定／實際進度、標示落後與風險工項，並整理文件待回與會議決議，方便 PCM 督導掌握介面協調重點。",
       },
       {
         title: "任務追蹤與甘特",
@@ -93,18 +93,18 @@ export const services: Service[] = [
     systems: [
       {
         src: "/systems/pmis-ai-workflow.png",
-        alt: "工程管理平台總覽",
-        caption: "公文、進度、查核與任務，集中在同一工作平台掌握",
+        alt: "PMIS 總覽作業畫面",
+        caption: "公文、進度、查核與任務清冊，依案件主檔集中查詢與追蹤",
       },
       {
         src: "/systems/pmis-system-ui.png",
-        alt: "AI 儀表板與工作流",
-        caption: "AI 儀表板協助進度預測、文件審核與風險預警",
+        alt: "進度儀表板與甘特",
+        caption: "預定／實際進度、甘特與風險清單，產出落後說明與督導摘要",
       },
       {
         src: "/systems/construction-site.png",
-        alt: "工程公開資訊頁",
-        caption: "基地資料、預定／實際進度與工期資訊一次對齊",
+        alt: "工程公開資訊與基地資料",
+        caption: "基地、契約與工期欄位一次對齊，供機關與專案團隊共用",
       },
     ],
   },

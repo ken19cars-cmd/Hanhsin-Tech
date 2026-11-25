@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <title>PMIS 總覽</title>
+  <link rel="stylesheet" href="common.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="brand"><i></i>Hanhsin PMIS｜營建工程管理</div>
+      <nav>
+        <a class="on" href="#">總覽</a>
+        <a href="#">公文</a>
+        <a href="#">進度</a>
+        <a href="#">查核</a>
+        <a href="#">會議</a>
+        <a href="#">文件</a>
+        <a href="#">採購</a>
+        <a href="#">影像</a>
+      </nav>
+      <div class="top-meta">
+        <span class="pill">機關：新北市都發局（示範）</span>
+        <span class="pill">帳號：pcm.chen</span>
+      </div>
+    </header>
+    <aside class="side">
+      <h4>案件清單</h4>
+      <a class="on" href="#">板橋文化段都更案</a>
+      <a class="sub" href="#">├ 公文管理</a>
+      <a class="sub" href="#">├ 進度管理</a>
+      <a class="sub" href="#">├ 查核管理</a>
+      <a class="sub" href="#">└ 任務追蹤</a>
+      <a href="#">公辦都更示範案</a>
+      <a href="#">促參履約管理案</a>
+      <a href="#">工地查核追蹤案</a>
+      <h4>快捷篩選</h4>
+      <a href="#">待回公文（6）</a>
+      <a href="#">未關閉缺失（3）</a>
+      <a href="#">本週到期任務（11）</a>
+    </aside>
+    <main class="main">
+      <div class="crumb">首頁 / 案件 / <strong>板橋文化段都更案</strong> / 總覽</div>
+      <div class="toolbar">
+        <h1>公文／進度／查核／任務總覽</h1>
+        <input class="input" value="關鍵字搜尋" />
+        <select class="select"><option>狀態：全部</option></select>
+        <select class="select"><option>期間：本週</option></select>
+        <button class="btn ghost">匯出 Excel</button>
+        <button class="btn primary">新增任務</button>
+      </div>
+      <div class="body">
+        <div class="kpi-row">
+          <div class="kpi"><b>128</b><small>公文總數</small></div>
+          <div class="kpi"><b>6</b><small>待回公文</small></div>
+          <div class="kpi"><b>48%</b><small>實際進度</small></div>
+          <div class="kpi"><b>54%</b><small>預定進度</small></div>
+          <div class="kpi"><b>3</b><small>未關閉缺失</small></div>
+          <div class="kpi"><b>11</b><small>本週任務</small></div>
+        </div>
+        <div class="split">
+          <section class="panel">
+            <div class="panel-h">各工項進度與關鍵查核 <span>更新 2026-11-25 09:12</span></div>
+            <table>
+              <thead>
+                <tr>
+                  <th>編號</th>
+                  <th>工項／事項</th>
+                  <th>負責單位</th>
+                  <th>預定</th>
+                  <th>實際</th>
+                  <th>進度</th>
+                  <th>狀態</th>
+                  <th>到期日</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>W-014</td>
+                  <td>地上結構施工（3F～8F）</td>
+                  <td>營造廠</td>
+                  <td>54%</td>
+                  <td>48%</td>
+                  <td><div class="bar warn"><i style="width:48%"></i></div></td>
+                  <td><span class="tag red">落後 6%</span></td>
+                  <td>2026-12-15</td>
+                </tr>
+                <tr>
+                  <td>W-021</td>
+                  <td>機電管線配置（B2～1F）</td>
+                  <td>機電承包</td>
+                  <td>32%</td>
+                  <td>30%</td>
+                  <td><div class="bar"><i style="width:30%"></i></div></td>
+                  <td><span class="tag amber">接近預定</span></td>
+                  <td>2026-12-28</td>
+                </tr>
+                <tr>
+                  <td>D-088</td>
+                  <td>結構圖說送審回覆</td>
+                  <td>設計單位</td>
+                  <td>12</td>
+                  <td>9</td>
+                  <td><div class="bar"><i style="width:75%"></i></div></td>
+                  <td><span class="tag red">3 件待回</span></td>
+                  <td>2026-11-28</td>
+                </tr>
+                <tr>
+                  <td>I-033</td>
+                  <td>臨時用電安衛查核缺失改善</td>
+                  <td>職安人員</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td><div class="bar"><i style="width:40%"></i></div></td>
+                  <td><span class="tag amber">改善中</span></td>
+                  <td>2026-11-27</td>
+                </tr>
+                <tr>
+                  <td>M-017</td>
+                  <td>界面協調會議決議追蹤</td>
+                  <td>PCM</td>
+                  <td>8</td>
+                  <td>5</td>
+                  <td><div class="bar"><i style="width:62%"></i></div></td>
+                  <td><span class="tag blue">追蹤中</span></td>
+                  <td>2026-11-30</td>
+                </tr>
+                <tr>
+                  <td>F-052</td>
+                  <td>混凝土澆置檢驗報告歸檔</td>
+                  <td>品管</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td><div class="bar"><i style="width:100%"></i></div></td>
+                  <td><span class="tag green">已齊備</span></td>
+                  <td>2026-11-20</td>
+                </tr>
+                <tr>
+                  <td>W-029</td>
+                  <td>外牆帷幕樣板確認</td>
+                  <td>建築師</td>
+                  <td>10%</td>
+                  <td>8%</td>
+                  <td><div class="bar"><i style="width:8%"></i></div></td>
+                  <td><span class="tag gray">未開始</span></td>
+                  <td>2027-02-10</td>
+                </tr>
+                <tr>
+                  <td>D-091</td>
+                  <td>變更設計第 3 次送件</td>
+                  <td>設計單位</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td><div class="bar"><i style="width:20%"></i></div></td>
+                  <td><span class="tag amber">審核中</span></td>
+                  <td>2026-12-05</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="foot"><span>顯示 1–8 / 共 46 筆</span><span>頁次 1 / 6</span></div>
+          </section>
+          <section class="panel">
+            <div class="panel-h">今日待辦與提醒</div>
+            <ul class="list">
+              <li><span class="tag red">公文</span><span>都發局來文：進度說明補件</span><span>今日 17:00</span></li>
+              <li><span class="tag amber">查核</span><span>I-033 臨時用電缺失複查</span><span>明日 10:00</span></li>
+              <li><span class="tag blue">會議</span><span>機電界面協調會紀錄確認</span><span>11/26</span></li>
+              <li><span class="tag gray">文件</span><span>W-014 混凝土強度報告上傳</span><span>11/27</span></li>
+              <li><span class="tag red">進度</span><span>地上結構落後原因表送審</span><span>11/28</span></li>
+              <li><span class="tag green">完成</span><span>F-052 檢驗報告歸檔</span><span>昨日</span></li>
+              <li><span class="tag blue">任務</span><span>B2 防水層查驗派工</span><span>11/29</span></li>
+              <li><span class="tag amber">公文</span><span>監造報表第 18 期簽核</span><span>11/30</span></li>
+            </ul>
+            <div class="foot"><span>未關閉事項 14</span><span>本週完成率 84%</span></div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
