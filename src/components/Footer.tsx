@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { company } from "@/lib/site";
+import { company, serviceShortLabels, services } from "@/lib/site";
 import Logo from "./Logo";
 
 export default function Footer() {
@@ -14,20 +14,30 @@ export default function Footer() {
           {company.tagline}
         </p>
       </div>
-      <div className="footer-meta">
+      <div className="footer-col">
+        <h2>系統應用</h2>
+        {services.map((service) => (
+          <Link key={service.slug} href={`/services/${service.slug}`}>
+            {serviceShortLabels[service.slug] ?? service.title}
+          </Link>
+        ))}
+      </div>
+      <div className="footer-col">
+        <h2>導入與支援</h2>
+        <Link href="/services">系統應用總覽</Link>
+        <Link href="/faq">常見問題</Link>
+        <Link href="/about">關於我們</Link>
+        <Link href="/contact">預約系統展示</Link>
+      </div>
+      <div className="footer-col footer-meta">
+        <h2>聯絡資訊</h2>
         <p>{company.address}</p>
         <p>
-          電話{" "}
-          <a href={`tel:${company.phoneTel}`}>{company.phoneDisplay}</a>
+          電話 <a href={`tel:${company.phoneTel}`}>{company.phoneDisplay}</a>
         </p>
         <p>
           Email <a href={`mailto:${company.email}`}>{company.email}</a>
         </p>
-      </div>
-      <div className="footer-links">
-        <Link href="/services">服務項目</Link>
-        <Link href="/about">關於我們</Link>
-        <Link href="/contact">聯絡我們</Link>
       </div>
     </footer>
   );

@@ -73,6 +73,11 @@ export default function SiteNav({ brand, menus, cta }: Props) {
   const closeTimer = useRef<number | null>(null);
   const openedByHover = useRef(false);
 
+  // Several menus can share a landing page; only the first match is marked current.
+  const activeId = menus.find(
+    (menu) => pathname === menu.href || pathname.startsWith(`${menu.href}/`),
+  )?.id;
+
   const canHover = () => window.matchMedia("(hover: hover) and (min-width: 981px)").matches;
 
   const cancelClose = useCallback(() => {
@@ -131,8 +136,7 @@ export default function SiteNav({ brand, menus, cta }: Props) {
         <ul className="nav-list">
           {menus.map((menu) => {
             const isOpen = open === menu.id;
-            const isActive =
-              pathname === menu.href || pathname.startsWith(`${menu.href}/`);
+            const isActive = menu.id === activeId;
             const panelId = `nav-panel-${menu.id}`;
             return (
               <li
