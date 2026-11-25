@@ -30,15 +30,13 @@ export type Faq = {
 
 /** One certification or rating system covered by a service. */
 export type LabelItem = {
-  /** Anchor id used for deep links from navigation. */
+  /** Also the page slug under /labels. */
   id: string;
   name: string;
-  /** One-line assessment focus for menus. */
+  /** One-line summary shown on overview tiles. */
   brief: string;
   code: string;
   org: string;
-  focus: string;
-  levels?: string;
   fit: string;
   logo?: string;
   /** Short text shown in place of a logo. */
@@ -62,17 +60,15 @@ export type LabelSource = {
 
 /** Full label profile used for its standalone page. */
 export type LabelProfile = LabelItem & {
-  tagline: string;
-  intro: string[];
+  lead: string;
   criteriaTitle: string;
   criteria: LabelTopic[];
-  levelsTitle: string;
-  levelRows: LabelTopic[];
-  incentives: LabelTopic[];
+  levelsTitle?: string;
+  levelRows?: LabelTopic[];
+  levelsNote?: string;
+  rules: string[];
   process: LabelStep[];
   validity?: string;
-  support: string[];
-  related: string[];
   sources: LabelSource[];
 };
 

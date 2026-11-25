@@ -8,6 +8,7 @@ export type NavLink = {
   label: string;
   href: string;
   desc?: string;
+  icon?: string;
 };
 
 export type NavGroup = {
@@ -202,7 +203,15 @@ export default function SiteNav({ brand, menus, cta }: Props) {
                           <ul>
                             {group.links.map((link) => (
                               <li key={link.href}>
-                                <NavAnchor link={link} className="nav-link" onNavigate={closeAll}>
+                                <NavAnchor
+                                  link={link}
+                                  className={link.icon ? "nav-link has-icon" : "nav-link"}
+                                  onNavigate={closeAll}
+                                >
+                                  {link.icon ? (
+                                    // eslint-disable-next-line @next/next/no-img-element
+                                    <img className="nav-link-icon" src={link.icon} alt="" />
+                                  ) : null}
                                   <span>{link.label}</span>
                                   {link.desc ? <small>{link.desc}</small> : null}
                                 </NavAnchor>

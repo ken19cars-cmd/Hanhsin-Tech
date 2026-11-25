@@ -90,42 +90,15 @@ export function LabelCatalog({ families }: { families: LabelFamily[] }) {
             <h3>{family.title}</h3>
             <p>{family.desc}</p>
           </header>
-          <div className="label-grid">
+          <div className="label-tiles">
             {family.items.map((item) => (
-              <article key={item.id} id={item.id} className="label-card">
-                <div className="label-head">
-                  <LabelMark item={item} />
-                  <div>
-                    <h4>
-                      <Link href={`/labels/${item.id}`}>{item.name}</Link>
-                    </h4>
-                    <p className="label-code">{item.code}</p>
-                  </div>
-                </div>
-                <dl>
-                  <div>
-                    <dt>主管／發證</dt>
-                    <dd>{item.org}</dd>
-                  </div>
-                  <div>
-                    <dt>評估重點</dt>
-                    <dd>{item.focus}</dd>
-                  </div>
-                  {item.levels ? (
-                    <div>
-                      <dt>等級</dt>
-                      <dd>{item.levels}</dd>
-                    </div>
-                  ) : null}
-                  <div>
-                    <dt>適合</dt>
-                    <dd>{item.fit}</dd>
-                  </div>
-                </dl>
-                <Link className="label-more" href={`/labels/${item.id}`}>
-                  查看完整介紹
-                </Link>
-              </article>
+              <Link key={item.id} id={item.id} className="label-tile" href={`/labels/${item.id}`}>
+                <span className="label-tile-mark">
+                  <LabelMark item={item} className="label-tile-logo" />
+                </span>
+                <strong>{item.name}</strong>
+                <small>{item.brief}</small>
+              </Link>
             ))}
           </div>
         </section>

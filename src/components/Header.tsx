@@ -28,35 +28,22 @@ const menus: NavMenu[] = [
     label: "永續標章",
     href: "/labels",
     layout: "labels",
-    intro: "國內外永續標章的目的、評估內容、等級與申請流程，每一項都有獨立的介紹頁。",
     groups: [
       ...labelFamilies.map((family, index) => ({
         title: family.title,
         href: `/labels#label-family-${index + 1}`,
         links: family.items.map((item) => ({
           label: item.name,
-          desc: item.brief,
+          icon: item.logo,
           href: labelHref(item.id),
         })),
       })),
       {
         title: "相關服務",
         links: [
-          {
-            label: "綠建築規劃與設計",
-            desc: "設計階段試算指標得分與門檻差距",
-            href: moduleHref("green", "設計參數與指標試算"),
-          },
-          {
-            label: "碳盤查服務",
-            desc: "ISO 14064-1 範疇一、二、三盤查",
-            href: moduleHref("esg", "溫室氣體盤查"),
-          },
-          {
-            label: "永續低碳 ESG 全方位服務",
-            desc: "指標資料鏈、揭露框架與確信準備",
-            href: "/services/esg",
-          },
+          { label: "綠建築規劃與設計", href: moduleHref("green", "設計參數與指標試算") },
+          { label: "碳盤查服務", href: moduleHref("esg", "溫室氣體盤查") },
+          { label: "永續低碳 ESG 全方位服務", href: "/services/esg" },
         ],
       },
     ],
