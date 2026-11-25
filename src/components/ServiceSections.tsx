@@ -71,7 +71,7 @@ export function LabelCatalog({ families }: { families: LabelFamily[] }) {
           </header>
           <div className="label-grid">
             {family.items.map((item) => (
-              <article key={item.name} className="label-card">
+              <article key={item.id} id={item.id} className="label-card">
                 <div className="label-head">
                   {item.logo ? (
                     // eslint-disable-next-line @next/next/no-img-element

@@ -1,7 +1,10 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import SiteNav, { type NavMenu } from "./SiteNav";
-import { company, moduleHref, serviceShortLabels, services } from "@/lib/site";
+import { company, getService, moduleHref, serviceShortLabels, services } from "@/lib/site";
+
+const labelFamilies = getService("green")?.catalog ?? [];
+const labelCount = labelFamilies.reduce((sum, family) => sum + family.items.length, 0);
 
 const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(company.address)}`;
 
@@ -23,67 +26,43 @@ const menus: NavMenu[] = [
     footer: { label: "五大系統應用總覽", href: "/services" },
   },
   {
-    id: "scenarios",
-    label: "應用情境",
-    href: "/services",
-    layout: "wide",
-    intro: "依您目前要處理的工作，直接看對應的系統模組。",
+    id: "labels",
+    label: "建築標章",
+    href: "/labels",
+    layout: "labels",
+    intro: "國內外建築標章與評級的目的與評估重點，點選可查看完整說明。",
     groups: [
+      ...labelFamilies.slice(0, 2).map((family, index) => ({
+        title: family.title,
+        href: `/labels#label-family-${index + 1}`,
+        links: family.items.map((item) => ({
+          label: item.name,
+          desc: item.brief,
+          href: `/labels#${item.id}`,
+        })),
+      })),
       {
+        title: "相關服務",
         links: [
           {
-            label: "工程履約與督導",
-            desc: "公文、送審、會議決議與缺失追蹤",
-            href: moduleHref("pmis", "公文與送審文件管理"),
+            label: "綠建築規劃與設計",
+            desc: "設計階段試算指標得分與門檻差距",
+            href: moduleHref("green", "設計參數與指標試算"),
           },
           {
-            label: "進度落後與付款預測",
-            desc: "S 曲線、估驗計價與付款節點",
-            href: moduleHref("pmis", "估驗計價與付款節點"),
-          },
-          {
-            label: "面積清冊與共有分攤",
-            desc: "戶別面積、共專範圍與產權清冊",
-            href: moduleHref("drawings", "地政作業輔助"),
-          },
-          {
-            label: "建材蘊含碳評估",
-            desc: "BIM 構件數量與減碳方案比較",
-            href: moduleHref("drawings", "BIM 應用"),
-          },
-          {
-            label: "國內外建築標章選擇",
-            desc: "21 種標章與評級，依需求判斷適用組合",
-            href: "/services/green#catalog",
-          },
-          {
-            label: "標章等級與容積獎勵評估",
-            desc: "依目標等級找出缺口與可行調整",
-            href: moduleHref("green", "準備度與缺口分析"),
-          },
-          {
-            label: "溫室氣體盤查與永續報告",
-            desc: "ISO 14064-1 盤查與揭露框架對應",
+            label: "碳盤查服務",
+            desc: "ISO 14064-1 範疇一、二、三盤查",
             href: moduleHref("esg", "溫室氣體盤查"),
           },
           {
-            label: "開發財務與資產評價",
-            desc: "開發財務模型與敏感性分析",
-            href: moduleHref("esg", "不動產分析與資產評價"),
-          },
-          {
-            label: "權屬清查與謄本解析",
-            desc: "批次調閱土地建物謄本，彙整持分與他項權利",
-            href: moduleHref("gis", "土地／建物謄本解析"),
-          },
-          {
-            label: "基地調查與選地",
-            desc: "地價、分區、行情與環境限制一次彙整",
-            href: moduleHref("gis", "基地資料彙整與篩選"),
+            label: "永續低碳 ESG 全方位服務",
+            desc: "指標資料鏈、揭露框架與確信準備",
+            href: "/services/esg",
           },
         ],
       },
     ],
+    footer: { label: `國內外 ${labelCount} 種建築標章與評級總覽`, href: "/labels" },
   },
   {
     id: "support",

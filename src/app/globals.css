@@ -193,7 +193,8 @@ p {
   position: relative;
 }
 
-.nav-item.nav-mega {
+.nav-item.nav-mega,
+.nav-item.nav-labels {
   position: static;
 }
 
@@ -283,7 +284,8 @@ p {
   transition-delay: 0s;
 }
 
-.nav-mega .nav-panel {
+.nav-mega .nav-panel,
+.nav-labels .nav-panel {
   top: calc(100% - 0.2rem);
   left: 0;
   right: 0;
@@ -321,6 +323,11 @@ p {
 
 .nav-split .nav-groups {
   grid-template-columns: repeat(2, minmax(10rem, 1fr));
+}
+
+.nav-labels .nav-groups {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem 1.4rem;
 }
 
 .nav-wide .nav-panel {
@@ -622,9 +629,14 @@ a.nav-group-title:hover {
   }
 
   .nav-mega .nav-groups,
+  .nav-labels .nav-groups,
   .nav-split .nav-groups,
   .nav-wide .nav-group ul {
     grid-template-columns: 1fr;
+  }
+
+  .nav-labels .nav-link small {
+    display: none;
   }
 
   .nav-mega .nav-groups {
@@ -2576,6 +2588,74 @@ a.nav-group-title:hover {
   color: #7b8d98;
   font-size: 0.78rem;
   line-height: 1.55;
+}
+
+.label-card {
+  scroll-margin-top: 5rem;
+}
+
+.label-card:target {
+  border-color: var(--brand-400);
+  box-shadow: 0 0 0 3px rgba(54, 169, 218, 0.25), 0 8px 22px rgba(10, 63, 99, 0.08);
+}
+
+.label-picks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.label-picks article {
+  padding: 1.1rem 1.15rem 1.2rem;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.label-picks h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.02rem;
+  color: var(--brand-700);
+}
+
+.label-picks p {
+  margin: 0 0 0.8rem;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.label-pick-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.label-pick-chips a {
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: var(--brand-50);
+  border: 1px solid var(--brand-200);
+  color: var(--brand-700);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.label-pick-chips a:hover {
+  background: var(--brand-100);
+  border-color: var(--brand-400);
+}
+
+@media (max-width: 980px) {
+  .label-picks {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .label-picks {
+    grid-template-columns: 1fr;
+  }
 }
 
 .label-index {

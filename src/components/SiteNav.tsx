@@ -22,7 +22,7 @@ export type NavMenu = {
   label: string;
   href: string;
   /** mega: full-width columns; split: two titled columns; list: single column; wide: two-column list */
-  layout: "mega" | "split" | "list" | "wide";
+  layout: "mega" | "labels" | "split" | "list" | "wide";
   intro?: string;
   groups: NavGroup[];
   footer?: NavLink;

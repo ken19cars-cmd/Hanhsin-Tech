@@ -30,7 +30,11 @@ export type Faq = {
 
 /** One certification or rating system covered by a service. */
 export type LabelItem = {
+  /** Anchor id used for deep links from navigation. */
+  id: string;
   name: string;
+  /** One-line assessment focus for menus. */
+  brief: string;
   code: string;
   org: string;
   focus: string;
