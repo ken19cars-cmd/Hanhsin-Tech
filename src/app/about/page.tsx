@@ -40,7 +40,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section about-page">
+      <section id="position" className="section about-page">
         <div className="shell about-block">
           <div className="section-head">
             <p className="kicker">公司定位</p>
@@ -59,7 +59,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section about-page">
+      <section id="domains" className="section about-page">
         <div className="shell">
           <div className="section-head">
             <p className="kicker">核心領域</p>
@@ -72,7 +72,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section about-page">
+      <section id="advantages" className="section about-page">
         <div className="shell about-block">
           <div className="section-head">
             <p className="kicker">系統優勢</p>

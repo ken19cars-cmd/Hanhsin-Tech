@@ -41,6 +41,22 @@ export function getService(slug: string) {
   return services.find((service) => service.slug === slug);
 }
 
+/** Compact service names for navigation and overview diagrams. */
+export const serviceShortLabels: Record<string, string> = {
+  pmis: "PMIS 工程管理",
+  drawings: "平面圖說辨識",
+  green: "標章指標評估",
+  esg: "ESG／資產評價",
+  gis: "GIS 地理加值",
+};
+
+/** Deep link to a module section on its service page; falls back to the page itself. */
+export function moduleHref(slug: string, moduleTitle: string) {
+  const service = getService(slug);
+  const index = service?.modules.findIndex((module) => module.title === moduleTitle) ?? -1;
+  return index >= 0 ? `/services/${slug}#cap-${index + 1}` : `/services/${slug}`;
+}
+
 export function mediaMotion(src: string) {
   return motionFor(src);
 }
