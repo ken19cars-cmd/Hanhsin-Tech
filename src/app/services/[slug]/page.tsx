@@ -3,10 +3,19 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import MediaLightbox from "@/components/MediaLightbox";
 import OpenableMedia from "@/components/OpenableMedia";
+import PptFlow from "@/components/PptFlow";
 import { getService, mediaMotion, services } from "@/lib/site";
 
 type Props = {
   params: Promise<{ slug: string }>;
+};
+
+const moduleIcons: Record<string, string[]> = {
+  pmis: ["modules", "ai", "gantt", "public"],
+  drawings: ["space", "bim", "land", "version"],
+  green: ["switch", "checklist", "calc", "gap"],
+  esg: ["data", "metrics", "finance", "report"],
+  gis: ["map", "filter", "layers", "sync"],
 };
 
 export function generateStaticParams() {
@@ -27,6 +36,8 @@ export default async function ServicePage({ params }: Props) {
   const { slug } = await params;
   const service = getService(slug);
   if (!service) notFound();
+
+  const icons = moduleIcons[service.slug] ?? [];
 
   return (
     <section className="section service-detail">
@@ -61,15 +72,14 @@ export default async function ServicePage({ params }: Props) {
             <p className="kicker">功能重點</p>
             <h2>這個系統幫您處理什麼</h2>
           </div>
-          <div className="feature-flow">
-            {service.modules.map((module, index) => (
-              <article key={module.title} className="feature-flow-card">
-                <span className="feature-flow-num">{String(index + 1).padStart(2, "0")}</span>
-                <h3>{module.title}</h3>
-                <p>{module.text}</p>
-              </article>
-            ))}
-          </div>
+          <PptFlow
+            aria-label={`${service.title}功能流程`}
+            items={service.modules.map((module, index) => ({
+              title: module.title,
+              text: module.text,
+              icon: icons[index] ?? "modules",
+            }))}
+          />
         </div>
 
         <div className="detail-block">

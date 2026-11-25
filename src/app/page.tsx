@@ -1,8 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import MediaLightbox from "@/components/MediaLightbox";
+import PptFlow from "@/components/PptFlow";
+import { serviceIcons } from "@/components/PptIcons";
 import ServiceOrbit from "@/components/ServiceOrbit";
 import { company, mediaMotion, services } from "@/lib/site";
+
+const overviewLabels: Record<string, string> = {
+  pmis: "PMIS 工程管理",
+  drawings: "平面圖說辨識",
+  green: "標章指標評估",
+  esg: "ESG／資產評價",
+  gis: "GIS 地理加值",
+};
 
 export default function HomePage() {
   return (
@@ -40,8 +50,8 @@ export default function HomePage() {
       </section>
 
       <section className="section">
-        <div className="shell intro-split">
-          <div className="intro-block">
+        <div className="shell">
+          <div className="intro-block intro-block-wide">
             <p className="kicker">關於翰欣</p>
             <h2>系統把分散資料收成可決策底圖</h2>
             <div className="prose-block">
@@ -51,16 +61,16 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-          <aside className="intro-signal" aria-label="服務涵蓋">
-            <div className="intro-signal-ring" aria-hidden="true" />
-            <ul>
-              <li>PMIS 工程管理</li>
-              <li>平面圖說辨識</li>
-              <li>標章指標評估</li>
-              <li>ESG／資產評價</li>
-              <li>GIS 地理加值</li>
-            </ul>
-          </aside>
+          <PptFlow
+            compact
+            aria-label="五大系統應用概覽"
+            className="intro-ppt"
+            items={services.map((service) => ({
+              title: overviewLabels[service.slug] ?? service.title,
+              icon: serviceIcons[service.slug] ?? "modules",
+              href: `/services/${service.slug}`,
+            }))}
+          />
         </div>
       </section>
 
