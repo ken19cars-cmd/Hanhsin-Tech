@@ -201,6 +201,37 @@ export default function PptIcon({ name, className }: IconProps) {
           <path d="M14 32v-8h8" />
         </svg>
       );
+    case "users":
+      return (
+        <svg {...common}>
+          <circle cx="18" cy="18" r="5" />
+          <circle cx="32" cy="20" r="4" />
+          <path d="M9 36c1-6 5-9 9-9s8 3 9 9" />
+          <path d="M27 35c1-4 3-6 6-6s5 2 6 6" />
+        </svg>
+      );
+    case "meeting":
+      return (
+        <svg {...common}>
+          <rect x="10" y="12" width="28" height="18" rx="2" />
+          <path d="M16 19h16M16 24h10" />
+          <path d="M18 30l-4 6M30 30l4 6" />
+        </svg>
+      );
+    case "curve":
+      return (
+        <svg {...common}>
+          <path d="M10 38h28M10 38V10" />
+          <path d="M12 36c6 0 8-2 11-10s6-12 13-13" />
+        </svg>
+      );
+    case "co2":
+      return (
+        <svg {...common}>
+          <path d="M14 32a8 8 0 01-1-16 10 10 0 0119-2 7 7 0 012 14H14z" />
+          <path d="M19 24h3M27 22v4" />
+        </svg>
+      );
     default:
       return (
         <svg {...common}>

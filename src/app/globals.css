@@ -1603,6 +1603,570 @@ p {
   font-size: 0.94rem;
 }
 
+/* Service detail: guide-style sections */
+.svc-subnav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  margin-top: 1.6rem;
+  background: rgba(255, 255, 255, 0.97);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 6px 18px rgba(10, 127, 163, 0.06);
+}
+
+.svc-subnav-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 3.2rem;
+}
+
+.svc-subnav-links {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.svc-subnav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.svc-subnav-links a {
+  flex: 0 0 auto;
+  padding: 0.95rem 1rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.svc-subnav-links a:hover {
+  color: var(--blue-600);
+  border-bottom-color: var(--blue-500);
+}
+
+.svc-subnav-cta {
+  flex: 0 0 auto;
+  padding: 0.5rem 1rem;
+  font-size: 0.88rem;
+}
+
+.svc-sec {
+  scroll-margin-top: 3.6rem;
+  padding: 3.4rem 0 2.6rem;
+}
+
+.svc-alt {
+  background: rgba(255, 255, 255, 0.62);
+  border-top: 1px solid rgba(14, 165, 201, 0.1);
+  border-bottom: 1px solid rgba(14, 165, 201, 0.1);
+}
+
+.svc-head {
+  max-width: 52rem;
+  margin-bottom: 1.8rem;
+}
+
+.svc-head h2 {
+  margin: 0.35rem 0 0.7rem;
+  font-size: clamp(1.45rem, 2.6vw, 2rem);
+  line-height: 1.3;
+}
+
+.svc-head .section-desc {
+  margin: 0;
+  max-width: none;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.svc-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  color: var(--blue-600);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.svc-num {
+  font-family: var(--font-display), "Sora", sans-serif;
+  font-size: 2.1rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--blue-500);
+  letter-spacing: 0;
+}
+
+.svc-rule {
+  width: 2.4rem;
+  height: 1px;
+  background: var(--blue-400);
+}
+
+.svc-subhead {
+  margin: 2.2rem 0 0.9rem;
+  font-size: 1.08rem;
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.75rem;
+}
+
+.audience-grid article {
+  padding: 0.95rem 1.05rem;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.audience-grid h4 {
+  margin: 0 0 0.35rem;
+  font-size: 0.98rem;
+  color: var(--blue-600);
+}
+
+.audience-grid p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.cap-list {
+  display: grid;
+  gap: 1.1rem;
+  margin-top: 2rem;
+}
+
+.cap {
+  scroll-margin-top: 4.4rem;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--ppt, var(--blue-500));
+  box-shadow: 0 10px 26px rgba(10, 127, 163, 0.06);
+  overflow: hidden;
+}
+
+.cap-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+  padding: 1.2rem 1.35rem 1rem;
+  border-bottom: 1px solid rgba(14, 165, 201, 0.12);
+}
+
+.cap-node {
+  display: grid;
+  place-items: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  background: var(--ppt, var(--blue-500));
+  color: #fff;
+}
+
+.cap-step {
+  font-family: var(--font-display), "Sora", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--ppt, var(--blue-600));
+}
+
+.cap-head h3 {
+  margin: 0.1rem 0 0.2rem;
+  font-size: 1.22rem;
+}
+
+.cap-head p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.cap-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+}
+
+.cap-main {
+  padding: 1.15rem 1.35rem 1.35rem;
+}
+
+.cap h4 {
+  margin: 0 0 0.45rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--ppt, var(--blue-600));
+}
+
+.cap-main > p {
+  margin: 0 0 1.15rem;
+  color: var(--ink);
+  line-height: 1.85;
+  font-size: 0.97rem;
+}
+
+.cap-how {
+  list-style: none;
+  counter-reset: how;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.cap-how li {
+  counter-increment: how;
+  position: relative;
+  padding-left: 2.1rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  font-size: 0.94rem;
+}
+
+.cap-how li::before {
+  content: counter(how);
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  display: grid;
+  place-items: center;
+  width: 1.45rem;
+  height: 1.45rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--ppt, var(--blue-500));
+  color: var(--ppt, var(--blue-600));
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.cap-side {
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+  padding: 1.15rem 1.25rem 1.35rem;
+  background: #f6fafc;
+  border-left: 1px solid rgba(14, 165, 201, 0.12);
+}
+
+.cap-box ul {
+  margin: 0;
+  padding-left: 1.05rem;
+  display: grid;
+  gap: 0.35rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.cap-output {
+  padding: 0.8rem 0.9rem;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px dashed color-mix(in srgb, var(--ppt, var(--blue-500)) 55%, transparent);
+}
+
+.cap-output p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.pipeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 0.3rem;
+}
+
+.pipe-stage {
+  min-width: 0;
+}
+
+.pipe-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 3.3rem;
+  padding: 0.6rem 1.6rem 0.6rem 1.5rem;
+  background: var(--ppt, var(--blue-500));
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.98rem;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%, 14px 50%);
+}
+
+.pipe-stage:first-child .pipe-head {
+  padding-left: 1rem;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+  border-radius: 8px 0 0 8px;
+}
+
+.pipe-head span {
+  font-family: var(--font-display), "Sora", sans-serif;
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+
+.pipe-stage ul {
+  margin: 0.8rem 0.4rem 0 0.6rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.pipe-stage ul li {
+  padding: 0.5rem 0.65rem;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--ppt, var(--blue-500));
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.arch-notes {
+  list-style: none;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.arch-notes li {
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(14, 165, 201, 0.08);
+  border: 1px solid rgba(14, 165, 201, 0.22);
+  color: var(--blue-600);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.workflow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.workflow::before {
+  content: "";
+  position: absolute;
+  left: 1.45rem;
+  top: 1.4rem;
+  bottom: 1.4rem;
+  width: 2px;
+  background: linear-gradient(180deg, var(--blue-300), var(--blue-600));
+  opacity: 0.45;
+}
+
+.workflow-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.9rem minmax(0, 1fr) minmax(12rem, 0.6fr);
+  gap: 1.1rem;
+  align-items: start;
+}
+
+.workflow-num {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--blue-500);
+  color: var(--blue-600);
+  font-family: var(--font-display), "Sora", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.workflow-body {
+  padding: 0.85rem 1.1rem;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.workflow-body h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+}
+
+.workflow-body ul {
+  margin: 0;
+  padding-left: 1.05rem;
+  list-style: disc;
+  display: grid;
+  gap: 0.25rem;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.workflow-output {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: rgba(14, 165, 201, 0.07);
+  border: 1px solid rgba(14, 165, 201, 0.2);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.workflow-output span {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--blue-600);
+}
+
+.faq-list {
+  display: grid;
+  gap: 0.6rem;
+  max-width: 56rem;
+}
+
+.faq-item {
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.faq-item summary {
+  position: relative;
+  padding: 1rem 3rem 1rem 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.15rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--blue-500);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 1.15rem 1.1rem;
+  color: var(--ink-soft);
+  line-height: 1.85;
+}
+
+@media (max-width: 980px) {
+  .cap-body {
+    grid-template-columns: 1fr;
+  }
+
+  .cap-side {
+    border-left: 0;
+    border-top: 1px solid rgba(14, 165, 201, 0.12);
+  }
+
+  .pipeline {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .pipe-head,
+  .pipe-stage:first-child .pipe-head {
+    padding-left: 1rem;
+    clip-path: none;
+    border-radius: 8px;
+  }
+
+  .pipe-stage ul {
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    margin: 0.55rem 0 0;
+  }
+
+  .workflow-step {
+    grid-template-columns: 2.9rem minmax(0, 1fr);
+  }
+
+  .workflow-output {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 700px) {
+  .svc-subnav-cta {
+    display: none;
+  }
+
+  .svc-sec {
+    padding: 2.4rem 0 1.8rem;
+  }
+
+  .cap-head {
+    padding: 1rem;
+  }
+
+  .cap-main,
+  .cap-side {
+    padding: 1rem;
+  }
+
+  .workflow::before {
+    left: 1.2rem;
+  }
+
+  .workflow-step {
+    grid-template-columns: 2.4rem minmax(0, 1fr);
+    gap: 0.7rem;
+  }
+
+  .workflow-num {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 0.8rem;
+  }
+}
+
 .lightbox {
   position: fixed;
   inset: 0;
