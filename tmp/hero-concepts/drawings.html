@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><link rel="stylesheet" href="concept.css">
+<style>
+.plan { position: absolute; left: 0; top: 38px; right: 0; bottom: 52px; background: #fbfdfe; }
+.steps { position: absolute; left: 0; right: 0; bottom: 0; height: 52px; display: flex; align-items: center; gap: 8px; padding: 0 16px; border-top: 1px solid #e3eef5; background: #f6fafd; }
+.steps .chip.on { background: #0e8fc8; color: #fff; border-color: #0e8fc8; }
+.steps i { color: #9ab3c4; font-style: normal; }
+table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+th, td { text-align: left; padding: 5px 4px; border-bottom: 1px solid #edf3f7; }
+th { color: #6a7f90; font-weight: 600; }
+td.n { text-align: right; font-weight: 700; color: #0a6fa1; }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+</style></head>
+<body>
+<div class="win" style="left:48px; top:84px; width:700px; height:600px;">
+  <div class="bar"><i></i><i></i><i></i><span>平面圖說辨識｜空間辨識系統</span><em>A 棟 8F 平面圖 v3.dwg</em></div>
+  <div class="plan">
+    <svg width="700" height="510" viewBox="0 0 700 510">
+      <g stroke="#9fb8c9" stroke-width="1">
+        <line x1="60" y1="30" x2="640" y2="30" stroke-dasharray="2 4"/>
+        <text x="330" y="24" font-size="10" fill="#8aa0b0">18,400</text>
+      </g>
+      <g stroke="#1f3b52" stroke-width="7" fill="none">
+        <rect x="60" y="50" width="580" height="420"/>
+        <line x1="300" y1="50" x2="300" y2="300"/>
+        <line x1="60" y1="300" x2="420" y2="300"/>
+        <line x1="420" y1="50" x2="420" y2="470"/>
+        <line x1="420" y1="220" x2="640" y2="220"/>
+        <line x1="180" y1="300" x2="180" y2="470"/>
+      </g>
+      <g opacity=".85">
+        <rect x="64" y="54" width="232" height="242" fill="rgba(14,143,200,.22)"/>
+        <rect x="304" y="54" width="112" height="242" fill="rgba(15,143,159,.22)"/>
+        <rect x="424" y="54" width="212" height="162" fill="rgba(58,114,208,.20)"/>
+        <rect x="424" y="224" width="212" height="242" fill="rgba(54,169,218,.22)"/>
+        <rect x="64" y="304" width="112" height="162" fill="rgba(11,63,99,.14)"/>
+        <rect x="184" y="304" width="232" height="162" fill="rgba(14,143,200,.12)"/>
+      </g>
+      <g stroke="#0e8fc8" stroke-width="2" stroke-dasharray="6 4" fill="none">
+        <rect x="64" y="54" width="232" height="242"/>
+      </g>
+      <g fill="#fff" stroke="#1f3b52" stroke-width="2">
+        <rect x="250" y="296" width="40" height="8"/><rect x="440" y="216" width="40" height="8"/><rect x="296" y="120" width="8" height="40"/>
+      </g>
+      <g font-size="13" font-weight="700" fill="#0b3f63">
+        <text x="140" y="170">客餐廳</text><text x="330" y="170">廚房</text><text x="500" y="135">主臥室</text>
+        <text x="505" y="345">次臥室</text><text x="98" y="385">衛浴</text><text x="275" y="385">陽台</text>
+      </g>
+      <g font-size="11" fill="#0a6fa1">
+        <text x="138" y="190">32.4 ㎡</text><text x="328" y="190">11.6 ㎡</text><text x="500" y="155">15.8 ㎡</text>
+        <text x="505" y="365">12.2 ㎡</text><text x="96" y="405">5.1 ㎡</text><text x="272" y="405">6.3 ㎡</text>
+      </g>
+      <g>
+        <rect x="150" y="214" width="96" height="22" rx="6" fill="#0e8fc8"/>
+        <text x="160" y="229" font-size="11" fill="#fff" font-weight="700">已辨識 98%</text>
+      </g>
+    </svg>
+  </div>
+  <div class="steps">
+    <span class="chip">DWG／PDF</span><i>→</i><span class="chip on">物件辨識</span><i>→</i><span class="chip">空間清冊</span><i>→</i><span class="chip">BIM 數量</span><i>→</i><span class="chip">蘊含碳</span>
+  </div>
+</div>
+
+<div class="card" style="left:790px; top:60px; width:360px;">
+  <h4><b>01</b>空間清冊（8F-A 戶）</h4>
+  <table>
+    <tr><th>空間</th><th>類別</th><th style="text-align:right">面積</th></tr>
+    <tr><td><span class="sw" style="background:#7fc6e6"></span>客餐廳</td><td>主建物</td><td class="n">32.4</td></tr>
+    <tr><td><span class="sw" style="background:#9bd0d4"></span>廚房</td><td>主建物</td><td class="n">11.6</td></tr>
+    <tr><td><span class="sw" style="background:#a9bce9"></span>主臥室</td><td>主建物</td><td class="n">15.8</td></tr>
+    <tr><td><span class="sw" style="background:#a6d6ee"></span>陽台</td><td>附屬建物</td><td class="n">6.3</td></tr>
+    <tr><td colspan="2"><b>專有合計</b></td><td class="n">83.4 ㎡</td></tr>
+  </table>
+</div>
+
+<div class="card" style="left:830px; top:340px; width:320px;">
+  <h4><b>02</b>BIM 數量與蘊含碳</h4>
+  <div style="display:flex;gap:14px;align-items:center">
+    <svg width="110" height="100" viewBox="0 0 110 100">
+      <g stroke="#0b3f63" stroke-width="1.2">
+        <polygon points="55,10 100,32 55,54 10,32" fill="#bfe0f1"/>
+        <polygon points="10,32 55,54 55,92 10,70" fill="#7fc6e6"/>
+        <polygon points="100,32 55,54 55,92 100,70" fill="#36a9da"/>
+        <line x1="10" y1="51" x2="55" y2="73" opacity=".5"/><line x1="100" y1="51" x2="55" y2="73" opacity=".5"/>
+      </g>
+    </svg>
+    <div>
+      <div class="kpi">412</div>
+      <p class="muted">kgCO₂e／㎡（A1–A5）</p>
+      <p class="muted" style="margin-top:4px">混凝土 2,860 m³｜鋼筋 412 t</p>
+    </div>
+  </div>
+  <div style="margin-top:10px">
+    <div class="row"><span>方案 B：高爐水泥</span><span class="tag t-green">-14%</span></div>
+  </div>
+</div>
+
+<div class="card" style="left:800px; top:575px; width:350px;">
+  <h4><b>03</b>共有部分分攤</h4>
+  <div class="row"><span>大公（梯廳、機房）</span><b>12.6 ㎡</b></div>
+  <div class="row"><span>分攤比例加總</span><span class="tag t-green">100%</span></div>
+</div>
+
+<div class="link" style="left:748px; top:140px; width:42px;"></div><div class="dot" style="left:743px; top:135px;"></div>
+<div class="link" style="left:748px; top:420px; width:82px;"></div><div class="dot" style="left:743px; top:415px;"></div>
+<div class="link" style="left:748px; top:630px; width:52px;"></div><div class="dot" style="left:743px; top:625px;"></div>
+<div class="stamp">示意畫面｜平面圖說辨識分析</div>
+</body></html>

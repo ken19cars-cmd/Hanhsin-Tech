@@ -1,33 +1,29 @@
-import Image from "next/image";
 import Link from "next/link";
+import HeroCarousel from "@/components/HeroCarousel";
 import MediaLightbox from "@/components/MediaLightbox";
 import PptFlow from "@/components/PptFlow";
 import { serviceIcons } from "@/components/PptIcons";
 import ServiceOrbit from "@/components/ServiceOrbit";
 import { company, mediaMotion, serviceShortLabels, services } from "@/lib/site";
 
+const heroTabs: Record<string, [string, string]> = {
+  pmis: ["PMIS 工程管理", "PMIS"],
+  drawings: ["平面圖說辨識", "圖說"],
+  green: ["建築標章評估", "標章"],
+  esg: ["企業 ESG", "ESG"],
+  gis: ["GIS 地理資訊", "GIS"],
+};
+
 export default function HomePage() {
   return (
     <>
-      <section className="hero hero-home">
-        <div className="hero-media" aria-hidden="true">
-          <Image
-            src="/hero.jpg"
-            alt=""
-            fill
-            priority
-            className="hero-img"
-            sizes="100vw"
-          />
-          <div className="hero-veil" />
-          <div className="hero-grid" aria-hidden="true" />
-        </div>
-        <div className="shell hero-inner">
+      <section className="home-hero">
+        <div className="shell home-hero-inner">
           <div className="hero-copy">
             <p className="eyebrow">{company.nameZh}</p>
             <h1>不動產開發與永續管理的應用系統</h1>
             <p className="lede">
-              從地政資料介接、平面圖說辨識、工程履約管理，到綠建築標章與企業 ESG 揭露，以自行開發的系統處理不動產開發各階段的資料工作，每個數字都能回溯來源。
+              從地政資料介接、平面圖說辨識、工程履約管理，到建築標章評估與企業 ESG 揭露，以自行開發的系統處理不動產開發各階段的資料工作，每個數字都能回溯來源。
             </p>
             <div className="hero-actions">
               <Link className="btn btn-primary" href="/services">
@@ -38,6 +34,18 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
+          <HeroCarousel
+            slides={services.map((service) => ({
+              src: `/hero/concept-${service.slug}.webp`,
+              alt: `${service.title}系統概念示意圖`,
+              index: service.index,
+              title: service.title,
+              text: service.short,
+              tab: heroTabs[service.slug]?.[0] ?? service.title,
+              tabShort: heroTabs[service.slug]?.[1] ?? service.index,
+              href: `/services/${service.slug}`,
+            }))}
+          />
         </div>
       </section>
 

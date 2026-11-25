@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><link rel="stylesheet" href="concept.css">
+<style>
+.side { position: absolute; left: 0; top: 38px; bottom: 0; width: 150px; background: #f4f9fc; border-right: 1px solid #e3eef5; padding: 14px 10px; }
+.side p { padding: 8px 10px; border-radius: 8px; font-size: 12px; font-weight: 600; color: #3d566b; margin-bottom: 4px; }
+.side p.on { background: #e1f0f8; color: #0a6fa1; }
+.main { position: absolute; left: 150px; top: 38px; right: 0; bottom: 0; padding: 16px 18px; }
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 14px; }
+.kpis div { padding: 10px 12px; border-radius: 10px; background: #f6fafd; border: 1px solid #e3eef5; }
+.kpis b { display: block; font-size: 20px; color: #0a6fa1; }
+.panel { border: 1px solid #e3eef5; border-radius: 10px; padding: 10px 12px; margin-bottom: 12px; }
+.panel h5 { font-size: 12px; margin-bottom: 6px; color: #0b3f63; }
+.gantt div { display: grid; grid-template-columns: 90px 1fr; align-items: center; gap: 8px; font-size: 11px; margin: 5px 0; color: #3d566b; }
+.gantt span { position: relative; height: 10px; background: #eef5fa; border-radius: 4px; }
+.gantt span i, .gantt span u { position: absolute; top: 0; height: 10px; border-radius: 4px; }
+.gantt span i { background: #bfe0f1; }
+.gantt span u { background: #0e8fc8; }
+</style></head>
+<body>
+<div class="win" style="left:48px; top:84px; width:760px; height:600px;">
+  <div class="bar"><i></i><i></i><i></i><span>PMIS｜營建工程管理</span><em>板橋文化段都更案</em></div>
+  <div class="side">
+    <p>總覽</p><p>公文與送審</p><p>會議列管</p><p>查核缺失</p><p class="on">進度 S 曲線</p><p>估驗計價</p><p>權限與稽核</p>
+  </div>
+  <div class="main">
+    <div class="kpis">
+      <div><span class="muted">預定進度</span><b>54%</b></div>
+      <div><span class="muted">實際進度</span><b>48%</b></div>
+      <div><span class="muted">差異</span><b style="color:#c0392b">-6%</b></div>
+      <div><span class="muted">要徑工項</span><b>7</b></div>
+    </div>
+    <div class="panel">
+      <h5>預定／實際 S 曲線</h5>
+      <svg width="570" height="200" viewBox="0 0 570 200">
+        <g stroke="#e8f0f6">
+          <line x1="30" y1="20" x2="560" y2="20"/><line x1="30" y1="65" x2="560" y2="65"/><line x1="30" y1="110" x2="560" y2="110"/><line x1="30" y1="155" x2="560" y2="155"/>
+        </g>
+        <line x1="30" y1="180" x2="560" y2="180" stroke="#c9dde9"/>
+        <path d="M30 178 C120 175 170 160 230 130 S340 60 400 40 S500 22 560 20" fill="none" stroke="#7fc6e6" stroke-width="3" stroke-dasharray="7 6"/>
+        <path d="M30 178 C120 176 170 165 230 142 S320 92 360 78" fill="none" stroke="#0e8fc8" stroke-width="4"/>
+        <circle cx="360" cy="78" r="6" fill="#0e8fc8"/>
+        <line x1="360" y1="20" x2="360" y2="180" stroke="#0b3f63" stroke-dasharray="3 4" opacity=".4"/>
+        <text x="368" y="74" font-size="11" fill="#0b3f63" font-weight="700">基準日 11/25</text>
+        <text x="420" y="36" font-size="11" fill="#5aa9cc">預定</text>
+        <text x="300" y="104" font-size="11" fill="#0a6fa1" font-weight="700">實際</text>
+        <g font-size="10" fill="#8aa0b0"><text x="30" y="196">2025.08</text><text x="270" y="196">2026.11</text><text x="510" y="196">2027.12</text></g>
+      </svg>
+    </div>
+    <div class="panel gantt">
+      <h5>要徑工項甘特</h5>
+      <div>地下結構<span><i style="left:2%;width:30%"></i><u style="left:2%;width:30%"></u></span></div>
+      <div>地上結構<span><i style="left:28%;width:34%"></i><u style="left:28%;width:24%"></u></span></div>
+      <div>機電管線<span><i style="left:40%;width:38%"></i><u style="left:40%;width:20%"></u></span></div>
+      <div>外牆帷幕<span><i style="left:62%;width:26%"></i><u style="left:62%;width:6%"></u></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="left:850px; top:64px; width:300px;">
+  <h4><b>01</b>今日待辦</h4>
+  <div class="row"><span>都發局來文：進度說明補件</span><span class="tag t-red">今日</span></div>
+  <div class="row"><span>結構圖說送審回覆</span><span class="tag t-amber">3 件</span></div>
+  <div class="row"><span>界面協調會決議列管</span><span class="tag t-blue">2 項</span></div>
+  <div class="row"><span>臨時用電缺失複查</span><span class="tag t-teal">明日</span></div>
+</div>
+
+<div class="card" style="left:880px; top:300px; width:270px;">
+  <h4><b>02</b>估驗計價　第 18 期</h4>
+  <div class="kpi">NT$ 3,240 萬</div>
+  <p class="muted" style="margin:6px 0 8px">累計估驗 46%｜保留款 5%</p>
+  <div class="prog"><i style="width:46%"></i></div>
+  <p class="muted" style="margin-top:8px">下期預估：2026.12.20</p>
+</div>
+
+<div class="card" style="left:840px; top:500px; width:310px;">
+  <h4><b>03</b>權限與稽核軌跡</h4>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px">
+    <span class="chip">主辦機關</span><span class="chip">PCM</span><span class="chip">監造</span><span class="chip">營造廠</span>
+  </div>
+  <div class="row"><span>本月操作日誌</span><b>1,284 筆</b></div>
+  <div class="row"><span>缺失結案率</span><b style="color:#1e8a4c">92%</b></div>
+</div>
+
+<div class="link" style="left:808px; top:150px; width:42px;"></div>
+<div class="dot" style="left:803px; top:145px;"></div>
+<div class="link" style="left:808px; top:380px; width:72px;"></div>
+<div class="dot" style="left:803px; top:375px;"></div>
+<div class="link" style="left:808px; top:590px; width:32px;"></div>
+<div class="dot" style="left:803px; top:585px;"></div>
+<div class="stamp">示意畫面｜PMIS 營建工程管理</div>
+</body></html>

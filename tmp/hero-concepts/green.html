@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><link rel="stylesheet" href="concept.css">
+<style>
+.main { position: absolute; left: 0; top: 38px; right: 0; bottom: 0; padding: 18px 22px; }
+.head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 16px; }
+.head h3 { font-size: 16px; color: #0b3f63; }
+.ind { display: grid; grid-template-columns: 110px 1fr 70px 70px; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #edf3f7; font-size: 12.5px; }
+.ind .track { position: relative; height: 12px; background: #eef5fa; border-radius: 6px; }
+.ind .track i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 6px; background: linear-gradient(90deg, #36a9da, #0e8fc8); }
+.ind .track u { position: absolute; top: -4px; bottom: -4px; width: 2px; background: #c0392b; }
+.ind b { text-align: right; color: #0a6fa1; }
+.total { display: flex; gap: 12px; margin-top: 16px; }
+.total div { flex: 1; padding: 12px 14px; border-radius: 12px; background: #f2f8fc; border: 1px solid #d6e9f4; }
+.total b { display: block; font-size: 22px; color: #0a6fa1; }
+.badges { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.badge { padding: 10px 8px; border-radius: 10px; border: 1px solid #d6e9f4; background: #f8fbfd; text-align: center; }
+.badge strong { display: block; font-size: 14px; color: #0b3f63; }
+.badge span { font-size: 10.5px; }
+</style></head>
+<body>
+<div class="win" style="left:48px; top:84px; width:720px; height:600px;">
+  <div class="bar"><i></i><i></i><i></i><span>建築標章評估｜指標試算工作台</span><em>綠建築 2026 年版・基本型</em></div>
+  <div class="main">
+    <div class="head"><h3>六大指標得分與門檻</h3><span class="muted">紅線為門檻／等級分界</span></div>
+    <div class="ind"><span>生物多樣性</span><span class="track"><i style="width:64%"></i></span><b>9 / 14</b><span class="tag t-blue">可加強</span></div>
+    <div class="ind"><span>基地保水</span><span class="track"><i style="width:67%"></i></span><b>6 / 9</b><span class="tag t-green">符合</span></div>
+    <div class="ind"><span>建築能效</span><span class="track"><i style="width:79%"></i><u style="left:74%"></u></span><b>27 / 34</b><span class="tag t-green">門檻 ✓</span></div>
+    <div class="ind"><span>低蘊含碳</span><span class="track"><i style="width:56%"></i></span><b>10 / 18</b><span class="tag t-amber">缺口</span></div>
+    <div class="ind"><span>室內環境</span><span class="track"><i style="width:60%"></i></span><b>9 / 15</b><span class="tag t-blue">可加強</span></div>
+    <div class="ind"><span>水資源</span><span class="track"><i style="width:70%"></i><u style="left:35%"></u></span><b>7 / 10</b><span class="tag t-green">門檻 ✓</span></div>
+    <div class="total">
+      <div><span class="muted">預估總分</span><b>68 分</b></div>
+      <div><span class="muted">可達等級</span><b>黃金級</b></div>
+      <div><span class="muted">距鑽石級</span><b style="color:#b4610c">3 分</b></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="left:810px; top:60px; width:340px;">
+  <h4><b>01</b>標章組合與狀態</h4>
+  <div class="badges">
+    <div class="badge"><strong>EEWH</strong><span class="tag t-blue">黃金級</span></div>
+    <div class="badge"><strong>BERS</strong><span class="tag t-green">1 級</span></div>
+    <div class="badge"><strong>LEBR</strong><span class="tag t-amber">試算中</span></div>
+    <div class="badge"><strong>智慧建築</strong><span class="tag t-blue">銀級</span></div>
+    <div class="badge"><strong>LEED</strong><span class="tag t-teal">Gold</span></div>
+    <div class="badge"><strong>WELL</strong><span class="tag t-teal">評估</span></div>
+  </div>
+</div>
+
+<div class="card" style="left:850px; top:330px; width:300px;">
+  <h4><b>02</b>可達等級</h4>
+  <div style="display:flex;align-items:center;gap:14px">
+    <svg width="100" height="100" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#e4eff6" stroke-width="12"/>
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#0e8fc8" stroke-width="12" stroke-dasharray="171 251" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+      <text x="50" y="56" text-anchor="middle" font-size="20" font-weight="800" fill="#0a6fa1">68</text>
+    </svg>
+    <div>
+      <p class="muted">2026 年版基本型</p>
+      <p style="font-weight:700;color:#0b3f63;margin-top:4px">黃金級 58–71 分</p>
+      <p class="muted" style="margin-top:4px">鑽石級需 71 分以上</p>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="left:810px; top:540px; width:340px;">
+  <h4><b>03</b>缺口與調整建議</h4>
+  <div class="row"><span>低蘊含碳：改用高爐水泥</span><span class="tag t-green">+3 分</span></div>
+  <div class="row"><span>生物多樣性：增加複層植栽</span><span class="tag t-green">+2 分</span></div>
+</div>
+
+<div class="link" style="left:768px; top:150px; width:42px;"></div><div class="dot" style="left:763px; top:145px;"></div>
+<div class="link" style="left:768px; top:410px; width:82px;"></div><div class="dot" style="left:763px; top:405px;"></div>
+<div class="link" style="left:768px; top:600px; width:42px;"></div><div class="dot" style="left:763px; top:595px;"></div>
+<div class="stamp">示意畫面｜建築標章評估與分析</div>
+</body></html>

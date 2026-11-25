@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><link rel="stylesheet" href="concept.css">
+<style>
+.layers { position: absolute; left: 0; top: 38px; bottom: 0; width: 170px; padding: 14px 12px; background: #f4f9fc; border-right: 1px solid #e3eef5; }
+.layers h5 { font-size: 11.5px; color: #6a7f90; margin-bottom: 8px; }
+.layers label { display: flex; align-items: center; gap: 8px; padding: 7px 6px; font-size: 12px; font-weight: 600; color: #0b3f63; }
+.layers label i { width: 14px; height: 14px; border-radius: 4px; border: 2px solid #0e8fc8; background: #0e8fc8; box-shadow: inset 0 0 0 2px #fff; }
+.layers label i.off { background: #fff; }
+.map { position: absolute; left: 170px; top: 38px; right: 0; bottom: 0; background: #f3f8fb; }
+</style></head>
+<body>
+<div class="win" style="left:48px; top:84px; width:740px; height:600px;">
+  <div class="bar"><i></i><i></i><i></i><span>GIS 地理資訊｜政府資料介接</span><em>TWD97</em></div>
+  <div class="layers">
+    <h5>圖層</h5>
+    <label><i></i>地籍圖</label>
+    <label><i></i>使用分區</label>
+    <label><i></i>實價登錄</label>
+    <label><i></i>淹水潛勢</label>
+    <label><i class="off"></i>土壤液化</label>
+    <label><i class="off"></i>招商案件</label>
+    <h5 style="margin-top:14px">資料來源</h5>
+    <p class="muted" style="line-height:1.8">地政電子謄本<br>實價登錄<br>都市計畫圖<br>國土測繪圖資</p>
+  </div>
+  <div class="map">
+    <svg width="570" height="562" viewBox="0 0 570 562">
+      <rect x="0" y="0" width="570" height="562" fill="#f3f8fb"/>
+      <g fill="rgba(14,143,200,.10)">
+        <rect x="0" y="0" width="300" height="250"/>
+      </g>
+      <g fill="rgba(58,114,208,.10)">
+        <rect x="300" y="0" width="270" height="250"/>
+      </g>
+      <g fill="rgba(15,143,159,.10)">
+        <rect x="0" y="250" width="570" height="312"/>
+      </g>
+      <g fill="#e2ebf1">
+        <rect x="0" y="232" width="570" height="34"/>
+        <rect x="282" y="0" width="34" height="562"/>
+      </g>
+      <g font-size="11" fill="#7f97a8" font-weight="600">
+        <text x="420" y="254">文化路一段</text>
+        <text x="292" y="420" transform="rotate(-90 292 420)">民生路</text>
+      </g>
+      <g fill="none" stroke="#9fb8c9" stroke-width="1.2">
+        <path d="M20 20 H260 V220 H20 Z M20 110 H140 V220 M140 20 V110 M200 110 V220"/>
+        <path d="M330 20 H550 V220 H330 Z M440 20 V220 M330 120 H550"/>
+        <path d="M20 290 H260 V540 H20 Z M120 290 V540 M20 410 H260"/>
+        <path d="M330 290 H550 V540 H330 Z M430 290 V420 M330 420 H550"/>
+      </g>
+      <path d="M330 120 H440 V220 H330 Z" fill="rgba(14,143,200,.35)" stroke="#0e8fc8" stroke-width="3"/>
+      <text x="350" y="166" font-size="12" font-weight="800" fill="#0b3f63">文化段 812</text>
+      <text x="356" y="184" font-size="11" fill="#0a6fa1">1,086 ㎡</text>
+      <g fill="rgba(58,114,208,.18)">
+        <path d="M0 420 C80 400 140 450 230 430 S380 470 570 450 V562 H0 Z"/>
+      </g>
+      <g stroke="rgba(58,114,208,.45)" stroke-width="1">
+        <line x1="20" y1="470" x2="60" y2="440"/><line x1="70" y1="480" x2="110" y2="450"/><line x1="140" y1="490" x2="180" y2="460"/><line x1="380" y1="500" x2="420" y2="470"/><line x1="460" y1="500" x2="500" y2="470"/>
+      </g>
+      <g>
+        <circle cx="90" cy="70" r="7" fill="#0b3f63"/><circle cx="210" cy="160" r="7" fill="#0b3f63"/><circle cx="500" cy="70" r="7" fill="#0b3f63"/>
+        <circle cx="380" cy="330" r="7" fill="#0b3f63"/><circle cx="190" cy="350" r="7" fill="#0b3f63"/><circle cx="480" cy="360" r="7" fill="#0b3f63"/>
+      </g>
+      <g font-size="10" fill="#0b3f63" font-weight="700">
+        <text x="100" y="66">62.1</text><text x="220" y="156">58.8</text><text x="510" y="66">66.4</text><text x="390" y="326">63.0</text><text x="200" y="346">60.2</text><text x="490" y="356">61.7</text>
+      </g>
+      <g>
+        <rect x="16" y="514" width="150" height="30" rx="8" fill="#fff" stroke="#d6e9f4"/>
+        <circle cx="34" cy="529" r="6" fill="#0b3f63"/><text x="46" y="533" font-size="11" fill="#3d566b">成交單價（萬／坪）</text>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<div class="card" style="left:830px; top:60px; width:320px;">
+  <h4><b>01</b>土地謄本解析</h4>
+  <div class="row"><span>地號</span><b>文化段 812</b></div>
+  <div class="row"><span>使用分區</span><b>商業區</b></div>
+  <div class="row"><span>所有權人／持分合計</span><b>12 人／100%</b></div>
+  <div class="row"><span>他項權利</span><span class="tag t-amber">抵押權 2 筆</span></div>
+</div>
+
+<div class="card" style="left:860px; top:330px; width:290px;">
+  <h4><b>02</b>周邊成交行情</h4>
+  <div class="kpi">62.4 <span style="font-size:13px">萬／坪</span></div>
+  <p class="muted" style="margin:4px 0 8px">500 m 內・近 24 個月・38 筆</p>
+  <svg width="258" height="54" viewBox="0 0 258 54">
+    <g fill="#7fc6e6"><rect x="0" y="34" width="26" height="20"/><rect x="33" y="24" width="26" height="30"/><rect x="66" y="12" width="26" height="42"/><rect x="99" y="4" width="26" height="50" fill="#0e8fc8"/><rect x="132" y="16" width="26" height="38"/><rect x="165" y="28" width="26" height="26"/><rect x="198" y="38" width="26" height="16"/><rect x="231" y="44" width="26" height="10"/></g>
+  </svg>
+</div>
+
+<div class="card" style="left:830px; top:555px; width:320px;">
+  <h4><b>03</b>基地資料表</h4>
+  <div class="row"><span>建蔽率／容積率</span><b>60%／560%</b></div>
+  <div class="row"><span>可建樓地板（概算）</span><b>6,082 ㎡</b></div>
+</div>
+
+<div class="link" style="left:788px; top:140px; width:42px;"></div><div class="dot" style="left:783px; top:135px;"></div>
+<div class="link" style="left:788px; top:410px; width:72px;"></div><div class="dot" style="left:783px; top:405px;"></div>
+<div class="link" style="left:788px; top:615px; width:42px;"></div><div class="dot" style="left:783px; top:610px;"></div>
+<div class="stamp">示意畫面｜GIS 地理資訊加值</div>
+</body></html>

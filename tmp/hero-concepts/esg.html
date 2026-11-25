@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><link rel="stylesheet" href="concept.css">
+<style>
+.main { position: absolute; left: 0; top: 38px; right: 0; bottom: 0; padding: 18px 20px; }
+.cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; position: relative; }
+.col h5 { font-size: 11.5px; color: #6a7f90; margin-bottom: 10px; letter-spacing: .06em; }
+.node { position: relative; z-index: 1; padding: 9px 10px; margin-bottom: 10px; border-radius: 10px; background: #f6fafd; border: 1px solid #d6e9f4; font-size: 12px; font-weight: 600; color: #0b3f63; }
+.node small { display: block; font-weight: 500; color: #6a7f90; font-size: 10.5px; margin-top: 2px; }
+.node.hl { background: #0e8fc8; color: #fff; border-color: #0e8fc8; }
+.node.hl small { color: rgba(255,255,255,.8); }
+.flows { position: absolute; inset: 0; z-index: 0; }
+.foot { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
+.foot div { padding: 12px 14px; border-radius: 12px; background: #f2f8fc; border: 1px solid #d6e9f4; }
+.foot b { display: block; font-size: 20px; color: #0a6fa1; }
+</style></head>
+<body>
+<div class="win" style="left:48px; top:84px; width:740px; height:600px;">
+  <div class="bar"><i></i><i></i><i></i><span>企業 ESG｜指標資料鏈</span><em>2026 年度報告</em></div>
+  <div class="main">
+    <svg class="flows" width="740" height="420" viewBox="0 0 740 420" style="top:50px">
+      <g stroke="#7fc6e6" stroke-width="2" fill="none">
+        <path d="M168 40 C190 40 190 70 210 70"/><path d="M168 98 C190 98 190 70 210 70"/><path d="M168 156 C190 156 190 128 210 128"/>
+        <path d="M168 214 C190 214 190 186 210 186"/>
+        <path d="M352 70 C372 70 372 98 392 98"/><path d="M352 128 C372 128 372 98 392 98"/><path d="M352 186 C372 186 372 156 392 156"/>
+        <path d="M534 98 C556 98 556 40 576 40"/><path d="M534 98 C556 98 556 98 576 98"/><path d="M534 156 C556 156 556 156 576 156"/><path d="M534 156 C556 156 556 214 576 214"/>
+      </g>
+    </svg>
+    <div class="cols">
+      <div class="col"><h5>原始憑證</h5>
+        <div class="node">電費單<small>12 據點・月</small></div>
+        <div class="node">燃料採購<small>柴油、天然氣</small></div>
+        <div class="node">冷媒填充<small>R-410A</small></div>
+        <div class="node">人資與職安<small>工時、職災</small></div>
+      </div>
+      <div class="col"><h5>資料字典與覆核</h5>
+        <div class="node" style="margin-top:20px">範疇一 直接排放<small>覆核 ✓</small></div>
+        <div class="node">範疇二 外購電力<small>覆核 ✓</small></div>
+        <div class="node">社會指標<small>填報中</small></div>
+      </div>
+      <div class="col"><h5>指標計算</h5>
+        <div class="node hl" style="margin-top:48px">溫室氣體排放<small>係數：環境部／能源署</small></div>
+        <div class="node hl">排放強度<small>tCO₂e／百萬營收</small></div>
+      </div>
+      <div class="col"><h5>揭露框架</h5>
+        <div class="node">GRI 305<small>排放</small></div>
+        <div class="node">IFRS S2<small>氣候相關揭露</small></div>
+        <div class="node">SASB<small>產業指標</small></div>
+        <div class="node">確信佐證包<small>124 / 124 件</small></div>
+      </div>
+    </div>
+    <div class="foot">
+      <div><span class="muted">範疇一＋二</span><b>18,420 t</b></div>
+      <div><span class="muted">較基準年</span><b style="color:#1e8a4c">-8.2%</b></div>
+      <div><span class="muted">佐證齊備</span><b>100%</b></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="left:830px; top:64px; width:320px;">
+  <h4><b>01</b>排放結構</h4>
+  <div style="display:flex;align-items:center;gap:16px">
+    <svg width="110" height="110" viewBox="0 0 42 42">
+      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#e4eff6" stroke-width="6"/>
+      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#0b3f63" stroke-width="6" stroke-dasharray="22 78" stroke-dashoffset="25"/>
+      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#0e8fc8" stroke-width="6" stroke-dasharray="46 54" stroke-dashoffset="3"/>
+      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#7fc6e6" stroke-width="6" stroke-dasharray="32 68" stroke-dashoffset="-43"/>
+    </svg>
+    <div style="font-size:12px;line-height:2">
+      <div><span class="sw" style="display:inline-block;width:10px;height:10px;border-radius:3px;background:#0b3f63;margin-right:6px"></span>範疇一 22%</div>
+      <div><span style="display:inline-block;width:10px;height:10px;border-radius:3px;background:#0e8fc8;margin-right:6px"></span>範疇二 46%</div>
+      <div><span style="display:inline-block;width:10px;height:10px;border-radius:3px;background:#7fc6e6;margin-right:6px"></span>範疇三 32%</div>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="left:860px; top:330px; width:290px;">
+  <h4><b>02</b>資產評價敏感性</h4>
+  <svg width="258" height="120" viewBox="0 0 258 120">
+    <line x1="129" y1="4" x2="129" y2="116" stroke="#9ab3c4"/>
+    <g font-size="10" fill="#3d566b">
+      <text x="0" y="22">租金</text><text x="0" y="50">資本化率</text><text x="0" y="78">營運成本</text><text x="0" y="106">空置率</text>
+    </g>
+    <rect x="70" y="12" width="59" height="14" fill="#7fc6e6"/><rect x="129" y="12" width="70" height="14" fill="#0e8fc8"/>
+    <rect x="84" y="40" width="45" height="14" fill="#7fc6e6"/><rect x="129" y="40" width="52" height="14" fill="#0e8fc8"/>
+    <rect x="100" y="68" width="29" height="14" fill="#7fc6e6"/><rect x="129" y="68" width="34" height="14" fill="#0e8fc8"/>
+    <rect x="110" y="96" width="19" height="14" fill="#7fc6e6"/><rect x="129" y="96" width="22" height="14" fill="#0e8fc8"/>
+  </svg>
+</div>
+
+<div class="card" style="left:830px; top:540px; width:320px;">
+  <h4><b>03</b>碳費試算</h4>
+  <div class="row"><span>年排放（適用排放源）</span><b>26,800 t</b></div>
+  <div class="row"><span>一般費率 300 元／t</span><b>NT$ 804 萬</b></div>
+</div>
+
+<div class="link" style="left:788px; top:150px; width:42px;"></div><div class="dot" style="left:783px; top:145px;"></div>
+<div class="link" style="left:788px; top:410px; width:72px;"></div><div class="dot" style="left:783px; top:405px;"></div>
+<div class="link" style="left:788px; top:600px; width:42px;"></div><div class="dot" style="left:783px; top:595px;"></div>
+<div class="stamp">示意畫面｜企業 ESG 與資產評價</div>
+</body></html>
