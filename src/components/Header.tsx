@@ -1,10 +1,8 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import SiteNav, { type NavMenu } from "./SiteNav";
-import { company, getService, moduleHref, serviceShortLabels, services } from "@/lib/site";
-
-const labelFamilies = getService("green")?.catalog ?? [];
-const labelCount = labelFamilies.reduce((sum, family) => sum + family.items.length, 0);
+import { labelFamilies, labelHref, labels } from "@/lib/labels";
+import { company, moduleHref, serviceShortLabels, services } from "@/lib/site";
 
 const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(company.address)}`;
 
@@ -27,18 +25,18 @@ const menus: NavMenu[] = [
   },
   {
     id: "labels",
-    label: "建築標章",
+    label: "永續標章",
     href: "/labels",
     layout: "labels",
-    intro: "國內外建築標章與評級的目的與評估重點，點選可查看完整說明。",
+    intro: "國內外永續標章的目的、評估內容、等級與申請流程，每一項都有獨立的介紹頁。",
     groups: [
-      ...labelFamilies.slice(0, 2).map((family, index) => ({
+      ...labelFamilies.map((family, index) => ({
         title: family.title,
         href: `/labels#label-family-${index + 1}`,
         links: family.items.map((item) => ({
           label: item.name,
           desc: item.brief,
-          href: `/labels#${item.id}`,
+          href: labelHref(item.id),
         })),
       })),
       {
@@ -62,7 +60,7 @@ const menus: NavMenu[] = [
         ],
       },
     ],
-    footer: { label: `國內外 ${labelCount} 種建築標章與評級總覽`, href: "/labels" },
+    footer: { label: `國內外 ${labels.length} 種永續標章總覽`, href: "/labels" },
   },
   {
     id: "support",

@@ -25,7 +25,7 @@ export default function Footer() {
       <div className="footer-col">
         <h2>導入與支援</h2>
         <Link href="/services">系統應用總覽</Link>
-        <Link href="/labels">國內外建築標章</Link>
+        <Link href="/labels">永續標章</Link>
         <Link href="/faq">常見問題</Link>
         <Link href="/about">關於我們</Link>
         <Link href="/contact">預約系統展示</Link>

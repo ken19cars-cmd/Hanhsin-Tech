@@ -76,8 +76,8 @@ function buildSections(service: Service): Section[] {
     sections.push({
       id: "catalog",
       label: "標章總覽",
-      title: `國內外 ${count} 種建築標章與評級`,
-      desc: "每一種標章的目的、評估重點、等級與適合的對象。系統已將這些標章拆成可檢核的評估項目，可依案件需要組合申請。",
+      title: `國內外 ${count} 種永續標章`,
+      desc: "每一種標章的目的、評估重點、等級與適合的對象，點選可查看完整介紹。系統已將這些標章拆成可檢核的評估項目，可依案件需要組合申請。",
       body: <LabelCatalog families={service.catalog} />,
     });
   }

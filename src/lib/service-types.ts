@@ -45,6 +45,37 @@ export type LabelItem = {
   badge?: string;
 };
 
+export type LabelTopic = {
+  title: string;
+  text: string;
+};
+
+export type LabelStep = {
+  title: string;
+  items: string[];
+};
+
+export type LabelSource = {
+  label: string;
+  url: string;
+};
+
+/** Full label profile used for its standalone page. */
+export type LabelProfile = LabelItem & {
+  tagline: string;
+  intro: string[];
+  criteriaTitle: string;
+  criteria: LabelTopic[];
+  levelsTitle: string;
+  levelRows: LabelTopic[];
+  incentives: LabelTopic[];
+  process: LabelStep[];
+  validity?: string;
+  support: string[];
+  related: string[];
+  sources: LabelSource[];
+};
+
 export type LabelFamily = {
   title: string;
   desc: string;

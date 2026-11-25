@@ -6,6 +6,7 @@ import type {
   Faq,
   FlowStage,
   LabelFamily,
+  LabelItem,
   Module,
   WorkStep,
 } from "@/lib/site";
@@ -33,7 +34,13 @@ export function SectionHead({ num, label, title, desc }: HeadProps) {
 
 export type SubnavItem = { id: string; label: string };
 
-export function ServiceSubnav({ items }: { items: SubnavItem[] }) {
+export function ServiceSubnav({
+  items,
+  cta = { label: "洽詢此系統", href: "/contact" },
+}: {
+  items: SubnavItem[];
+  cta?: { label: string; href: string };
+}) {
   return (
     <nav className="svc-subnav" aria-label="本頁導覽">
       <div className="shell svc-subnav-inner">
@@ -44,11 +51,25 @@ export function ServiceSubnav({ items }: { items: SubnavItem[] }) {
             </a>
           ))}
         </div>
-        <Link className="btn btn-primary svc-subnav-cta" href="/contact">
-          洽詢此系統
+        <Link className="btn btn-primary svc-subnav-cta" href={cta.href}>
+          {cta.label}
         </Link>
       </div>
     </nav>
+  );
+}
+
+export function LabelMark({ item, className = "label-logo" }: { item: LabelItem; className?: string }) {
+  if (item.logo) {
+    // eslint-disable-next-line @next/next/no-img-element
+    return <img className={className} src={item.logo} alt={`${item.name}標誌`} />;
+  }
+  const text = item.badge ?? item.name;
+  const isLong = Math.max(...text.split("\n").map((line) => line.length)) > 4;
+  return (
+    <span className={`label-badge${isLong ? " is-long" : ""}`} aria-hidden="true">
+      {text}
+    </span>
   );
 }
 
@@ -73,23 +94,11 @@ export function LabelCatalog({ families }: { families: LabelFamily[] }) {
             {family.items.map((item) => (
               <article key={item.id} id={item.id} className="label-card">
                 <div className="label-head">
-                  {item.logo ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img className="label-logo" src={item.logo} alt={`${item.name}標誌`} />
-                  ) : (
-                    <span
-                      className={`label-badge${
-                        Math.max(...(item.badge ?? item.name).split("\n").map((line) => line.length)) > 4
-                          ? " is-long"
-                          : ""
-                      }`}
-                      aria-hidden="true"
-                    >
-                      {item.badge ?? item.name}
-                    </span>
-                  )}
+                  <LabelMark item={item} />
                   <div>
-                    <h4>{item.name}</h4>
+                    <h4>
+                      <Link href={`/labels/${item.id}`}>{item.name}</Link>
+                    </h4>
                     <p className="label-code">{item.code}</p>
                   </div>
                 </div>
@@ -113,6 +122,9 @@ export function LabelCatalog({ families }: { families: LabelFamily[] }) {
                     <dd>{item.fit}</dd>
                   </div>
                 </dl>
+                <Link className="label-more" href={`/labels/${item.id}`}>
+                  查看完整介紹
+                </Link>
               </article>
             ))}
           </div>
