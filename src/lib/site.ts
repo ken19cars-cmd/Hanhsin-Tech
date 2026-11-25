@@ -6,6 +6,8 @@ export type {
   Driver,
   Faq,
   FlowStage,
+  LabelFamily,
+  LabelItem,
   Module,
   Service,
   SystemShot,
@@ -46,7 +48,7 @@ export function getService(slug: string) {
 export const serviceShortLabels: Record<string, string> = {
   pmis: "PMIS 工程管理",
   drawings: "平面圖說辨識",
-  green: "標章指標評估",
+  green: "建築標章評估",
   esg: "ESG／資產評價",
   gis: "GIS 地理加值",
 };

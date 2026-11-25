@@ -5,7 +5,7 @@ import ServiceOrbit from "@/components/ServiceOrbit";
 export const metadata: Metadata = {
   title: "服務項目",
   description:
-    "PMIS、平面圖說辨識分析、綠建築標章、企業 ESG 與資產評價、GIS 加值。",
+    "PMIS、平面圖說辨識分析、建築標章評估與分析、企業 ESG 與資產評價、GIS 地理資訊加值。",
 };
 
 export default function ServicesPage() {
@@ -15,7 +15,7 @@ export default function ServicesPage() {
         <p className="kicker">服務項目</p>
         <h1>五大系統應用</h1>
         <p className="lede">
-          五套系統各自處理不動產開發中的一段資料工作：工程履約、圖說與面積、標章指標、ESG
+          五套系統各自處理不動產開發中的一段資料工作：工程履約、圖說與面積、建築標章、ESG
           揭露與資產評價、政府地政與地理資料。每套都可單獨導入，也能共用同一份案件資料串接使用。
         </p>
         <ServiceOrbit />

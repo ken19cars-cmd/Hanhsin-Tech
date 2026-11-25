@@ -28,6 +28,25 @@ export type Faq = {
   a: string;
 };
 
+/** One certification or rating system covered by a service. */
+export type LabelItem = {
+  name: string;
+  code: string;
+  org: string;
+  focus: string;
+  levels?: string;
+  fit: string;
+  logo?: string;
+  /** Short text shown in place of a logo. */
+  badge?: string;
+};
+
+export type LabelFamily = {
+  title: string;
+  desc: string;
+  items: LabelItem[];
+};
+
 /** A regulatory or market fact that explains why the system is needed, with its source. */
 export type Driver = {
   figure: string;
@@ -55,6 +74,8 @@ export type Service = {
   imageAlt: string;
   purpose: { heading: string; text: string };
   drivers: Driver[];
+  /** Certification catalog, shown as its own section when present. */
+  catalog?: LabelFamily[];
   audiences: Module[];
   outcomes: Module[];
   modules: Capability[];

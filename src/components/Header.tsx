@@ -52,9 +52,9 @@ const menus: NavMenu[] = [
             href: moduleHref("drawings", "BIM 應用"),
           },
           {
-            label: "綠建築與智慧建築準備",
-            desc: "指標試算、缺口分析與送審文件",
-            href: moduleHref("green", "設計參數與指標試算"),
+            label: "國內外建築標章選擇",
+            desc: "21 種標章與評級，依需求判斷適用組合",
+            href: "/services/green#catalog",
           },
           {
             label: "標章等級與容積獎勵評估",

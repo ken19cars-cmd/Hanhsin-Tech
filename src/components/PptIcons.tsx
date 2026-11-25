@@ -250,4 +250,4 @@ export const serviceIcons: Record<string, string> = {
   gis: "gis",
 };
 
-export const pptColors = ["#5f9134", "#2e7d6b", "#86ad45", "#c58b2c", "#3e6e2c", "#3f7f86"];
+export const pptColors = ["#0e8fc8", "#0f8f9f", "#3a72d0", "#0a6fa1", "#36a9da", "#2b5f8e"];

@@ -1,6 +1,14 @@
 import Link from "next/link";
 import PptIcon, { pptColors } from "@/components/PptIcons";
-import type { Capability, Driver, Faq, FlowStage, Module, WorkStep } from "@/lib/site";
+import type {
+  Capability,
+  Driver,
+  Faq,
+  FlowStage,
+  LabelFamily,
+  Module,
+  WorkStep,
+} from "@/lib/site";
 
 type HeadProps = {
   num: string;
@@ -23,21 +31,14 @@ export function SectionHead({ num, label, title, desc }: HeadProps) {
   );
 }
 
-export const subnavItems = [
-  { id: "purpose", label: "為什麼需要" },
-  { id: "features", label: "功能詳解" },
-  { id: "architecture", label: "系統架構" },
-  { id: "screens", label: "畫面示意" },
-  { id: "process", label: "導入流程" },
-  { id: "faq", label: "常見問題" },
-];
+export type SubnavItem = { id: string; label: string };
 
-export function ServiceSubnav() {
+export function ServiceSubnav({ items }: { items: SubnavItem[] }) {
   return (
     <nav className="svc-subnav" aria-label="本頁導覽">
       <div className="shell svc-subnav-inner">
         <div className="svc-subnav-links">
-          {subnavItems.map((item) => (
+          {items.map((item) => (
             <a key={item.id} href={`#${item.id}`}>
               {item.label}
             </a>
@@ -48,6 +49,76 @@ export function ServiceSubnav() {
         </Link>
       </div>
     </nav>
+  );
+}
+
+export function LabelCatalog({ families }: { families: LabelFamily[] }) {
+  return (
+    <div className="label-catalog">
+      <nav className="label-index" aria-label="標章分類">
+        {families.map((family, index) => (
+          <a key={family.title} href={`#label-family-${index + 1}`}>
+            {family.title}
+            <span>{family.items.length}</span>
+          </a>
+        ))}
+      </nav>
+      {families.map((family, index) => (
+        <section key={family.title} id={`label-family-${index + 1}`} className="label-family">
+          <header>
+            <h3>{family.title}</h3>
+            <p>{family.desc}</p>
+          </header>
+          <div className="label-grid">
+            {family.items.map((item) => (
+              <article key={item.name} className="label-card">
+                <div className="label-head">
+                  {item.logo ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img className="label-logo" src={item.logo} alt={`${item.name}標誌`} />
+                  ) : (
+                    <span
+                      className={`label-badge${
+                        Math.max(...(item.badge ?? item.name).split("\n").map((line) => line.length)) > 4
+                          ? " is-long"
+                          : ""
+                      }`}
+                      aria-hidden="true"
+                    >
+                      {item.badge ?? item.name}
+                    </span>
+                  )}
+                  <div>
+                    <h4>{item.name}</h4>
+                    <p className="label-code">{item.code}</p>
+                  </div>
+                </div>
+                <dl>
+                  <div>
+                    <dt>主管／發證</dt>
+                    <dd>{item.org}</dd>
+                  </div>
+                  <div>
+                    <dt>評估重點</dt>
+                    <dd>{item.focus}</dd>
+                  </div>
+                  {item.levels ? (
+                    <div>
+                      <dt>等級</dt>
+                      <dd>{item.levels}</dd>
+                    </div>
+                  ) : null}
+                  <div>
+                    <dt>適合</dt>
+                    <dd>{item.fit}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
   );
 }
 
