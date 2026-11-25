@@ -7,6 +7,7 @@ import PptFlow from "@/components/PptFlow";
 import {
   AudienceGrid,
   CapabilityDetail,
+  DriverGrid,
   FaqList,
   Pipeline,
   SectionHead,
@@ -75,10 +76,13 @@ export default async function ServicePage({ params }: Props) {
         <div className="shell">
           <SectionHead
             num="01"
-            label="系統目的"
+            label="為什麼需要"
             title={service.purpose.heading}
             desc={service.purpose.text}
           />
+          <h3 className="svc-subhead">法規與趨勢</h3>
+          <DriverGrid items={service.drivers} />
+          <h3 className="svc-subhead">導入後的改變</h3>
           <div className="outcome-strip">
             {service.outcomes.map((item) => (
               <article key={item.title}>

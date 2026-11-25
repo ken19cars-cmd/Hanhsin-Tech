@@ -3,6 +3,7 @@ import type { Service } from "@/lib/service-types";
 
 export type {
   Capability,
+  Driver,
   Faq,
   FlowStage,
   Module,
@@ -75,7 +76,7 @@ export const focusAreas = [
   { title: "工程管理", text: "契約、進度、查核與文件主檔管理。" },
   { title: "建築設計支援", text: "空間辨識、BIM 多元應用與地政作業輔助。" },
   { title: "ESG 永續", text: "標章評估、企業 ESG 與資產評鑑準備。" },
-  { title: "國土智慧", text: "GIS 招商地圖、條件查詢與圖層疊加。" },
+  { title: "國土智慧", text: "地政謄本、地價與都市計畫資料介接與疊圖。" },
 ];
 
 /** Homepage value pillars — client outcomes, not product jargon. */

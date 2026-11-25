@@ -57,6 +57,11 @@ const menus: NavMenu[] = [
             href: moduleHref("green", "設計參數與指標試算"),
           },
           {
+            label: "標章等級與容積獎勵評估",
+            desc: "依目標等級找出缺口與可行調整",
+            href: moduleHref("green", "準備度與缺口分析"),
+          },
+          {
             label: "溫室氣體盤查與永續報告",
             desc: "ISO 14064-1 盤查與揭露框架對應",
             href: moduleHref("esg", "溫室氣體盤查"),
@@ -67,9 +72,14 @@ const menus: NavMenu[] = [
             href: moduleHref("esg", "不動產分析與資產評價"),
           },
           {
-            label: "招商選地與基地初評",
-            desc: "條件篩選、法定條件與可建量概算",
-            href: moduleHref("gis", "基地初評與可建量概算"),
+            label: "權屬清查與謄本解析",
+            desc: "批次調閱土地建物謄本，彙整持分與他項權利",
+            href: moduleHref("gis", "土地／建物謄本解析"),
+          },
+          {
+            label: "基地調查與選地",
+            desc: "地價、分區、行情與環境限制一次彙整",
+            href: moduleHref("gis", "基地資料彙整與篩選"),
           },
         ],
       },

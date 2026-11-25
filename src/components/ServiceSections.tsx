@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PptIcon, { pptColors } from "@/components/PptIcons";
-import type { Capability, Faq, FlowStage, Module, WorkStep } from "@/lib/site";
+import type { Capability, Driver, Faq, FlowStage, Module, WorkStep } from "@/lib/site";
 
 type HeadProps = {
   num: string;
@@ -24,7 +24,7 @@ export function SectionHead({ num, label, title, desc }: HeadProps) {
 }
 
 export const subnavItems = [
-  { id: "purpose", label: "系統目的" },
+  { id: "purpose", label: "為什麼需要" },
   { id: "features", label: "功能詳解" },
   { id: "architecture", label: "系統架構" },
   { id: "screens", label: "畫面示意" },
@@ -48,6 +48,24 @@ export function ServiceSubnav() {
         </Link>
       </div>
     </nav>
+  );
+}
+
+export function DriverGrid({ items }: { items: Driver[] }) {
+  return (
+    <div className="driver-grid">
+      {items.map((item) => (
+        <article key={item.title} className="driver">
+          <strong className="driver-figure">{item.figure}</strong>
+          <h4>{item.title}</h4>
+          <p>{item.text}</p>
+          <p className="driver-source">
+            <span>依據</span>
+            {item.source}
+          </p>
+        </article>
+      ))}
+    </div>
   );
 }
 

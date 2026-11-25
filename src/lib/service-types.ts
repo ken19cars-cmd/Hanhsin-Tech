@@ -28,6 +28,14 @@ export type Faq = {
   a: string;
 };
 
+/** A regulatory or market fact that explains why the system is needed, with its source. */
+export type Driver = {
+  figure: string;
+  title: string;
+  text: string;
+  source: string;
+};
+
 export type SystemShot = {
   src: string;
   alt: string;
@@ -46,6 +54,7 @@ export type Service = {
   image: string;
   imageAlt: string;
   purpose: { heading: string; text: string };
+  drivers: Driver[];
   audiences: Module[];
   outcomes: Module[];
   modules: Capability[];

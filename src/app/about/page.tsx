@@ -19,7 +19,7 @@ export default function AboutPage() {
             <p className="kicker">關於我們</p>
             <h1>{company.nameZh}</h1>
             <p className="lede">
-              以系統把土地、工程與永續資料串成可追蹤的工作底圖，協助決策與對外說明。
+              以自行開發的應用系統，處理不動產開發從土地調查、設計、施工到永續揭露各階段的資料工作。
             </p>
             <p className="lede muted">
               {company.nameEn}
@@ -52,8 +52,11 @@ export default function AboutPage() {
           <div className="prose-block about-prose">
             <p>
               {company.nameZh}為{company.group}
-              {company.relation}
-              ，承接不動產開發顧問領域的長期經驗，聚焦應用研發與資訊整合：把土地、財務、估價、工程、設計與永續所需資料，整理成可追溯、可共用、可決策的工作底圖。
+              {company.relation}。皓欣長期從事不動產開發規劃顧問，翰欣則把顧問實務中反覆出現的資料工作轉成應用系統：介接政府地政與地理資料、解析建築圖說、管理工程履約，並整理標章與
+              ESG 所需的數據與文件。
+            </p>
+            <p>
+              系統的欄位、流程與報表，都依土地開發、都市更新、公共工程與永續揭露的實際作業訂定；每一筆資料保留來源、時間與版次，讓業主、主辦機關與合作單位在同一份資料上討論與查核。
             </p>
           </div>
         </div>
@@ -65,7 +68,7 @@ export default function AboutPage() {
             <p className="kicker">核心領域</p>
             <h2>以系統應用串起六大專業領域</h2>
             <p className="section-desc">
-              土地、財務、工程、設計、ESG 與國土資訊，透過同一套系統底圖互相對齊。
+              每個領域都對應到具體的系統模組，可以單獨導入，也能共用同一份案件資料。
             </p>
           </div>
           <DomainMap />

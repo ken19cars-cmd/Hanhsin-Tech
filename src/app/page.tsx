@@ -25,16 +25,16 @@ export default function HomePage() {
         <div className="shell hero-inner">
           <div className="hero-copy">
             <p className="eyebrow">{company.nameZh}</p>
-            <h1>土地開發與永續管理的系統應用</h1>
+            <h1>不動產開發與永續管理的應用系統</h1>
             <p className="lede">
-              以應用系統串接工程進度、圖面與標章、企業 ESG 與資產資訊，以及地理條件查詢，讓案件團隊共用同一套可追蹤資料。
+              從地政資料介接、平面圖說辨識、工程履約管理，到綠建築標章與企業 ESG 揭露，以自行開發的系統處理不動產開發各階段的資料工作，每個數字都能回溯來源。
             </p>
             <div className="hero-actions">
               <Link className="btn btn-primary" href="/services">
-                五大服務
+                五大系統應用
               </Link>
               <Link className="btn btn-ghost" href="/contact">
-                聯絡我們
+                預約系統展示
               </Link>
             </div>
           </div>
@@ -49,9 +49,10 @@ export default function HomePage() {
             <div className="prose-block">
               <p>
                 {company.nameZh}（{company.nameEn}）為{company.group}
-                {company.relation}。應用系統可依案件需求延伸至：土地開發與地政條件、營建工程管理、平面圖說與
-                BIM、綠建築／智慧建築指標、企業 ESG 與資產評價，以及 GIS
-                招商與基地查詢等領域，可單點導入，也可逐步串接。
+                {company.relation}。應用系統涵蓋不動產開發的五個工作面向：以 API
+                介接地政謄本、地價與都市計畫等政府資料；由平面圖說產出面積清冊、BIM
+                數量與蘊含碳；管理工程履約的公文、查核與估驗；試算綠建築、能效與低碳等標章指標；整理企業
+                ESG 揭露與資產評價。可依需求單點導入，也能共用同一份案件資料逐步串接。
               </p>
             </div>
           </div>
