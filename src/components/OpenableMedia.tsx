@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useId, useState } from "react";
+import LightboxMotion from "@/components/LightboxMotion";
 
 type Props = {
   src: string;
@@ -66,15 +67,7 @@ export default function OpenableMedia({
             </div>
             <div className="lightbox-stage">
               {motion ? (
-                <video
-                  className="lightbox-video"
-                  src={motion}
-                  muted
-                  loop
-                  playsInline
-                  autoPlay
-                  controls
-                />
+                <LightboxMotion src={src} alt={alt} />
               ) : (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img className="lightbox-image" src={src} alt={alt} />

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useId, useState } from "react";
+import LightboxMotion from "@/components/LightboxMotion";
 
 export type GalleryItem = {
   src: string;
@@ -98,16 +99,7 @@ export default function MediaLightbox({ items, className }: Props) {
             </div>
             <div className="lightbox-stage">
               {current.motion ? (
-                <video
-                  key={current.motion}
-                  className="lightbox-video"
-                  src={current.motion}
-                  muted
-                  loop
-                  playsInline
-                  autoPlay
-                  controls
-                />
+                <LightboxMotion key={current.src} src={current.src} alt={current.alt} />
               ) : (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img className="lightbox-image" src={current.src} alt={current.alt} />

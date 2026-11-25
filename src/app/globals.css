@@ -1610,8 +1610,7 @@ p {
   display: grid;
   place-items: center;
   padding: 1rem;
-  background: rgba(12, 24, 32, 0.72);
-  backdrop-filter: blur(4px);
+  background: rgba(12, 24, 32, 0.78);
 }
 
 .lightbox-panel {
@@ -1666,6 +1665,44 @@ p {
   max-height: min(70vh, 720px);
   object-fit: contain;
   background: #000;
+}
+
+.lightbox-motion {
+  width: 100%;
+  max-height: min(70vh, 720px);
+  overflow: hidden;
+  border-radius: 8px;
+  background: #fff;
+  /* Promote to own compositor layer for stable 60fps animation */
+  transform: translateZ(0);
+  contain: paint;
+}
+
+.lightbox-kenburns {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  transform-origin: center 18%;
+  will-change: transform;
+  backface-visibility: hidden;
+  animation: lightbox-kenburns 9s linear infinite alternate;
+}
+
+@keyframes lightbox-kenburns {
+  from {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.14) translate3d(0, -5.5%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox-kenburns {
+    animation: none;
+    transform: none;
+  }
 }
 
 .lightbox-caption {
