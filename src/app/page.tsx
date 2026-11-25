@@ -53,11 +53,13 @@ export default function HomePage() {
         <div className="shell">
           <div className="intro-block intro-block-wide">
             <p className="kicker">關於翰欣</p>
-            <h2>系統把分散資料收成可決策底圖</h2>
+            <h2>系統可延伸的應用領域</h2>
             <div className="prose-block">
               <p>
                 {company.nameZh}（{company.nameEn}）為{company.group}
-                {company.relation}，專注土地開發、建築與永續的資訊整合與系統導入。
+                {company.relation}。應用系統可依案件需求延伸至：土地開發與地政條件、營建工程管理、平面圖說與
+                BIM、綠建築／智慧建築指標、企業 ESG 與資產評價，以及 GIS
+                招商與基地查詢等領域，可單點導入，也可逐步串接。
               </p>
             </div>
           </div>
