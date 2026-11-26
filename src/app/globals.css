@@ -2786,9 +2786,9 @@ a.nav-group-title:hover {
 
 .lbl-hero {
   display: grid;
-  grid-template-columns: 19rem minmax(0, 1fr);
-  gap: 2.4rem;
-  align-items: center;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: 1.6rem;
+  align-items: start;
 }
 
 .lbl-hero h1 {
@@ -2803,11 +2803,10 @@ a.nav-group-title:hover {
   display: grid;
   place-items: center;
   aspect-ratio: 1;
-  padding: 1.6rem;
-  border-radius: 24px;
+  padding: 0.85rem;
+  border-radius: 18px;
   background: #fff;
   border: 1px solid var(--line);
-  box-shadow: var(--shadow);
 }
 
 .lbl-hero-logo {
@@ -2816,83 +2815,127 @@ a.nav-group-title:hover {
   object-fit: contain;
 }
 
-.lbl-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.6rem;
-  margin: 1.1rem 0 0;
-  padding: 0;
-  list-style: none;
-  color: var(--ink-soft);
-  font-size: 0.92rem;
+.lbl-facts {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 0.7rem;
+  max-width: 46rem;
+  margin: 1rem 0 1.15rem;
 }
 
-.lbl-meta span {
-  margin-right: 0.5rem;
+.lbl-facts div {
+  padding: 0.7rem 0.85rem;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.lbl-facts dt {
+  margin-bottom: 0.2rem;
   color: var(--brand-600);
+  font-size: 0.75rem;
   font-weight: 700;
 }
 
-.lbl-sec {
-  padding-top: 2.6rem;
-  padding-bottom: 2.6rem;
+.lbl-facts dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.55;
 }
 
-.lbl-criteria {
+.lbl-sec {
+  scroll-margin-top: 4.2rem;
+  padding-top: 2.1rem;
+  padding-bottom: 2.1rem;
+}
+
+.lbl-sec .svc-head {
+  margin-bottom: 1.05rem;
+}
+
+.lbl-sec .svc-head h2 {
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+}
+
+.lbl-spec {
   display: grid;
-  grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr));
-  gap: 0.8rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.lbl-criteria li {
-  padding: 1rem 1.1rem;
+.lbl-spec li {
+  padding: 1rem 1.1rem 1.1rem;
   border-radius: 14px;
   background: #fff;
   border: 1px solid var(--line);
-  border-top: 3px solid var(--brand-500);
 }
 
-.lbl-criteria-num {
+.lbl-spec-top {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.lbl-spec-top span {
+  flex: none;
   color: var(--brand-500);
   font-family: var(--font-display), "Sora", sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
 }
 
-.lbl-criteria h3 {
-  margin: 0.25rem 0 0.3rem;
-  font-size: 1.02rem;
-  color: var(--brand-700);
+.lbl-spec-top h3 {
+  flex: 1;
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.4;
 }
 
-.lbl-criteria p {
+.lbl-spec-top em {
+  flex: none;
+  color: var(--brand-600);
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.lbl-spec p {
   margin: 0;
   color: var(--ink-soft);
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.75;
 }
 
 .lbl-levels {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
+  display: grid;
   margin: 0;
   padding: 0;
   list-style: none;
+  max-width: 40rem;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--line);
 }
 
 .lbl-levels li {
   display: grid;
-  gap: 0.15rem;
-  min-width: 9rem;
-  padding: 0.8rem 1.1rem;
-  border-radius: 12px;
-  background: #fff;
-  border: 1px solid var(--line);
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.lbl-levels li:last-child {
+  border-bottom: 0;
 }
 
 .lbl-levels strong {
@@ -2906,9 +2949,15 @@ a.nav-group-title:hover {
 }
 
 .lbl-note {
-  margin: 0.9rem 0 0;
+  max-width: 52rem;
+  margin: 0.85rem 0 0;
+  padding: 0.75rem 0.95rem;
+  border-radius: 10px;
+  border-left: 3px solid var(--brand-500);
+  background: #fff;
   color: var(--ink-soft);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
+  line-height: 1.7;
 }
 
 .lbl-prose {
@@ -2925,34 +2974,110 @@ a.nav-group-title:hover {
 }
 
 .lbl-rules {
+  counter-reset: rule;
   display: grid;
-  gap: 0.55rem;
   max-width: 52rem;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.lbl-rules li {
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr);
+  gap: 0.35rem 0.7rem;
+  align-items: start;
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.lbl-rules li:last-child {
+  border-bottom: 0;
+}
+
+.lbl-rules li::before {
+  counter-increment: rule;
+  content: counter(rule, decimal-leading-zero);
+  color: var(--brand-600);
+  font-family: var(--font-display), "Sora", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.9;
+}
+
+.lbl-flow {
+  display: grid;
+  max-width: 42rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.lbl-rules li {
+.lbl-flow > li {
   position: relative;
-  padding: 0.75rem 1rem 0.75rem 2.2rem;
-  border-radius: 12px;
-  background: #fff;
-  border: 1px solid var(--line);
-  color: var(--ink);
-  font-size: 0.95rem;
-  line-height: 1.65;
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr);
+  gap: 0.85rem;
 }
 
-.lbl-rules li::before {
+.lbl-flow > li:not(:last-child)::before {
   content: "";
   position: absolute;
-  left: 1rem;
-  top: 1.25rem;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 2px;
-  background: var(--brand-500);
+  top: 2.5rem;
+  bottom: 0;
+  left: 1.15rem;
+  width: 1px;
+  background: var(--brand-200);
+}
+
+.lbl-flow > li > span {
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 999px;
+  background: var(--brand-600);
+  color: #fff;
+  font-family: var(--font-display), "Sora", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.lbl-flow h3 {
+  margin: 0.4rem 0 0.25rem;
+  font-size: 1.05rem;
+}
+
+.lbl-flow ul {
+  margin: 0 0 1.15rem;
+  padding: 0;
+  list-style: none;
+}
+
+.lbl-flow ul li {
+  position: relative;
+  padding-left: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.lbl-flow ul li::before {
+  content: "";
+  position: absolute;
+  top: 0.7em;
+  left: 0;
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 50%;
+  background: var(--brand-400);
 }
 
 .lbl-foot {
@@ -3014,25 +3139,27 @@ a.nav-group-title:hover {
 }
 
 @media (max-width: 1100px) {
-  .lbl-criteria {
-    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
-  }
-
   .label-tiles {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
+@media (max-width: 800px) {
+  .lbl-spec,
+  .lbl-facts {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 900px) {
   .lbl-hero {
-    grid-template-columns: 1fr;
-    gap: 1.4rem;
+    grid-template-columns: 6.2rem minmax(0, 1fr);
+    gap: 1rem;
   }
 
   .lbl-hero-mark {
-    width: 12rem;
-    padding: 1.1rem;
-    border-radius: 20px;
+    padding: 0.55rem;
+    border-radius: 14px;
   }
 
   .lbl-foot {
@@ -3048,10 +3175,6 @@ a.nav-group-title:hover {
 
   .label-tile-mark {
     height: 6.5rem;
-  }
-
-  .lbl-levels li {
-    min-width: calc(50% - 0.3rem);
   }
 }
 

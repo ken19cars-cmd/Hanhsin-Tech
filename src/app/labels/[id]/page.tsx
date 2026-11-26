@@ -2,9 +2,35 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
-import { FaqList, LabelMark, Pipeline, SectionHead } from "@/components/ServiceSections";
+import { FaqList, LabelMark, SectionHead, ServiceSubnav } from "@/components/ServiceSections";
 import { getLabel, labelFamilies, labels } from "@/lib/labels";
-import type { LabelProfile } from "@/lib/service-types";
+import type { LabelProfile, LabelTopic } from "@/lib/service-types";
+
+function splitScore(title: string) {
+  const mark = title.indexOf("｜");
+  if (mark === -1) return { name: title, score: "" };
+  return { name: title.slice(0, mark).trim(), score: title.slice(mark + 1).trim() };
+}
+
+function SpecGrid({ items }: { items: LabelTopic[] }) {
+  return (
+    <ol className="lbl-spec">
+      {items.map((item, index) => {
+        const { name, score } = splitScore(item.title);
+        return (
+          <li key={item.title}>
+            <div className="lbl-spec-top">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{name}</h3>
+              {score ? <em>{score}</em> : null}
+            </div>
+            <p>{item.text}</p>
+          </li>
+        );
+      })}
+    </ol>
+  );
+}
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -31,13 +57,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function criteriaColumns(count: number) {
-  if (count <= 4) return count;
-  if (count % 4 === 0) return 4;
-  if (count % 5 === 0) return 5;
-  return 3;
-}
-
 function buildSections(label: LabelProfile): Section[] {
   const sections: Section[] = [
     {
@@ -59,17 +78,7 @@ function buildSections(label: LabelProfile): Section[] {
       id: "systems",
       label: "申請種類",
       title: "依建築階段或類型選擇",
-      body: (
-        <ol className="lbl-criteria" style={{ ["--cols" as string]: criteriaColumns(label.systems.length) }}>
-          {label.systems.map((item, index) => (
-            <li key={item.title}>
-              <span className="lbl-criteria-num">{String(index + 1).padStart(2, "0")}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </li>
-          ))}
-        </ol>
-      ),
+      body: <SpecGrid items={label.systems} />,
     });
   }
 
@@ -77,17 +86,7 @@ function buildSections(label: LabelProfile): Section[] {
       id: "criteria",
       label: "評估內容",
       title: label.criteriaTitle,
-      body: (
-        <ol className="lbl-criteria" style={{ ["--cols" as string]: criteriaColumns(label.criteria.length) }}>
-          {label.criteria.map((item, index) => (
-            <li key={item.title}>
-              <span className="lbl-criteria-num">{String(index + 1).padStart(2, "0")}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </li>
-          ))}
-        </ol>
-      ),
+      body: <SpecGrid items={label.criteria} />,
     });
 
   if (label.levelRows?.length) {
@@ -130,7 +129,21 @@ function buildSections(label: LabelProfile): Section[] {
       title: "申請流程",
       body: (
         <>
-          <Pipeline stages={label.process} />
+          <ol className="lbl-flow">
+            {label.process.map((step, index) => (
+              <li key={step.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{step.title}</h3>
+                  <ul>
+                    {step.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            ))}
+          </ol>
           {label.validity ? <p className="lbl-note">{label.validity}</p> : null}
         </>
       ),
@@ -176,16 +189,16 @@ export default async function LabelPage({ params }: Props) {
               <p className="kicker">{label.code}</p>
               <h1>{label.name}</h1>
               <p className="lede">{label.lead}</p>
-              <ul className="lbl-meta">
-                <li>
-                  <span>主管／發證</span>
-                  {label.org}
-                </li>
-                <li>
-                  <span>適合</span>
-                  {label.fit}
-                </li>
-              </ul>
+              <dl className="lbl-facts">
+                <div>
+                  <dt>主管／發證</dt>
+                  <dd>{label.org}</dd>
+                </div>
+                <div>
+                  <dt>適合對象</dt>
+                  <dd>{label.fit}</dd>
+                </div>
+              </dl>
               <div className="hero-actions">
                 <Link className="btn btn-primary" href={`/labels/${label.id}/assess`}>
                   填寫評估表
@@ -199,12 +212,13 @@ export default async function LabelPage({ params }: Props) {
         </div>
       </section>
 
+      <ServiceSubnav
+        items={sections.map(({ id: sectionId, label: text }) => ({ id: sectionId, label: text }))}
+        cta={{ label: "填寫評估表", href: `/labels/${label.id}/assess` }}
+      />
+
       {sections.map((section, index) => (
-        <section
-          key={section.id}
-          id={section.id}
-          className={`section svc-sec lbl-sec${index % 2 === 0 ? " svc-alt" : ""}`}
-        >
+        <section key={section.id} id={section.id} className="section svc-sec lbl-sec">
           <div className="shell">
             <SectionHead num={String(index + 1).padStart(2, "0")} label={section.label} title={section.title} />
             {section.body}
