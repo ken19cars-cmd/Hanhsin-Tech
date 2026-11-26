@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
-import { LabelMark, Pipeline, SectionHead } from "@/components/ServiceSections";
+import { FaqList, LabelMark, Pipeline, SectionHead } from "@/components/ServiceSections";
 import { getLabel, labelFamilies, labels } from "@/lib/labels";
 import type { LabelProfile } from "@/lib/service-types";
 
@@ -41,6 +41,39 @@ function criteriaColumns(count: number) {
 function buildSections(label: LabelProfile): Section[] {
   const sections: Section[] = [
     {
+      id: "about",
+      label: "制度說明",
+      title: "這套制度在評什麼",
+      body: (
+        <div className="lbl-prose">
+          {label.body.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+      ),
+    },
+  ];
+
+  if (label.systems?.length) {
+    sections.push({
+      id: "systems",
+      label: "申請種類",
+      title: "依建築階段或類型選擇",
+      body: (
+        <ol className="lbl-criteria" style={{ ["--cols" as string]: criteriaColumns(label.systems.length) }}>
+          {label.systems.map((item, index) => (
+            <li key={item.title}>
+              <span className="lbl-criteria-num">{String(index + 1).padStart(2, "0")}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </li>
+          ))}
+        </ol>
+      ),
+    });
+  }
+
+  sections.push({
       id: "criteria",
       label: "評估內容",
       title: label.criteriaTitle,
@@ -55,8 +88,7 @@ function buildSections(label: LabelProfile): Section[] {
           ))}
         </ol>
       ),
-    },
-  ];
+    });
 
   if (label.levelRows?.length) {
     sections.push({
@@ -102,6 +134,12 @@ function buildSections(label: LabelProfile): Section[] {
           {label.validity ? <p className="lbl-note">{label.validity}</p> : null}
         </>
       ),
+    },
+    {
+      id: "faq",
+      label: "常見問題",
+      title: "申請前常確認的事",
+      body: <FaqList items={label.faqs} />,
     },
   );
 

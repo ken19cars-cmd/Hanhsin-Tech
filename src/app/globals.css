@@ -2911,6 +2911,19 @@ a.nav-group-title:hover {
   font-size: 0.9rem;
 }
 
+.lbl-prose {
+  display: grid;
+  gap: 0.95rem;
+  max-width: 52rem;
+}
+
+.lbl-prose p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
 .lbl-rules {
   display: grid;
   gap: 0.55rem;

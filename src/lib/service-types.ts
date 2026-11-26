@@ -61,6 +61,10 @@ export type LabelSource = {
 /** Full label profile used for its standalone page. */
 export type LabelProfile = LabelItem & {
   lead: string;
+  /** Longer explanation shown under the hero facts. */
+  body: string[];
+  /** Rating systems, certificate types, or building categories. */
+  systems?: LabelTopic[];
   criteriaTitle: string;
   criteria: LabelTopic[];
   levelsTitle?: string;
@@ -69,6 +73,7 @@ export type LabelProfile = LabelItem & {
   rules: string[];
   process: LabelStep[];
   validity?: string;
+  faqs: Faq[];
   sources: LabelSource[];
 };
 

@@ -34,7 +34,6 @@ const menus: NavMenu[] = [
         href: `/labels#label-family-${index + 1}`,
         links: family.items.map((item) => ({
           label: item.name,
-          icon: item.logo,
           href: labelHref(item.id),
         })),
       })),
